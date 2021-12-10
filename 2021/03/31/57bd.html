@@ -1,0 +1,1293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag (contains Google-Analytics、Baidu-Tongji)-->
+<head>
+  <!-- Google Analytics -->
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-xxxxxx-xx"></script>
+  <script type="text/javascript">
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-xxxxxx-xx');
+  </script>
+  
+
+  <!-- Baidu Tongji -->
+  
+  <script type="text/javascript">
+    // Originial
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+  
+
+  <!-- Baidu Push -->
+  
+  <script>
+    (function() {
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+      } else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+  
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <meta name="google-site-verification" content="lxDfCplOZbIzjhG34NuQBgu2gdyRlAtMB4utP5AgEBc" />
+  <meta name="baidu-site-verification" content="PpzM9WxOJU" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="It&#39;s a personal blog..." />
+  <meta name="keyword" content="Blog" />
+  <link rel="shortcut icon" href="/img/avatar/avatar.png" />
+
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script async="async" defer="defer" src="https://buttons.github.io/buttons.js"></script>
+  <!-- Bootstrap Core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.min.css" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/beantech.min.css" />
+
+  <!-- Pygments Highlight CSS -->
+  
+<link rel="stylesheet" href="../../../css/highlight.css">
+<link rel="stylesheet" href="../../../css/widget.css">
+<link rel="stylesheet" href="../../../css/rocket.css">
+<link rel="stylesheet" href="../../../css/signature.css">
+<link rel="stylesheet" href="../../../css/catalog.css">
+<link rel="stylesheet" href="../../../css/livemylife.css">
+
+
+  
+  <!-- wave start -->
+  <link rel="stylesheet" href="/css/wave.css" />
+  <!-- wave end -->
+  
+
+  
+  <!-- top start (article top hot config) -->
+  <link rel="stylesheet" href="/css/top.css" />
+  <!-- top end -->
+  
+
+  
+  <!-- ThemeColor start -->
+  <link rel="stylesheet" href="/css/scroll.css" />
+  <!-- ThemeColor end -->
+  
+
+  
+  <!-- viewer start (Picture preview) -->
+  <link rel="stylesheet" href="/css/viewer.min.css" />
+  <!-- viewer end -->
+  
+
+  
+  <!-- Search start -->
+  <link rel="stylesheet" href="/css/search.css" />
+  <!-- Search end -->
+  
+
+  
+  <!-- ThemeColor start -->
+  <link rel="stylesheet" href="/css/themecolor.css" />
+  <!-- ThemeColor end -->
+  
+
+  
+
+  
+  <!-- gitalk start -->
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css"> -->
+  <link rel="stylesheet" href="/css/gitalk.css" />
+  <!-- gitalk end -->
+  
+
+  <!-- Custom Fonts -->
+  <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+  <!-- Hux change font-awesome CDN to qiniu -->
+  <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" type="text/css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Hux Delete, sad but pending in China <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'> <link
+    href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/ css'> -->
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
+
+  <!-- ga & ba script hoook -->
+  <link rel="canonical" href="https://vickyluoluo.github.io/2021/03/31/57bd.html">
+  <title>
+    
+    Java NIO通信基础 - dream big
+    
+  </title>
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+
+<!-- hack iOS CSS :active style -->
+
+<body ontouchstart="" class="body--home">
+	<!-- ThemeColor -->
+	
+	<!-- ThemeColor -->
+<!-- <div class="toggle" onclick="document.body.classList.toggle('body--dark')">Switch Color</div> -->
+
+<div class="toggle" onclick="document.body.classList.toggle('body--dark')">
+  <i class="mdui-icon material-icons bright-mode"></i>
+  <i class="mdui-icon material-icons dark-mode"></i>
+</div>
+
+	
+
+	<!-- Gitter -->
+	
+	<!-- Gitter -->
+<!-- Docs:https://gitter.im/?utm_source=left-menu-logo -->
+<!-- <script>
+  ((window.gitter = {}).chat = {}).options = {
+    room: 'your-community/your-room'
+  };
+</script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script> -->
+
+	
+
+	<!-- Navigation (contains search)-->
+	<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Dream big</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="/">Home</a>
+          </li>
+          <!-- Archives -->
+          <li>
+            <a href="/archive/">Archives</a>
+          </li>
+          <!-- Categories -->
+          <li>
+            <a href="/categories/">Categories</a>
+          </li>
+          <!-- Tags  -->
+          <li>
+            <a href="/tags/">Tags</a>
+          </li>
+          <!-- About -->
+          <li>
+            <a href="/about/">About</a>
+          </li>
+          <!-- EBooks -->
+          <li>
+            <a href="/ebooks/">EBooks</a>
+          </li>
+          <!--
+          
+
+          
+          
+
+          
+          <li>
+            <a href="/ebooks/">EBooks</a>
+          </li>
+          
+          
+
+          
+          <li>
+            <a href="/about/">About</a>
+          </li>
+          
+          
+
+          
+          <li>
+            <a href="/archive/">Archives</a>
+          </li>
+          
+          
+
+          
+          <li>
+            <a href="/categories/">Categories</a>
+          </li>
+          
+          
+
+          
+          <li>
+            <a href="/tags/">Tags</a>
+          </li>
+          
+          
+          -->
+          
+          <li><a class="popup-trigger" title="Search"><span class="search-icon"></span>Search</a></li>
+          
+        </ul>
+      </div>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container -->
+</nav>
+<!-- progress -->
+<div id="progress">
+  <div class="line" style="width: 0%;"></div>
+</div>
+
+
+<script>
+  // Drop Bootstarp low-performance Navbar
+  // Use customize navbar with high-quality material design animation
+  // in high-perf jank-free CSS3 implementation
+  var $body = document.body;
+  var $toggle = document.querySelector('.navbar-toggle');
+  var $navbar = document.querySelector('#huxblog_navbar');
+  var $collapse = document.querySelector('.navbar-collapse');
+
+  $toggle.addEventListener('click', handleMagic)
+
+  function handleMagic(e) {
+    if ($navbar.className.indexOf('in') > 0) {
+      // CLOSE
+      $navbar.className = " ";
+      // wait until animation end.
+      setTimeout(function() {
+        // prevent frequently toggle
+        if ($navbar.className.indexOf('in') < 0) {
+          $collapse.style.height = "0px"
+        }
+      }, 400)
+    } else {
+      // OPEN
+      $collapse.style.height = "auto"
+      $navbar.className += " in";
+    }
+  }
+</script>
+
+
+	<!-- Post Header (contains intro-header、signature、wordcount、busuanzi、waveoverlay) -->
+	<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+
+  <style type="text/css">
+    header.intro-header {
+       /*post*/
+        background-image: url('/img/header_img/squirrel.jpg');
+      
+    }
+
+    
+      #signature {/*signature*/
+        background-image: url('/img/signature/vicky-white.png');
+      }
+    
+  </style>
+
+
+
+
+
+<header class="intro-header">
+  <!-- Signature -->
+  <div id="signature">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          
+          <div class="post-heading">
+            <div class="tags">
+              
+              <a class="tag" href="/tags/#IO" title="IO">IO</a>
+              
+            </div>
+            <h1>Java NIO通信基础</h1>
+            <h2 class="subheading"></h2>
+            <span class="meta">
+              Posted by Vicky Luo on
+              2021-03-31
+            </span>
+
+
+            
+            <!-- WordCount start -->
+            <div class="blank_box"></div>
+            <span class="meta">
+              Estimated Reading Time <span class="post-count">17</span> Minutes
+            </span>
+            <div class="blank_box"></div>
+            <span class="meta">
+              Words <span class="post-count">4.5k</span> In Total
+            </span>
+            <div class="blank_box"></div>
+            <!-- 不蒜子统计 start -->
+            <span class="meta">
+              Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+            </span>
+            <!-- 不蒜子统计 end -->
+            <!-- WordCount end -->
+            
+
+
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- waveoverlay start -->
+  <div class="preview-overlay">
+    <svg class="preview-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+      <defs>
+        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+      </defs>
+      <g class="preview-parallax">
+        <use xlink:href="#gentle-wave" x="48" y="0" fill=var(--gentle-wave1)></use>
+        <use xlink:href="#gentle-wave" x="48" y="3" fill=var(--gentle-wave2)></use>
+        <use xlink:href="#gentle-wave" x="48" y="5" fill=var(--gentle-wave3)></use>
+        <use xlink:href="#gentle-wave" x="48" y="7" fill=var(--gentle-wave)></use>
+      </g>
+    </svg>
+  </div>
+  <!-- waveoverlay end -->
+  
+
+</header>
+
+
+
+	<!-- Main Content (Post contains
+	Pager、
+	tip、
+	socialshare、
+	gitalk、gitment、disqus-comment、
+	Catalog、
+	Sidebar、
+	Featured-Tags、
+	Friends Blog、
+	anchorjs、
+	) -->
+	<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+
+        <h2 id="Java-NIO通信基础"><a href="#Java-NIO通信基础" class="headerlink" title="Java NIO通信基础"></a>Java NIO通信基础</h2><h3 id="一、NIO简介"><a href="#一、NIO简介" class="headerlink" title="一、NIO简介"></a>一、NIO简介</h3><blockquote>
+<p>在1.4版本之前，Java IO类库是阻塞IO；从1.4版本开始，为了支持非阻塞IO，引进了新的异步IO库，被称为Java New IO类库，简称为JAVA NIO。Java NIO属于 IO多路复用模型。</p>
+</blockquote>
+<p><strong>NIO和OIO（old IO）的区别：</strong></p>
+<ul>
+<li>OIO面向流（Stream Oriented），NIO面向缓冲区（BufferOriented）</li>
+<li>OIO的操作是阻塞的，NIO是非阻塞的。</li>
+<li>OIO没有选择器（Selector）概念，NIO的选择器，需要底层操作系统提供支持。</li>
+</ul>
+<p>Java NIO由以下三个核心组件组成：· Channel（通道）· Buffer（缓冲区）· Selector（选择器）</p>
+<h4 id="1-通道（Channel）"><a href="#1-通道（Channel）" class="headerlink" title="1. 通道（Channel）"></a>1. 通道（Channel）</h4><p>​        在OIO中，同一个网络连接会通过输入流（Input Stream）和输出流（Output Stream）不断地进行输入和输出的操作。在NIO中，同一个网络连接使用一个通道表示，所有的NIO的IO操作都是从通道开始的。一个通道类似于OIO中的两个流的结合体，既可以从通道读取，也可以向通道写入。</p>
+<h4 id="2-选择器（Selector）"><a href="#2-选择器（Selector）" class="headerlink" title="2. 选择器（Selector）"></a>2. 选择器（Selector）</h4><blockquote>
+<p>IO多路复用指的是一个进程/线程可以同时监视多个文件描述符（一个网络连接，操作系统底层使用一个文件描述符来表示），一旦其中的一个或者多个文件描述符可读或者可写，系统内核就通知该进程/线程。</p>
+</blockquote>
+<p>​        通过选择器，一个线程可以查询多个通道的IO事件的就绪状态，即监视多个文件描述符。具体的开发层面来说，首先把通道注册到选择器中，然后通过选择器内部的机制，可以查询（select）这些注册的通道是否有已经就绪的IO事件（例如可读、可写、网络连接完成等）。一个选择器只需要一个线程进行监控，系统不必为每一个网络连接（文件描述符）创建进程/线程，从而大大减小了系统的开销。</p>
+<h4 id="3-缓冲区（Buffer）"><a href="#3-缓冲区（Buffer）" class="headerlink" title="3. 缓冲区（Buffer）"></a>3. 缓冲区（Buffer）</h4><p>​        应用程序与通道（Channel）主要的交互操作，就是进行数据的read读取和write写入。通道的读取，就是将数据从通道读取到缓冲区中；通道的写入，就是将数据从缓冲区中写入到通道中。</p>
+<h3 id="二、Buffer类及其属性"><a href="#二、Buffer类及其属性" class="headerlink" title="二、Buffer类及其属性"></a>二、Buffer类及其属性</h3><blockquote>
+<p>Buffer（缓冲区）本质上是一个内存块（数组），既可以写入数据，也可以从中读取数据。</p>
+</blockquote>
+<h4 id="Buffer类"><a href="#Buffer类" class="headerlink" title="Buffer类"></a>Buffer类</h4><p>​        Buffer类是一个抽象类，位于java.nio包中，线程不安全。在NIO中有8种缓冲区类：ByteBuffer、CharBuffer、DoubleBuffer、FloatBuffer、IntBuffer、LongBuffer、ShortBuffer、MappedByteBuffer，其中MappedByteBuffer是专门用于内存映射的一种ByteBuffer类型。使用最多的是ByteBuffer。</p>
+<h4 id="Buffer类的重要属性"><a href="#Buffer类的重要属性" class="headerlink" title="Buffer类的重要属性"></a>Buffer类的重要属性</h4><p>​        为了记录读写的状态和位置，Buffer类提供了一些重要的属性：capacity（容量）、position（读写位置）、limit（读写的限制）、mark（标记）。</p>
+<p><img src="https://tvax2.sinaimg.cn/large/006YzKDNly1gp33iz38e4j30kk05pt9v.jpg" alt="image"></p>
+<h4 id="Buffer类的重要方法"><a href="#Buffer类的重要方法" class="headerlink" title="Buffer类的重要方法"></a>Buffer类的重要方法</h4><ol>
+<li><p><strong>allocate()创建缓冲区</strong></p>
+<p> ​        为了获取一个Buffer实例对象，并不是使用子类的构造器new来创建一个实例对象，而是调用子类的allocate()方法，并分配内存空间（capacity）。</p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">IntBuffer intBuffer = intBuffer.allocate(<span class="number">10</span>);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>put()写入到缓冲区</strong></p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">intBuffer.put(<span class="number">1</span>);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>flip()翻转</strong></p>
+<p> ​        向缓冲区写入数据之后，不能直接从缓冲区中读取数据，需要使用flip()将写入模式翻转成读取模式。flip()方法源码如下：</p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">final</span> Buffer <span class="title">flip</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    limit = position;</span><br><span class="line">    position = <span class="number">0</span>;</span><br><span class="line">    mark = -<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p> 容量为10的intBuffer，在写入1个数据时，position=1，limit=10，capacity=10；在写完翻转后，position=0，limit=1，capacity=10；</p>
+<blockquote>
+<p>读取完成后，如何再一次将缓冲区切换成写入模式呢？可以调用Buffer.clear()清空或者Buffer.compact()压缩方法，它们可以将缓冲区转换为写模式。</p>
+</blockquote>
+<p> 缓冲区读写模式的转换如图：</p>
+<p> <img src="https://tvax1.sinaimg.cn/large/006YzKDNly1gp34tey3npj30g1071aay.jpg" alt="image"></p>
+</li>
+<li><p><strong>clear()清空</strong></p>
+<p> ​        清空缓冲区但不清除数据，数据将“被遗忘”，缓冲区切换为写入模式。源码如下：</p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">final</span> Buffer <span class="title">clear</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    position = <span class="number">0</span>;</span><br><span class="line">    limit = capacity;</span><br><span class="line">    mark = -<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>compact()压缩</strong></p>
+<p> ​        不覆盖未读的数据，将所有未读的数据拷贝到Buffer起始处，然后将position设到最后一个未读元素后面，limit设置为capacity，缓冲区切换为写入模式。源码如下：</p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> ByteBuffer <span class="title">compact</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    System.arraycopy(hb, ix(position()), hb, ix(<span class="number">0</span>), remaining()); <span class="comment">// 拷贝未读数据</span></span><br><span class="line">    position(remaining()); <span class="comment">// remaining()返回limit - position</span></span><br><span class="line">    limit(capacity()); <span class="comment">// limit设置为capacity</span></span><br><span class="line">    discardMark(); <span class="comment">// mark = -1</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>get()从缓冲区读取</strong></p>
+<p> ​        翻转后可读，读操作会改变可读位置position的值，而limit值不会改变。如果position==limit，表示所有数据读取完成，position指向了一个没有数据的元素位置，此时再读，会抛出BufferUnderflowException异常。</p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">byteBuffer.get();</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>rewind()倒带</strong></p>
+<p> ​        已读完的数据，如果需要再读一遍，可以调用rewind()方法。rewind()也叫倒带。源码如下：</p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">final</span> Buffer <span class="title">rewind</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    position = <span class="number">0</span>; <span class="comment">// 重置</span></span><br><span class="line">    mark = -<span class="number">1</span>; <span class="comment">// 清理标记</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>rewind()和flip()区别在于：rewind()不会影响limit；而flip()会重设limit属性值。</p>
+</blockquote>
+</li>
+<li><p><strong>mark( )和reset( )</strong></p>
+<p>​        Buffer.mark()和Buffer.reset()方法是配套使用的，比如读到第3个元素（i= =2时），调用mark()方法，把当前位置position的值保存到mark属性中，这时mark属性的值为2。接下来，就可以调用reset方法，将mark属性的值恢复到position中。然后可以从位置2（第三个元素）开始读。</p>
+</li>
+</ol>
+<p><strong>Buffer类的基本使用步骤</strong>：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">IntBuffer intBuffer = intBuffer.allocate(<span class="number">10</span>);</span><br><span class="line">intBuffer.put(<span class="number">1</span>);</span><br><span class="line">intBuffer.flip();</span><br><span class="line">intBuffer.get();</span><br><span class="line">intBuffer.clear();||intBuffer.compact();</span><br></pre></td></tr></table></figure>
+
+<h3 id="二、Channel类及其属性"><a href="#二、Channel类及其属性" class="headerlink" title="二、Channel类及其属性"></a>二、Channel类及其属性</h3><blockquote>
+<p>NIO中一个连接用一个Channel（通道）来表示，一个通道可以表示一个底层的文件描述符，例如硬件设备、文件、网络连接等。对于不同的网络传输协议类型，在Java中都有不同的NIO Channel（通道）实现。</p>
+</blockquote>
+<h4 id="Channel（通道）的主要类型"><a href="#Channel（通道）的主要类型" class="headerlink" title="Channel（通道）的主要类型"></a>Channel（通道）的主要类型</h4><ol>
+<li><p>FileChannel文件通道，用于文件的数据读写。</p>
+</li>
+<li><p>SocketChannel套接字通道，用于Socket套接字TCP连接的数据读写。</p>
+</li>
+<li><p>ServerSocketChannel服务器嵌套字通道（或服务器监听通道），允许我们监听TCP连接请求，为每个监听到的请求，创建一个SocketChannel套接字通道。</p>
+</li>
+<li><p>DatagramChannel数据报通道，用于UDP协议的数据读写。</p>
+</li>
+</ol>
+<h4 id="FileChannel的使用"><a href="#FileChannel的使用" class="headerlink" title="FileChannel的使用"></a>FileChannel的使用</h4><blockquote>
+<p>通过FileChannel，既可以从一个文件中读取数据，也可以将数据写入到文件中。FileChannel为<strong>阻塞模式</strong>，不能设置为非阻塞模式。</p>
+</blockquote>
+<ol>
+<li><strong>获取FileChannel通道</strong></li>
+</ol>
+<ul>
+<li><p>通过文件输入输出流获取：</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建文件输入流</span></span><br><span class="line">FileInputStream fis = <span class="keyword">new</span> FileInputStream(srcFile);</span><br><span class="line"><span class="comment">// 获取文件流的通道</span></span><br><span class="line">FileChannel inChannel = fis.getChannel();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建文件输出流</span></span><br><span class="line">FileOutputStream fos = <span class="keyword">new</span> FileOutputStream(destFile);</span><br><span class="line"><span class="comment">// 获取文件流的通道</span></span><br><span class="line">FileChannel outChannel = fis.getChannel();</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>通过RandomAccessFile类获取：</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建RandomAccessFile随机访问对象</span></span><br><span class="line">RandomAccessFile rafile = <span class="keyword">new</span> RandomAccessFile(srcFile, <span class="string">"rw"</span>);</span><br><span class="line"><span class="comment">// 获取文件流的通道</span></span><br><span class="line">FileChannel raFileChannel = rafile.getChannel();</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ol start="2">
+<li><p><strong>读取FileChannel通道</strong></p>
+<p> ​        调用<code>public abstract int read(ByteBuffer src) throws IOException</code>方法读取通道数据，写入ByteBuffer缓冲区，并返回数据。<strong>虽然对于通道来说是读取数据，但是对于ByteBuffer缓冲区来说是写入数据，这时，ByteBuffer缓冲区处于写入模式。</strong></p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ByteBuffer byteBuffer = ByteBuffer.allocate(<span class="number">1024</span>);</span><br><span class="line"><span class="keyword">int</span> length = -<span class="number">1</span>;</span><br><span class="line"><span class="keyword">while</span> (-<span class="number">1</span> != (length = raFileChannel.read(byteBuffer))) &#123;</span><br><span class="line"><span class="comment">// TODO</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>写入FileChannel通道</strong></p>
+<p> ​        调用<code>public abstract int write(ByteBuffer src) throws IOException</code>方法读取缓冲区数据写入通道，并返回写入的字节数。<strong>对于ByteBuffer缓冲区来说是读入数据，对通道来说是写入。</strong></p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 刚写完要翻转成读取模式</span></span><br><span class="line">byteBuffer.flip();</span><br><span class="line"><span class="keyword">int</span> outlength = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">while</span> (<span class="number">0</span> != (outlength = raFileChannel.write(byteBuffer))) &#123;</span><br><span class="line">	System.out.println(<span class="string">"写入字节数："</span> + outlength);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>关闭通道</strong></p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">inChannel.close();</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>强制刷新到磁盘</strong></p>
+<p> ​        在将缓冲区写入通道时，出于性能原因，操作系统不可能每次都实时将数据写入磁盘。如果需要保证写入通道的缓冲数据，最终都真正地写入磁盘，可以调用FileChannel的force()方法。</p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">inChannel.force(<span class="keyword">true</span>);</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h4 id="SocketChannel和ServerSocketChannel的使用"><a href="#SocketChannel和ServerSocketChannel的使用" class="headerlink" title="SocketChannel和ServerSocketChannel的使用"></a>SocketChannel和ServerSocketChannel的使用</h4><blockquote>
+<p>在NIO中，涉及网络连接的通道有两个，一个是SocketChannel负责连接传输，另一个是ServerSocketChannel负责连接的监听。都<strong>支持阻塞和非阻塞两种模式</strong>。ServerSocketChannel应用于服务器端，而SocketChannel同时处于服务器端和客户端。对于一个连接，两端都有一个负责传输的SocketChannel传输通道。SocketChannel与OIO中的Socket类对应，ServerSocketChannel与OIO中的ServerSocket类对应。</p>
+</blockquote>
+<ol>
+<li><p><strong>获取SocketChannel传输通道</strong></p>
+<p> ​        在<strong>客户端</strong>，先通过SocketChannel静态方法open()获得一个套接字传输通道；然后，将socket套接字设置为非阻塞模式；最后，通过connect()实例方法，对服务器的IP和端口发起连接。</p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 获取通道</span></span><br><span class="line">SocketChannel socketChannel = SocketChannel.open();</span><br><span class="line"><span class="comment">// 设置为非阻塞</span></span><br><span class="line">socketChannel.configureBlocking(<span class="keyword">false</span>);</span><br><span class="line"><span class="comment">// 对服务器的IP和端口发起连接</span></span><br><span class="line">socketChannel.connect(<span class="keyword">new</span> InetSocketAddress(InetAddress.getLocalHost(),<span class="number">5252</span>));</span><br></pre></td></tr></table></figure>
+
+<p> ​        非阻塞情况下，与服务器的连接可能还没有真正建立，socketChannel.connect方法就返回了，因此需要不断地自旋，检查当前是否连接到了主机：</p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 不断自旋，等待连接完成</span></span><br><span class="line"><span class="keyword">while</span> (!socketChannel.finishConnect()) &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p> ​        在<strong>服务器端</strong>，当新连接事件到来时，ServerSocketChannel能成功地查询，通过accept()方法，来获取新连接的套接字通道：</p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 新连接事件到来,通过事件（后面会讲到key）获取服务器监听通道</span></span><br><span class="line">ServerSocketChannel serverSocketChannel = （ServerSocketChannel）key.channel();</span><br><span class="line"><span class="comment">// 获取新连接的套接字通道</span></span><br><span class="line">SocketChannel socketChannel = serverSocketChannel.accept();</span><br><span class="line"><span class="comment">// 切换为非阻塞模式</span></span><br><span class="line">socketChannel.configureBlocking(<span class="keyword">false</span>);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>读取SocketChannel传输通道</strong></p>
+<p> ​        与FileChannel一样</p>
+</li>
+<li><p><strong>写入SocketChannel传输通道</strong></p>
+<p> ​        与FileChannel一样</p>
+</li>
+<li><p><strong>关闭SocketChannel传输通道</strong></p>
+<p> ​        在关闭SocketChannel传输通道前，如果传输通道用来写入数据，则建议调用一次shutdownOutput()终止输出方法，向对方发送一个输出的结束标志（-1）。然后调用socketChannel.close()方法，关闭套接字连接。</p>
+ <figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 终止输出方法，向对方发送一个输出的结束标志</span></span><br><span class="line"><span class="selector-tag">socketChannel</span><span class="selector-class">.shutdownOutput</span>();</span><br><span class="line"><span class="comment">// 关闭套接字连接</span></span><br><span class="line"><span class="selector-tag">socketChannel</span><span class="selector-class">.close</span>();</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h4 id="DatagramChannel的使用"><a href="#DatagramChannel的使用" class="headerlink" title="DatagramChannel的使用"></a>DatagramChannel的使用</h4><blockquote>
+<p>DatagramChannel数据报通道用来处理UDP协议的数据传输。和Socket套接字的TCP传输协议不同，UDP协议不是面向连接的协议。使用UDP协议时，只要知道服务器的IP和端口，就可以直接向对方发送数据。</p>
+</blockquote>
+<ol>
+<li><p><strong>获取DatagramChannel传输通道</strong></p>
+<p> ​        调用DatagramChannel静态方法open()获得通道，然后设置为非阻塞模式，绑定数据报的监听端口：</p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 获取通道</span></span><br><span class="line">DatagramChannel datagramChannel = DatagramChannel.open();</span><br><span class="line"><span class="comment">// 设置为非阻塞</span></span><br><span class="line">datagramChannel.configureBlocking(<span class="keyword">false</span>);		</span><br><span class="line"><span class="comment">// 绑定监听IP和端口</span></span><br><span class="line">datagramChannel.socket().bind(<span class="keyword">new</span> InetSocketAddress(InetAddress.getLocalHost(),<span class="number">5252</span>));</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>读取DatagramChannel传输通道</strong></p>
+<p> ​        不是调用read方法，而是调用receive：</p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ByteBuffer byteBuffer = ByteBuffer.allocate(<span class="number">1024</span>);</span><br><span class="line">SocketAddress clientAddr = datagramChannel.receive(byteBuffer);</span><br></pre></td></tr></table></figure>
+
+<p> ​        通道读取receive（ByteBuffer buf）方法的返回值，是SocketAddress类型，表示返回发送端的连接地址（包括IP和端口）。</p>
+</li>
+<li><p><strong>写入DatagramChannel传输通道</strong></p>
+<p> ​        不是调用write方法，而是调用send方法，由于UDP是面向非连接的协议，因此，在发送数据的时候，需要指定接收方的地址：</p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">byteBuffer.flip();</span><br><span class="line">datagramChannel.send(byteBuffer, <span class="keyword">new</span> InetSocketAddress(InetAddress.getLocalHost(),<span class="number">5252</span>));</span><br><span class="line">byteBuffer.clear();</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>关闭DatagramChannel传输通道</strong></p>
+<p> ​        与FileChannel一样，close()即可。</p>
+</li>
+</ol>
+<h3 id="三、Select类及其属性"><a href="#三、Select类及其属性" class="headerlink" title="三、Select类及其属性"></a>三、Select类及其属性</h3><blockquote>
+<p>非阻塞模式下，如何知道SocketChannel和DatagramChannel通道何时是可读的呢？这时就需要用到NIO的新组件——Selector通道选择器</p>
+<p>简单地说：<strong>选择器的使命是完成IO的多路复用</strong>。一个通道代表一条连接，通过选择器可以同时监控多个通道的IO（输入输出）状况。选择器和通道的关系，是监控和被监控的关系。</p>
+</blockquote>
+<h4 id="Selector-选择器及注册"><a href="#Selector-选择器及注册" class="headerlink" title="Selector 选择器及注册"></a>Selector 选择器及注册</h4><p>​        通道和选择器之间的关系，通过<code>Channel.register（Selector sel, int ops）</code>方法完成，需要传入待注册的选择器实例和待监控事件类型。</p>
+<p>可供选择器监控的<strong>通道IO事件类型</strong>（就绪状态），包括以下四种：</p>
+<ol>
+<li>可读：SelectionKey.OP_READ</li>
+<li>可写：SelectionKey.OP_WRITE</li>
+<li>连接：SelectionKey.OP_CONNECT</li>
+<li>接收：SelectionKey.OP_ACCEPT</li>
+</ol>
+<p>事件类型的定义在SelectionKey类中。如果选择器要监控通道的多种事件，可以用“按位或”运算符来实现。例如，同时监控可读和可写IO事件：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> key = SelectionKey.OP_READ | SelectionKey.OP_WRITE;</span><br></pre></td></tr></table></figure>
+
+<h4 id="SelectableChannel-可选择通道"><a href="#SelectableChannel-可选择通道" class="headerlink" title="SelectableChannel(可选择通道)"></a>SelectableChannel(可选择通道)</h4><p>​        一条通道若能被选择，必须继承SelectableChannel类。所有网络链接Socket套接字通道，都继承了SelectableChannel类，都是可选择的。而FileChannel文件通道，并没有继承SelectableChannel，因此不是可选择通道。</p>
+<h4 id="SelectionKey-选择键"><a href="#SelectionKey-选择键" class="headerlink" title="SelectionKey(选择键)"></a>SelectionKey(选择键)</h4><p>​        一旦在通道中发生了某些IO事件（就绪状态达成），并且在选择器中注册过，就会被选择器选中，并放入SelectionKey的集合中。SelectionKey可以获得通道的IO事件类型，比方说SelectionKey.OP_READ，还可以获得发生IO事件所在的通道及选择器实例。</p>
+<h4 id="选择器的使用"><a href="#选择器的使用" class="headerlink" title="选择器的使用"></a>选择器的使用</h4><ol>
+<li><p><strong>获取选择器实例</strong></p>
+<p> ​        通过调用静态工厂方法open()来获取：</p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Selector selector = Selector.open();</span><br></pre></td></tr></table></figure>
+
+<p> <em>open()的内部，是向选择器SPI（SelectorProvider）发出请求，通过默认的SPI对象，获取一个新的选择器实例。SPI全称为（Service Provider Interface，服务提供者接口），是JDK的一种可以扩展的服务提供和发现机制。Java通过SPI的方式，提供选择器的默认实现版本。也就是说，其他的服务提供商可以通过SPI的方式，提供定制化版本的选择器的动态替换或者扩展。</em></p>
+</li>
+<li><p><strong>将通道注册到选择器中</strong></p>
+<p> ​        需要注意：注册到选择器的通道，必须处于非阻塞模式下，否则将抛出IllegalBlockingModeException异常。并且一个通道，并不一定支持所有的四种IO事件。例如服务器监听通道ServerSocketChannel，仅支持Accept（接收到新连接）IO事件；而SocketChannel传输通道，则不支持Accept（接收到新连接）IO事件。可以在注册之前，通过通道的validOps()方法，来获取该通道所有支持的IO事件集合。</p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 获取通道</span></span><br><span class="line">ServerSocketChannel serverSocketChannel = ServerSocketChannel.open();</span><br><span class="line"><span class="comment">// 设置为非阻塞</span></span><br><span class="line">serverSocketChannel.configureBlocking(<span class="keyword">false</span>);</span><br><span class="line"><span class="comment">// 绑定连接</span></span><br><span class="line">serverSocketChannel.bind(<span class="keyword">new</span> InetSocketAddress(<span class="number">5252</span>));</span><br><span class="line">System.out.println(<span class="string">"服务器启动成功"</span>);</span><br><span class="line"><span class="comment">// 将通道注册的“接收新连接”IO事件注册到选择器上</span></span><br><span class="line">serverSocketChannel.register(selector, SelectionKey.OP_ACCEPT);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>选出感兴趣的IO就绪事件（选择键集合）</strong></p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 轮询感兴趣的IO就绪事件（选择键集合）</span></span><br><span class="line"><span class="keyword">while</span> (selector.select() &gt; <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="comment">// 获取选择键集合</span></span><br><span class="line">    Iterator&lt;SelectionKey&gt; selectedKeys = selector.selectedKeys().iterator();</span><br><span class="line">    <span class="keyword">while</span> (selectedKeys.hasNext()) &#123;</span><br><span class="line">        <span class="comment">// 获取单个的选择键并处理</span></span><br><span class="line">        SelectionKey selectedKey = selectedKeys.next();</span><br><span class="line">        <span class="keyword">if</span> (selectedKey.isAcceptable()) &#123;</span><br><span class="line">     		<span class="comment">// 通道有新连接</span></span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (selectedKey.isConnectalbe()) &#123;</span><br><span class="line">            <span class="comment">// 通道连接成功</span></span><br><span class="line">        &#125;  <span class="keyword">else</span> <span class="keyword">if</span> (selectedKey.isReadalbe()) &#123;</span><br><span class="line">            <span class="comment">// 通道可读</span></span><br><span class="line">        &#125;  <span class="keyword">else</span> <span class="keyword">if</span> (selectedKey.isWritalbe()) &#123;</span><br><span class="line">            <span class="comment">// 通道可写</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 处理完后移除选择键</span></span><br><span class="line">        selectedKeys.remove();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p> SelectionKey集合不能添加元素，如果试图向SelectionKey选择键集合中添加元素，则将抛出java.lang.UnsupportedOperationException异常。</p>
+<p> select()方法有三个重载的实现版本，具体如下：</p>
+<ol>
+<li><p>select()：阻塞调用，一直到至少有一个通道发生了注册的IO事件。</p>
+</li>
+<li><p>select(long timeout)：和select()一样，但最长阻塞时间为timeout指定的毫秒数。</p>
+</li>
+<li><p>selectNow()：非阻塞，不管有没有IO事件，都会立刻返回。</p>
+<p>select()方法返回的整数值，表示从上一次select到这一次select之间，有多少<strong>通道</strong>发生了注册的IO事件。强调一下，select()方法返回的数量，指的是通道数，而不是IO事件数。</p>
+</li>
+</ol>
+</li>
+</ol>
+<h4 id="实践案例"><a href="#实践案例" class="headerlink" title="实践案例"></a>实践案例</h4><p>使用NIO实现Discard服务器，Discard服务器的功能很简单，读取客户端通道的输入数据，读取完成后直接关闭客户端通道；并且读取到的数据直接抛弃掉。</p>
+<p><strong>服务器端：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 使用NIO实现Discard服务器端功能：</span></span><br><span class="line"><span class="comment"> *      仅读取客户端通道的输入数据，读取完成后直接关闭客户端通道，并且读取到的数据直接抛弃掉。</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">NioDiscardServer</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">startServer</span><span class="params">()</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 获取选择器</span></span><br><span class="line">        Selector selector = Selector.open();</span><br><span class="line">        <span class="comment">// 获取通道</span></span><br><span class="line">        ServerSocketChannel serverSocketChannel = ServerSocketChannel.open();</span><br><span class="line">        <span class="comment">// 设置为非阻塞</span></span><br><span class="line">        serverSocketChannel.configureBlocking(<span class="keyword">false</span>);</span><br><span class="line">        <span class="comment">// 绑定连接</span></span><br><span class="line">        serverSocketChannel.bind(<span class="keyword">new</span> InetSocketAddress(<span class="number">5252</span>));</span><br><span class="line">        System.out.println(<span class="string">"服务器启动成功"</span>);</span><br><span class="line">        <span class="comment">// 将通道注册的“接收新连接”IO事件注册到选择器上</span></span><br><span class="line">        serverSocketChannel.register(selector, SelectionKey.OP_ACCEPT);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 轮询感兴趣的IO就绪事件（选择键集合）</span></span><br><span class="line">        <span class="keyword">while</span> (selector.select() &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="comment">// 获取选择键集合</span></span><br><span class="line">            Iterator&lt;SelectionKey&gt; selectedKeys = selector.selectedKeys().iterator();</span><br><span class="line">            <span class="keyword">while</span> (selectedKeys.hasNext()) &#123;</span><br><span class="line">                <span class="comment">// 获取单个的选择键并处理</span></span><br><span class="line">                SelectionKey selectedKey = selectedKeys.next();</span><br><span class="line">                <span class="keyword">if</span> (selectedKey.isAcceptable()) &#123;</span><br><span class="line">                    <span class="comment">// 若选择键的IO事件是“连接就绪”，就获取客户端连接</span></span><br><span class="line">                    SocketChannel socketChannel = serverSocketChannel.accept();</span><br><span class="line">                    <span class="comment">// 切换为非阻塞模式</span></span><br><span class="line">                    socketChannel.configureBlocking(<span class="keyword">false</span>);</span><br><span class="line">                    <span class="comment">// 将新连接的通道可读事件注册到选择器上</span></span><br><span class="line">                    socketChannel.register(selector, SelectionKey.OP_READ);</span><br><span class="line">                &#125; <span class="keyword">else</span> <span class="keyword">if</span> (selectedKey.isReadable()) &#123;</span><br><span class="line">                    <span class="comment">// 若选择键的IO事件是“可读”，就读取数据</span></span><br><span class="line">                    SocketChannel socketChannel = (SocketChannel) selectedKey.channel();</span><br><span class="line">                    <span class="comment">// 读取数据，然后丢弃</span></span><br><span class="line">                    ByteBuffer byteBuffer = ByteBuffer.allocate(<span class="number">1024</span>);</span><br><span class="line">                    <span class="keyword">int</span> length = <span class="number">0</span>;</span><br><span class="line">                    <span class="comment">// 调用通道的read方法，从通道读取数据写入缓冲区，并返回读取到的数据</span></span><br><span class="line">                    <span class="keyword">while</span> ((length = socketChannel.read(byteBuffer)) &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                        byteBuffer.flip();</span><br><span class="line">                        System.out.println(<span class="keyword">new</span> String(byteBuffer.array(), <span class="number">0</span>, length));</span><br><span class="line">                        byteBuffer.clear();</span><br><span class="line">                    &#125;</span><br><span class="line">                    socketChannel.close();</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="comment">// 移除选择键</span></span><br><span class="line">                selectedKeys.remove();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 关闭连接</span></span><br><span class="line">        serverSocketChannel.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>客户端：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 使用NIO实现Discard客户端功能：</span></span><br><span class="line"><span class="comment"> *      客户端首先建立到服务器的连接，发送一些简单的数据，然后直接关闭连接。</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">NioDiscardClient</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">startClient</span><span class="params">()</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        InetSocketAddress address = <span class="keyword">new</span> InetSocketAddress(InetAddress.getLocalHost(),<span class="number">5252</span>);</span><br><span class="line">        <span class="comment">// 获取通道</span></span><br><span class="line">        SocketChannel socketChannel = SocketChannel.open(address);</span><br><span class="line">        <span class="comment">// 设置为非阻塞</span></span><br><span class="line">        socketChannel.configureBlocking(<span class="keyword">false</span>);</span><br><span class="line">        <span class="comment">// 不断自旋，等待连接完成</span></span><br><span class="line">        <span class="keyword">while</span> (!socketChannel.finishConnect()) &#123;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="string">"客户端连接成功"</span>);</span><br><span class="line">        <span class="comment">// 分配指定大小的缓冲区</span></span><br><span class="line">        ByteBuffer byteBuffer = ByteBuffer.allocate(<span class="number">1024</span>);</span><br><span class="line">        byteBuffer.put(<span class="string">"hello nio"</span>.getBytes());</span><br><span class="line">        byteBuffer.flip();</span><br><span class="line">        <span class="comment">// 发送到服务器</span></span><br><span class="line">        socketChannel.write(byteBuffer);</span><br><span class="line">        <span class="comment">// 终止输出方法，向对方发送一个输出的结束标志</span></span><br><span class="line">        socketChannel.shutdownOutput();</span><br><span class="line">        <span class="comment">// 关闭套接字连接</span></span><br><span class="line">        socketChannel.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>测试：</strong></p>
+<p>​        先启动服务器，等到控制台出现“服务器启动成功”，再启动客户端，客户端连接成功后，发现服务器端出现“hello nio”则成功：</p>
+<p>服务器端：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">服务器启动成功</span><br></pre></td></tr></table></figure>
+
+<p>客户端：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">客户端连接成功</span><br></pre></td></tr></table></figure>
+
+<p>服务器端：</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">服务器启动成功</span></span><br><span class="line"><span class="attr">hello</span> <span class="string">nio</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
+          
+          <li class="previous">
+            <a href="/2021/04/15/a10a.html" data-toggle="tooltip" data-placement="top" title="高并发利器Redis">&larr; Previous Post</a>
+          </li>
+          
+          
+          <li class="next">
+            <a href="/2021/03/24/1af5.html" data-toggle="tooltip" data-placement="top" title="高并发IO的底层原理">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
+
+        
+        <!-- tip start -->
+        <div class="tip">
+          <p>
+            If the images or anything used in the blog infringe your copyright, please contact me to delete them. Thank you!
+          </p>
+        </div>
+        <!-- tip end -->
+        
+
+        
+        <hr>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+<!-- gitalk start -->
+<!-- Docs:https://github.com/gitalk/gitalk/blob/master/readme-cn.md -->
+
+<div id="gitalk-container"></div>
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.js"></script> -->
+<script src="/js/comment/gitalk.js"></script>
+
+<script>
+  var gitalk = new Gitalk({
+    clientID: '174c71e299e44fbdb98f',
+    clientSecret: 'b89fcac752fa9157640097d65ec0796ba699eaa4',
+    repo: 'VickyLuoLuo.github.io',
+    owner: 'VickyLuoLuo',
+    admin: 'VickyLuoLuo',
+    id: 'Wed Mar 31 2021 18:45:33 GMT+0800', // Ensure uniqueness and length less than 50
+    distractionFreeMode: false, // Facebook-like distraction free mode
+    perPage: 10 ,
+    pagerDirection: 'last',
+    createIssueManually: true ,
+    language: 'en'
+  });
+  gitalk.render('gitalk-container');
+
+  var gtFolded = () => {
+    setTimeout(function() {
+      let markdownBody = document.getElementsByClassName("markdown-body");
+      let list = Array.from(markdownBody);
+      list.forEach(item => {
+        if (item.clientHeight > 250) {
+          item.classList.add('gt-comment-body-folded');
+          item.style.maxHeight = '250px';
+          item.title = 'Click to Expand';
+          item.onclick = function() {
+            item.classList.remove('gt-comment-body-folded');
+            item.style.maxHeight = '';
+            item.title = '';
+            item.onclick = null;
+          };
+        }
+      })
+    }, 800);
+  }
+</script>
+
+<!-- gitalk end -->
+
+
+
+<!-- 2. gitment comment -->
+
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+            <!-- 修改自动编号显示问题 -->
+           <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Java-NIO通信基础"><span class="toc-nav-text">Java NIO通信基础</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#一、NIO简介"><span class="toc-nav-text">一、NIO简介</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#1-通道（Channel）"><span class="toc-nav-text">1. 通道（Channel）</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#2-选择器（Selector）"><span class="toc-nav-text">2. 选择器（Selector）</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#3-缓冲区（Buffer）"><span class="toc-nav-text">3. 缓冲区（Buffer）</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#二、Buffer类及其属性"><span class="toc-nav-text">二、Buffer类及其属性</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Buffer类"><span class="toc-nav-text">Buffer类</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Buffer类的重要属性"><span class="toc-nav-text">Buffer类的重要属性</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Buffer类的重要方法"><span class="toc-nav-text">Buffer类的重要方法</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#二、Channel类及其属性"><span class="toc-nav-text">二、Channel类及其属性</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Channel（通道）的主要类型"><span class="toc-nav-text">Channel（通道）的主要类型</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#FileChannel的使用"><span class="toc-nav-text">FileChannel的使用</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#SocketChannel和ServerSocketChannel的使用"><span class="toc-nav-text">SocketChannel和ServerSocketChannel的使用</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#DatagramChannel的使用"><span class="toc-nav-text">DatagramChannel的使用</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#三、Select类及其属性"><span class="toc-nav-text">三、Select类及其属性</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Selector-选择器及注册"><span class="toc-nav-text">Selector 选择器及注册</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#SelectableChannel-可选择通道"><span class="toc-nav-text">SelectableChannel(可选择通道)</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#SelectionKey-选择键"><span class="toc-nav-text">SelectionKey(选择键)</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#选择器的使用"><span class="toc-nav-text">选择器的使用</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#实践案例"><span class="toc-nav-text">实践案例</span></a></li></ol></li></ol></li></ol>
+        
+        </div>
+      </aside>
+    
+
+
+      <!-- Sidebar Container -->
+      <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+        <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">FEATURED TAGS</a>
+          </h5>
+          <div class="tags">
+            
+            <a class="tag" href="/tags/#IO" title="IO">IO</a>
+            
+          </div>
+        </section>
+        
+
+        <!-- Friends Blog -->
+        
+        <hr>
+        <h5>FRIENDS</h5>
+        <ul class="list-inline">
+
+          
+          <li>
+            <a href="https://sagerenn.github.io/" target="_blank">Sage Renn</a>
+          </li>
+          
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
+
+
+	<!-- Footer (contains ThemeColor、viewer) -->
+	<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center">
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+        </ul>
+        <p class="copyright text-muted">
+          Copyright &copy;
+          Vicky Luo
+          2021
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a id="rocket" href="#top" class=""></a>
+
+<!-- jQuery -->
+<script type="text/javascript" src="/js/jquery.min.js"></script>
+<!-- <script type="text/javascript" src="/js/jquery.js"></script> -->
+<!-- <script type="text/javascript" src="//cdnjs.loli.net/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+
+<!-- Bootstrap Core JavaScript -->
+<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script type="text/javascript" src="/js/hux-blog.min.js"></script>
+
+<!-- catalog -->
+<script type="text/javascript" async="true" src="/js/catalog.js?v=1.0.0"></script>
+
+<!-- totop(rocket) -->
+<script type="text/javascript" async="true" src="/js/totop.js?v=1.0.0"></script>
+
+<!-- Busuanzi JavaScript -->
+<script type="text/javascript" async="true" src="/js/busuanzi.pure.mini.js"></script>
+
+
+  <!-- Scroll start -->
+  <script type="text/javascript" src="/js/scroll.js"></script>
+  <!-- Scroll end -->
+
+
+
+  <!-- ThemeColor start -->
+  <script type="text/javascript" src="/js/themecolor.js"></script>
+  <!-- ThemeColor end -->
+
+
+
+
+
+  <!-- viewer start -->
+  <!-- viewer start (Picture preview) -->
+  <script type="text/javascript" src="/js/viewer/viewer.min.js"></script>
+  <script type="text/javascript" src="/js/viewer/pic-viewer.js"></script>
+  <!-- viewer end -->
+
+
+<script>
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function (e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  // fastClick.js
+  async ("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function () {
+    var $nav = document.querySelector("nav");
+    if ($nav)
+      FastClick.attach($nav);
+    }
+  )
+</script>
+
+<!-- Because of the native support for backtick-style fenced code blocks right within the Markdown is landed in Github Pages, From V1.6, There is no need for Highlight.js, so Huxblog drops it officially. -
+https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0 - https://help.github.com/articles/creating-and-highlighting-code-blocks/ -->
+<!-- <script> async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){ hljs.initHighlightingOnLoad(); }) </script> <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet"> -->
+
+<!-- jquery.tagcloud.js -->
+<!-- <script> // only load tagcloud.js in tag.html if($('#tag_cloud').length !== 0){ async("https://vickyluoluo.github.io/js/jquery.tagcloud.js",function(){ $.fn.tagcloud.defaults = { //size: {start: 1, end: 1, unit: 'em'}, color: {start:
+'#bbbbee', end: '#0085a1'}, }; $('#tag_cloud a').tagcloud(); }) } </script> -->
+
+
+	<!-- Search -->
+	
+	<div class="popup search-popup local-search-popup">
+  <span class="popup-btn-close">
+    ESC
+  </span>
+  <div class="container">
+    <div class="row">
+      <!-- <div class="col-md-9 col-md-offset-1"> -->
+      <div class="col-lg-9 col-lg-offset-1 col-md-10 col-md-offset-1 local-search-content">
+
+        <div class="local-search-header clearfix">
+
+          <div class="local-search-input-wrapper">
+            <span class="search-icon">
+              <i class="fa fa-search fa-lg" style="margin: 25px 10px 25px 20px;"></i>
+            </span>
+            <input autocomplete="off" placeholder="Search..." type="text" id="local-search-input">
+          </div>
+        </div>
+        <div id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <script src="/js/ziploader.js"></script>
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.json";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    // monitor main search box;
+    var onPopupClose = function (e) {
+      $('.popup').fadeOut(300);
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $('.popup').fadeIn(300);
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+    // get search zip version
+    $.get('/searchVersion.json?t=' + (+new Date()), function (res) {
+      if (localStorage.getItem('searchVersion') !== res) {
+        localStorage.setItem('searchVersion', res);
+        initSearchJson();
+      }
+    });
+
+    function initSearchJson() {
+      initLoad(['/search.flv'], {
+        loadOptions: {
+          success: function (obj) {
+            localStorage.setItem('searchJson', obj['search.json'])
+          },
+          error: function (e) {
+            return console.log(e)
+          }
+        },
+        returnOptions: {
+          'json': TYPE_TEXT
+        },
+        mimeOptions: {
+          'json': 'application/json'
+        }
+      })
+    }
+    // search function;
+    var searchFunc = function (search_id, content_id) {
+      'use strict';
+      isfetched = true;
+      var datas = JSON.parse(localStorage.getItem('searchJson'));
+      // console.log(search_id)
+      var input = document.getElementById(search_id);
+      var resultContent = document.getElementById(content_id);
+      var inputEventFunction = function () {
+        var searchText = input.value.trim().toLowerCase();
+        var keywords = searchText.split(/[\s\-]+/);
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        var resultItems = [];
+        if (searchText.length > 0) {
+          // perform local searching
+          datas.forEach(function (data) {
+            var isMatch = false;
+            var hitCount = 0;
+            var searchTextCount = 0;
+            var title = data.title
+              ? data.title.trim()
+              : '';
+            var titleInLowerCase = title.toLowerCase();
+            var content = data.content
+              ? data.content.trim().replace(/<[^>]+>/g, "")
+              : '';
+            var contentInLowerCase = content.toLowerCase();
+            var articleUrl = decodeURIComponent(data.url);
+
+            var date = data.date;
+            var dateTime = date.replace(/T/, " ").replace(/.000Z/, "");
+            var imgUrl = data.header_img;
+
+            var indexOfTitle = [];
+            var indexOfContent = [];
+            // only match articles with not empty titles
+            keywords.forEach(function (keyword) {
+              function getIndexByWord(word, text, caseSensitive) {
+                var wordLen = word.length;
+                if (wordLen === 0) {
+                  return [];
+                }
+                var startPosition = 0,
+                  position = [],
+                  index = [];
+                if (!caseSensitive) {
+                  text = text.toLowerCase();
+                  word = word.toLowerCase();
+                }
+                while ((position = text.indexOf(word, startPosition)) > -1) {
+                  index.push({position: position, word: word});
+                  startPosition = position + wordLen;
+                }
+                return index;
+              }
+              indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+              indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+            });
+            if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+              isMatch = true;
+              hitCount = indexOfTitle.length + indexOfContent.length;
+            }
+            // show search results
+            if (isMatch) {
+              // sort index by position of keyword
+              [indexOfTitle, indexOfContent].forEach(function (index) {
+                index.sort(function (itemLeft, itemRight) {
+                  if (itemRight.position !== itemLeft.position) {
+                    return itemRight.position - itemLeft.position;
+                  } else {
+                    return itemLeft.word.length - itemRight.word.length;
+                  }
+                });
+              });
+              // merge hits into slices
+              function mergeIntoSlice(text, start, end, index) {
+                var item = index[index.length - 1];
+                var position = item.position;
+                var word = item.word;
+                var hits = [];
+                var searchTextCountInSlice = 0;
+                while (position + word.length <= end && index.length != 0) {
+                  if (word === searchText) {
+                    searchTextCountInSlice++;
+                  }
+                  hits.push({position: position, length: word.length});
+                  var wordEnd = position + word.length;
+                  // move to next position of hit
+                  index.pop();
+                  while (index.length != 0) {
+                    item = index[index.length - 1];
+                    position = item.position;
+                    word = item.word;
+                    if (wordEnd > position) {
+                      index.pop();
+                    } else {
+                      break;
+                    }
+                  }
+                }
+                searchTextCount += searchTextCountInSlice;
+                return {hits: hits, start: start, end: end, searchTextCount: searchTextCountInSlice};
+              }
+              var slicesOfTitle = [];
+              if (indexOfTitle.length != 0) {
+                slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+              }
+              var slicesOfContent = [];
+              while (indexOfContent.length != 0) {
+                var item = indexOfContent[indexOfContent.length - 1];
+                var position = item.position;
+                var word = item.word;
+                // cut out 100 characters
+                var start = position - 20;
+                var end = position + 80;
+                if (start < 0) {
+                  start = 0;
+                }
+                if (end < position + word.length) {
+                  end = position + word.length;
+                }
+                if (end > content.length) {
+                  end = content.length;
+                }
+                slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+              }
+              // sort slices in content by search text's count and hits' count
+              slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                  return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                  return sliceRight.hits.length - sliceLeft.hits.length;
+                } else {
+                  return sliceLeft.start - sliceRight.start;
+                }
+              });
+              // select top N slices in content
+              var upperBound = parseInt('1');
+              if (upperBound >= 0) {
+                slicesOfContent = slicesOfContent.slice(0, upperBound);
+              }
+              // highlight title and content
+              function highlightKeyword(text, slice) {
+                var result = '';
+                var prevEnd = slice.start;
+                slice.hits.forEach(function (hit) {
+                  result += text.substring(prevEnd, hit.position);
+                  var end = hit.position + hit.length;
+                  result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                  prevEnd = end;
+                });
+                result += text.substring(prevEnd, slice.end);
+                return result;
+              }
+              var resultItem = '';
+
+              // if (slicesOfTitle.length != 0) {   resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>"; } else {   resultItem += "<li><a target='_blank' href='" +
+              // articleUrl + "' class='search-result-title'>" + title + "</a>"; } slicesOfContent.forEach(function (slice) {   resultItem += "<a target='_blank' href='" + articleUrl + "'><p class=\"search-result\">" + highlightKeyword(content, slice) +
+              // "...</p></a>"; }); resultItem += "</li>";
+
+              if (slicesOfTitle.length != 0) {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              } else {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + title + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              }
+              slicesOfContent.forEach(function (slice) {
+                resultItem += "<p class=\"search-result-content\">" + highlightKeyword(content, slice) + "...</p>";
+              });
+              resultItem += "</div><div class='search-result-right'><img class='media-image' src='" + imgUrl + "' width='64px' height='48px'></img></div></a>";
+
+              resultItems.push({item: resultItem, searchTextCount: searchTextCount, hitCount: hitCount, id: resultItems.length});
+            }
+          })
+        };
+
+        if (keywords.length === 1 && keywords[0] === "") {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else if (resultItems.length === 0) {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else {
+          resultItems.sort(function (resultLeft, resultRight) {
+            if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+              return resultRight.searchTextCount - resultLeft.searchTextCount;
+            } else if (resultLeft.hitCount !== resultRight.hitCount) {
+              return resultRight.hitCount - resultLeft.hitCount;
+            } else {
+              return resultRight.id - resultLeft.id;
+            }
+          });
+          var searchResultList = '<div class=\"search-result-list\">';
+          resultItems.forEach(function (result) {
+            searchResultList += result.item;
+          })
+          searchResultList += "</div>";
+          resultContent.innerHTML = searchResultList;
+        }
+      }
+      if ('auto' === 'auto') {
+        input.addEventListener('input', inputEventFunction);
+      } else {
+        $('.search-icon').click(inputEventFunction);
+        input.addEventListener('keypress', function (event) {
+          if (event.keyCode === 13) {
+            inputEventFunction();
+          }
+        });
+      }
+      // remove loading animation
+      $('body').css('overflow', '');
+      proceedsearch();
+    }
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function (e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc('local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function (e) {
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 && $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+
+    document.addEventListener('mouseup', (e) => {
+      var _con = document.querySelector(".local-search-content");
+      if (_con) {
+        if (!_con.contains(e.target)) {
+          onPopupClose();
+        }
+      }
+    });
+  </script>
+
+
+	
+
+	<!-- Image to hack wechat -->
+	<!-- <img src="https://vickyluoluo.github.io/img/icon_wechat.png" width="0" height="0" /> -->
+	<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>

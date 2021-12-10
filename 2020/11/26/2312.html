@@ -1,0 +1,1417 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag (contains Google-Analytics、Baidu-Tongji)-->
+<head>
+  <!-- Google Analytics -->
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-xxxxxx-xx"></script>
+  <script type="text/javascript">
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-xxxxxx-xx');
+  </script>
+  
+
+  <!-- Baidu Tongji -->
+  
+  <script type="text/javascript">
+    // Originial
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+  
+
+  <!-- Baidu Push -->
+  
+  <script>
+    (function() {
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+      } else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+  
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <meta name="google-site-verification" content="lxDfCplOZbIzjhG34NuQBgu2gdyRlAtMB4utP5AgEBc" />
+  <meta name="baidu-site-verification" content="PpzM9WxOJU" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="It&#39;s a personal blog..." />
+  <meta name="keyword" content="Blog" />
+  <link rel="shortcut icon" href="/img/avatar/avatar.png" />
+
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script async="async" defer="defer" src="https://buttons.github.io/buttons.js"></script>
+  <!-- Bootstrap Core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.min.css" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/beantech.min.css" />
+
+  <!-- Pygments Highlight CSS -->
+  
+<link rel="stylesheet" href="../../../css/highlight.css">
+<link rel="stylesheet" href="../../../css/widget.css">
+<link rel="stylesheet" href="../../../css/rocket.css">
+<link rel="stylesheet" href="../../../css/signature.css">
+<link rel="stylesheet" href="../../../css/catalog.css">
+<link rel="stylesheet" href="../../../css/livemylife.css">
+
+
+  
+  <!-- wave start -->
+  <link rel="stylesheet" href="/css/wave.css" />
+  <!-- wave end -->
+  
+
+  
+  <!-- top start (article top hot config) -->
+  <link rel="stylesheet" href="/css/top.css" />
+  <!-- top end -->
+  
+
+  
+  <!-- ThemeColor start -->
+  <link rel="stylesheet" href="/css/scroll.css" />
+  <!-- ThemeColor end -->
+  
+
+  
+  <!-- viewer start (Picture preview) -->
+  <link rel="stylesheet" href="/css/viewer.min.css" />
+  <!-- viewer end -->
+  
+
+  
+  <!-- Search start -->
+  <link rel="stylesheet" href="/css/search.css" />
+  <!-- Search end -->
+  
+
+  
+  <!-- ThemeColor start -->
+  <link rel="stylesheet" href="/css/themecolor.css" />
+  <!-- ThemeColor end -->
+  
+
+  
+
+  
+  <!-- gitalk start -->
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css"> -->
+  <link rel="stylesheet" href="/css/gitalk.css" />
+  <!-- gitalk end -->
+  
+
+  <!-- Custom Fonts -->
+  <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+  <!-- Hux change font-awesome CDN to qiniu -->
+  <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" type="text/css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Hux Delete, sad but pending in China <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'> <link
+    href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/ css'> -->
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
+
+  <!-- ga & ba script hoook -->
+  <link rel="canonical" href="https://vickyluoluo.github.io/2020/11/26/2312.html">
+  <title>
+    
+    数据结构和算法大纲 - dream big
+    
+  </title>
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+
+<!-- hack iOS CSS :active style -->
+
+<body ontouchstart="" class="body--home">
+	<!-- ThemeColor -->
+	
+	<!-- ThemeColor -->
+<!-- <div class="toggle" onclick="document.body.classList.toggle('body--dark')">Switch Color</div> -->
+
+<div class="toggle" onclick="document.body.classList.toggle('body--dark')">
+  <i class="mdui-icon material-icons bright-mode"></i>
+  <i class="mdui-icon material-icons dark-mode"></i>
+</div>
+
+	
+
+	<!-- Gitter -->
+	
+	<!-- Gitter -->
+<!-- Docs:https://gitter.im/?utm_source=left-menu-logo -->
+<!-- <script>
+  ((window.gitter = {}).chat = {}).options = {
+    room: 'your-community/your-room'
+  };
+</script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script> -->
+
+	
+
+	<!-- Navigation (contains search)-->
+	<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Dream big</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="/">Home</a>
+          </li>
+          <!-- Archives -->
+          <li>
+            <a href="/archive/">Archives</a>
+          </li>
+          <!-- Categories -->
+          <li>
+            <a href="/categories/">Categories</a>
+          </li>
+          <!-- Tags  -->
+          <li>
+            <a href="/tags/">Tags</a>
+          </li>
+          <!-- About -->
+          <li>
+            <a href="/about/">About</a>
+          </li>
+          <!-- EBooks -->
+          <li>
+            <a href="/ebooks/">EBooks</a>
+          </li>
+          <!--
+          
+
+          
+          
+
+          
+          <li>
+            <a href="/ebooks/">EBooks</a>
+          </li>
+          
+          
+
+          
+          <li>
+            <a href="/about/">About</a>
+          </li>
+          
+          
+
+          
+          <li>
+            <a href="/archive/">Archives</a>
+          </li>
+          
+          
+
+          
+          <li>
+            <a href="/categories/">Categories</a>
+          </li>
+          
+          
+
+          
+          <li>
+            <a href="/tags/">Tags</a>
+          </li>
+          
+          
+          -->
+          
+          <li><a class="popup-trigger" title="Search"><span class="search-icon"></span>Search</a></li>
+          
+        </ul>
+      </div>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container -->
+</nav>
+<!-- progress -->
+<div id="progress">
+  <div class="line" style="width: 0%;"></div>
+</div>
+
+
+<script>
+  // Drop Bootstarp low-performance Navbar
+  // Use customize navbar with high-quality material design animation
+  // in high-perf jank-free CSS3 implementation
+  var $body = document.body;
+  var $toggle = document.querySelector('.navbar-toggle');
+  var $navbar = document.querySelector('#huxblog_navbar');
+  var $collapse = document.querySelector('.navbar-collapse');
+
+  $toggle.addEventListener('click', handleMagic)
+
+  function handleMagic(e) {
+    if ($navbar.className.indexOf('in') > 0) {
+      // CLOSE
+      $navbar.className = " ";
+      // wait until animation end.
+      setTimeout(function() {
+        // prevent frequently toggle
+        if ($navbar.className.indexOf('in') < 0) {
+          $collapse.style.height = "0px"
+        }
+      }, 400)
+    } else {
+      // OPEN
+      $collapse.style.height = "auto"
+      $navbar.className += " in";
+    }
+  }
+</script>
+
+
+	<!-- Post Header (contains intro-header、signature、wordcount、busuanzi、waveoverlay) -->
+	<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+
+  <style type="text/css">
+    header.intro-header {
+       /*post*/
+        background-image: url('/img/header_img/post-bg-desk.jpg');
+      
+    }
+
+    
+      #signature {/*signature*/
+        background-image: url('/img/signature/vicky-white.png');
+      }
+    
+  </style>
+
+
+
+
+
+<header class="intro-header">
+  <!-- Signature -->
+  <div id="signature">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          
+          <div class="post-heading">
+            <div class="tags">
+              
+              <a class="tag" href="/tags/#algorithm" title="algorithm">algorithm</a>
+              
+              <a class="tag" href="/tags/#data structure" title="data structure">data structure</a>
+              
+            </div>
+            <h1>数据结构和算法大纲</h1>
+            <h2 class="subheading"></h2>
+            <span class="meta">
+              Posted by Vicky Luo on
+              2020-11-26
+            </span>
+
+
+            
+            <!-- WordCount start -->
+            <div class="blank_box"></div>
+            <span class="meta">
+              Estimated Reading Time <span class="post-count">11</span> Minutes
+            </span>
+            <div class="blank_box"></div>
+            <span class="meta">
+              Words <span class="post-count">3.2k</span> In Total
+            </span>
+            <div class="blank_box"></div>
+            <!-- 不蒜子统计 start -->
+            <span class="meta">
+              Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+            </span>
+            <!-- 不蒜子统计 end -->
+            <!-- WordCount end -->
+            
+
+
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- waveoverlay start -->
+  <div class="preview-overlay">
+    <svg class="preview-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+      <defs>
+        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+      </defs>
+      <g class="preview-parallax">
+        <use xlink:href="#gentle-wave" x="48" y="0" fill=var(--gentle-wave1)></use>
+        <use xlink:href="#gentle-wave" x="48" y="3" fill=var(--gentle-wave2)></use>
+        <use xlink:href="#gentle-wave" x="48" y="5" fill=var(--gentle-wave3)></use>
+        <use xlink:href="#gentle-wave" x="48" y="7" fill=var(--gentle-wave)></use>
+      </g>
+    </svg>
+  </div>
+  <!-- waveoverlay end -->
+  
+
+</header>
+
+
+
+	<!-- Main Content (Post contains
+	Pager、
+	tip、
+	socialshare、
+	gitalk、gitment、disqus-comment、
+	Catalog、
+	Sidebar、
+	Featured-Tags、
+	Friends Blog、
+	anchorjs、
+	) -->
+	<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+
+        <h1 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h1><h2 id="一、线性表"><a href="#一、线性表" class="headerlink" title="一、线性表"></a>一、线性表</h2><h3 id="1-数组"><a href="#1-数组" class="headerlink" title="1. 数组"></a>1. 数组</h3><ul>
+<li>动态数组</li>
+</ul>
+<h3 id="2-链表"><a href="#2-链表" class="headerlink" title="2. 链表"></a>2. 链表</h3><ul>
+<li>单链表</li>
+<li>双向链表</li>
+<li>循环链表</li>
+<li>双向循环链表</li>
+<li>静态链表</li>
+</ul>
+<h3 id="3-栈"><a href="#3-栈" class="headerlink" title="3. 栈"></a>3. 栈</h3><ul>
+<li>顺序栈</li>
+<li>链式栈</li>
+</ul>
+<h3 id="4-队列"><a href="#4-队列" class="headerlink" title="4. 队列"></a>4. 队列</h3><ul>
+<li>普通队列</li>
+<li>双端队列</li>
+<li>阻塞队列</li>
+<li>并发队列</li>
+<li>阻塞并发队列</li>
+</ul>
+<h2 id="二、散列表"><a href="#二、散列表" class="headerlink" title="二、散列表"></a>二、散列表</h2><h3 id="1-散列函数"><a href="#1-散列函数" class="headerlink" title="1. 散列函数"></a>1. 散列函数</h3><h3 id="2-冲突解决"><a href="#2-冲突解决" class="headerlink" title="2. 冲突解决"></a>2. 冲突解决</h3><ul>
+<li>链表法</li>
+<li>开放寻址</li>
+<li>其他</li>
+</ul>
+<h3 id="3-动态扩容"><a href="#3-动态扩容" class="headerlink" title="3. 动态扩容"></a>3. 动态扩容</h3><h3 id="4-位图"><a href="#4-位图" class="headerlink" title="4. 位图"></a>4. 位图</h3><h2 id="三、树"><a href="#三、树" class="headerlink" title="三、树"></a>三、树</h2><h3 id="1-二叉树"><a href="#1-二叉树" class="headerlink" title="1. 二叉树"></a>1. 二叉树</h3><ul>
+<li><p>平衡二叉树</p>
+</li>
+<li><p>二叉查找树</p>
+</li>
+<li><p>平衡二叉查找树</p>
+<ul>
+<li>AVL树</li>
+<li>红黑树</li>
+</ul>
+</li>
+<li><p>完全二叉树</p>
+</li>
+<li><p>满二叉树</p>
+</li>
+</ul>
+<h3 id="2-多路查找树"><a href="#2-多路查找树" class="headerlink" title="2. 多路查找树"></a>2. 多路查找树</h3><ul>
+<li>B树</li>
+<li>B+树</li>
+<li>2-3树</li>
+<li>2-3-4树</li>
+</ul>
+<h3 id="3-堆"><a href="#3-堆" class="headerlink" title="3. 堆"></a>3. 堆</h3><ul>
+<li><p>小顶堆</p>
+</li>
+<li><p>大顶堆</p>
+</li>
+<li><p>优先级队列</p>
+<ul>
+<li><p>与普通队列区别：保证每次取出的元素是队列中优先级最高的，优先级别克自定义</p>
+</li>
+<li><p>常用场景：从杂乱的数据中按照一定顺序筛选数据</p>
+</li>
+<li><p>本质：二叉堆结构，binary heap. 利用数组来实现完全二叉树</p>
+</li>
+<li><p>特性</p>
+<ul>
+<li><p>1.数组中第一个元素拥有最高优先级</p>
+</li>
+<li><p>2.给定下标i，那么对于arr[i]：</p>
+<ul>
+<li>1）父节点：对应元素下标为（i - 1）/ 2</li>
+<li>2）左侧子节点：对应下标为2*i + 1</li>
+<li>3）右侧子结点：对应下标为2*i + 2</li>
+</ul>
+</li>
+<li><p>3.每个元素的优先级都必须高于两侧子节点</p>
+</li>
+</ul>
+</li>
+<li><p>基本操作</p>
+<ul>
+<li>1.向上筛选（shift up / bubble up）</li>
+<li>2.向下筛选 （shift down / bubble down）</li>
+</ul>
+</li>
+<li><p>时间复杂度：<br>  长度为n的数组，取前k个：O（logn）<br>  初始化：O(k)</p>
+</li>
+<li><p>Leetcode</p>
+<ul>
+<li><a href="https://leetcode-cn.com/problems/top-k-frequent-elements/" target="_blank" rel="noopener">347. 前 K 个高频元素-中等</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>斐波那契堆</p>
+</li>
+<li><p>二项堆</p>
+</li>
+<li><p>其他</p>
+<ul>
+<li><p>树状数组 Binary Indexed Tree</p>
+<ul>
+<li>求数组中前K个元素的总和（或平均值）</li>
+<li>LeetCode</li>
+</ul>
+</li>
+<li><p>线段树Segment Tree</p>
+<ul>
+<li><p>按照二叉树的形式存储数据的结构，每个结点保存数组中某一段的总和</p>
+</li>
+<li><p>Leetcode </p>
+<ul>
+<li><a href="https://leetcode-cn.com/problems/count-of-smaller-numbers-after-self/" target="_blank" rel="noopener">315. 计算右侧小于当前元素的个数-困难</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="四、图"><a href="#四、图" class="headerlink" title="四、图"></a>四、图</h2><h3 id="1-图的存储"><a href="#1-图的存储" class="headerlink" title="1. 图的存储"></a>1. 图的存储</h3><ul>
+<li>邻接矩阵</li>
+<li>邻接表</li>
+</ul>
+<h3 id="2-拓扑排序"><a href="#2-拓扑排序" class="headerlink" title="2. 拓扑排序"></a>2. 拓扑排序</h3><h3 id="3-最短路径"><a href="#3-最短路径" class="headerlink" title="3. 最短路径"></a>3. 最短路径</h3><h3 id="4-关键路径"><a href="#4-关键路径" class="headerlink" title="4. 关键路径"></a>4. 关键路径</h3><h3 id="5-最小生成树"><a href="#5-最小生成树" class="headerlink" title="5. 最小生成树"></a>5. 最小生成树</h3><h3 id="6-二分图"><a href="#6-二分图" class="headerlink" title="6. 二分图"></a>6. 二分图</h3><h3 id="7-最大流"><a href="#7-最大流" class="headerlink" title="7. 最大流"></a>7. 最大流</h3><h1 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h1><h2 id="一、复杂度"><a href="#一、复杂度" class="headerlink" title="一、复杂度"></a>一、复杂度</h2><h3 id="1-时间复杂度"><a href="#1-时间复杂度" class="headerlink" title="1. 时间复杂度"></a>1. 时间复杂度</h3><ul>
+<li><p>如何分析</p>
+<ul>
+<li><ol>
+<li>只关注循环执行次数最多的一段代码</li>
+</ol>
+</li>
+<li><ol start="2">
+<li>加法法则：总复杂度等于量级最大的那段代码的复杂度</li>
+</ol>
+</li>
+<li><ol start="3">
+<li>乘法法则：嵌套代码的复杂度等于嵌套内外代码复杂度的乘积</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>常见时间复杂度实例分析</p>
+<p>  <img src="https://tva2.sinaimg.cn/large/006YzKDNly1gujq7ui7kaj60vq0fwadg02.jpg" alt="image-20210917165515820"></p>
+<ul>
+<li><ol>
+<li><p>O(1)</p>
+<ul>
+<li>一般情况下，只要算法中不存在循环语句、递归语句，即使有成千上万行的代码，其时间复杂度也是Ο(1)。</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><ol start="2">
+<li><p>O(logn)、O(nlogn)</p>
+<ul>
+<li>i=1; while (i &lt;= n) { i = i * 2; }<br> 在对数阶时间复杂度的表示方法里，我们忽略对数的“底”，统一表示为 O(logn)。</li>
+<li>如果一段代码的时间复杂度是 O(logn)，我们循环执行 n 遍，时间复杂度就是 O(nlogn) 了。归并排序、快速排序的时间复杂度都是 O(nlogn)</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><ol start="3">
+<li><p>O(m+n)、O(m*n)</p>
+<ul>
+<li>代码的复杂度由两个数据的规模来决定，无法事先评估 m 和 n 谁的量级大</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-空间复杂度"><a href="#2-空间复杂度" class="headerlink" title="2. 空间复杂度"></a>2. 空间复杂度</h3><ul>
+<li>时间复杂度的全称是渐进时间复杂度，表示算法的执行时间与数据规模之间的增长关系。类比一下，空间复杂度全称就是渐进空间复杂度（asymptotic space complexity），表示算法的存储空间与数据规模之间的增长关系。</li>
+<li>常见的空间复杂度就是 O(1)、O(n)、O(n2 )，像 O(logn)、O(nlogn) 这样的对数阶复杂度平时都用不到。</li>
+</ul>
+<h3 id="3-Tips"><a href="#3-Tips" class="headerlink" title="3. Tips"></a>3. Tips</h3><ul>
+<li><p>越高阶复杂度的算法，执行效率越低。常见的复杂度并不多，从低阶到高阶有：O(1)、O(logn)、O(n)、O(nlogn)、O(n^2 )。</p>
+<p>  <img src="https://tvax2.sinaimg.cn/large/006YzKDNly1gujq9nxktgj60vq0hsgno02.jpg" alt="image-20210917165700182"></p>
+</li>
+</ul>
+<h2 id="二、基本算法思想"><a href="#二、基本算法思想" class="headerlink" title="二、基本算法思想"></a>二、基本算法思想</h2><h3 id="1-贪心算法"><a href="#1-贪心算法" class="headerlink" title="1. 贪心算法"></a>1. 贪心算法</h3><h3 id="2-分治算法"><a href="#2-分治算法" class="headerlink" title="2. 分治算法"></a>2. 分治算法</h3><ul>
+<li>快排、归并</li>
+<li>在O(n)内查找一个无序数组中第K大元素</li>
+</ul>
+<h3 id="3-动态规划"><a href="#3-动态规划" class="headerlink" title="3. 动态规划"></a>3. 动态规划</h3><h3 id="4-回溯算法"><a href="#4-回溯算法" class="headerlink" title="4. 回溯算法"></a>4. 回溯算法</h3><h3 id="5-枚举算法"><a href="#5-枚举算法" class="headerlink" title="5. 枚举算法"></a>5. 枚举算法</h3><h2 id="三、排序"><a href="#三、排序" class="headerlink" title="三、排序"></a>三、排序</h2><p><img src="https://tva3.sinaimg.cn/large/006YzKDNly1gujqana3gej60vq0je42y02.jpg" alt="image-20210917165757241"></p>
+<h3 id="1-O-n-2"><a href="#1-O-n-2" class="headerlink" title="1. O(n^2)"></a>1. O(n^2)</h3><p><img src="https://tvax2.sinaimg.cn/large/006YzKDNly1gujqbw4ot7j60vq0g8dk802.jpg" alt="image-20210917165853155"></p>
+<ul>
+<li><p>冒泡排序</p>
+<ul>
+<li>原地排序、稳定排序</li>
+</ul>
+</li>
+<li><p>插入排序</p>
+<ul>
+<li><p>原地排序、稳定排序</p>
+</li>
+<li><p>leetcode:</p>
+<p><a href="https://leetcode-cn.com/problems/insertion-sort-list/" target="_blank" rel="noopener">147. 对链表进行插入排序-中等</a></p>
+</li>
+</ul>
+</li>
+<li><p>选择排序</p>
+<ul>
+<li>原地、不稳定</li>
+</ul>
+</li>
+<li><p>希尔排序</p>
+</li>
+</ul>
+<h3 id="2-O-nlogn"><a href="#2-O-nlogn" class="headerlink" title="2. O(nlogn)"></a>2. O(nlogn)</h3><p><img src="https://tvax3.sinaimg.cn/large/006YzKDNly1gujqcqpdquj60vq0l1wl602.jpg" alt="image-20210917165958632"></p>
+<ul>
+<li><p>归并排序</p>
+<ul>
+<li>分治思想、递归实现</li>
+<li>稳定排序、非原地排序，空间复杂度高O(n)</li>
+<li>先把数组从中间分成前后两部分，然后对前后两部分分别排序，再将排好序的两部分合并在一起，这样整个数组就都有序了。</li>
+<li>递推公式：merge_sort(p…r) = merge(merge_sort(p…q), merge_sort(q+1…r))<br>  终止条件：p &gt;= r 不用再继续分解</li>
+<li>处理过程从下到上个，先处理子问题，再合并</li>
+</ul>
+</li>
+<li><p>快速排序</p>
+<ul>
+<li>分治思想、递归实现</li>
+<li>原地排序，空间复杂度O(1)，不稳定</li>
+<li>选择 p 到 r 之间的任意一个数据作为 pivot（分区点），遍历 p 到 r 之间的数据，将小于 pivot 的放到左边，大于 pivot 的放到右边， pivot 放到中间。根据分治、递归的处理思想，我们可以用递归排序下标从 p 到 q-1 之间的数据和下标从 q+1 到 r 之间的数据，直到区间缩小为 1</li>
+<li>递推公式：quick_sort(p…r) = quick_sort(p…q-1) + quick_sort(q+1… r)<br>  终止条件：p &gt;= r</li>
+<li>处理过程从上到下，先分区，再处理子问题</li>
+</ul>
+</li>
+<li><p>堆排序</p>
+</li>
+</ul>
+<h3 id="3-O-n"><a href="#3-O-n" class="headerlink" title="3. O(n)"></a>3. O(n)</h3><ul>
+<li><p>计数排序</p>
+<ul>
+<li>1.算法原理<br>  1）计数其实就是桶排序的一种特殊情况。<br>  2）当要排序的n个数据所处范围并不大时，比如最大值为k，则分成k个桶<br>  3）每个桶内的数据值都是相同的，就省掉了桶内排序的时间。</li>
+<li>2.使用条件<br>  1）只能用在数据范围不大的场景中，若数据范围k比要排序的数据n大很多，就不适合用计数排序；<br>  2）计数排序只能给非负整数排序，其他类型需要在不改变相对大小情况下，转换为非负整数；<br>  3）比如如果考试成绩精确到小数后一位，就需要将所有分数乘以10，转换为整数。</li>
+<li><ol start="2">
+<li>案例分析：<br>   假设只有8个考生分数在0-5分之间，成绩存于数组A[8] = [2，5，3，0，2，3，0，3]。<br>   使用大小为6的数组C[6]表示桶，下标对应分数，即0，1，2，3，4，5。<br>   C[6]存储的是考生人数，只需遍历一边考生分数，就可以得到C[6] = [2，0，2，3，0，1]。<br>   对C[6]数组顺序求和则C[6]=[2，2，4，7，7，8]，c[k]存储的是小于等于分数k的考生个数。</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>基数排序</p>
+<ul>
+<li>1.算法原理（以排序10万个手机号为例来说明）<br>  1）比较两个手机号码a，b的大小，如果在前面几位中a已经比b大了，那后面几位就不用看了。<br>  2）借助稳定排序算法的思想，可以先按照最后一位来排序手机号码，然后再按照倒数第二位来重新排序，以此类推，最后按照第一个位重新排序。<br>  3）经过11次排序后，手机号码就变为有序的了。<br>  4）每次排序有序数据范围较小，可以使用桶排序或计数排序来完成。</li>
+<li>2.使用条件<br>  1）要求数据可以分割独立的“位”来比较；<br>  2）位之间由递进关系，如果a数据的高位比b数据大，那么剩下的地位就不用比较了；<br>  3）每一位的数据范围不能太大，要可以用线性排序，否则基数排序的时间复杂度无法做到O(n)。</li>
+</ul>
+</li>
+<li><p>桶排序</p>
+<ul>
+<li>1.算法原理：<br>  1）将要排序的数据分到几个有序的桶里，每个桶里的数据再单独进行快速排序。<br>  2）桶内排完序之后，再把每个桶里的数据按照顺序依次取出，组成的序列就是有序的了。</li>
+<li>2.使用条件<br>  1）要排序的数据需要很容易就能划分成m个桶，并且桶与桶之间有着天然的大小顺序。<br>  2）数据在各个桶之间分布是均匀的。</li>
+<li>3.适用场景<br>  1）桶排序比较适合用在外部排序中。<br>  2）外部排序就是数据存储在外部磁盘且数据量大，但内存有限无法将整个数据全部加载到内存中。</li>
+<li>4.应用案例<br>  1）需求描述：<br>  有10GB的订单数据，需按订单金额（假设金额都是正整数）进行排序<br>  但内存有限，仅几百MB<br>  2）解决思路：<br>  扫描一遍文件，看订单金额所处数据范围，比如1元-10万元，那么就分100个桶。<br>  第一个桶存储金额1-1000元之内的订单，第二个桶存1001-2000元之内的订单，依次类推。<br>  每个桶对应一个文件，并按照金额范围的大小顺序编号命名（00，01，02，…，99）。<br>  将100个小文件依次放入内存并用快排排序。<br>  所有文件排好序后，只需按照文件编号从小到大依次读取每个小文件并写到大文件中即可。<br>  3）注意点：若单个文件无法全部载入内存，则针对该文件继续按照前面的思路进行处理即可。</li>
+</ul>
+</li>
+</ul>
+<h2 id="四、搜索"><a href="#四、搜索" class="headerlink" title="四、搜索"></a>四、搜索</h2><h3 id="1-深度优先搜索"><a href="#1-深度优先搜索" class="headerlink" title="1. 深度优先搜索"></a>1. 深度优先搜索</h3><h3 id="2-广度优先搜索"><a href="#2-广度优先搜索" class="headerlink" title="2. 广度优先搜索"></a>2. 广度优先搜索</h3><h3 id="3-A-启发式搜索"><a href="#3-A-启发式搜索" class="headerlink" title="3. A*启发式搜索"></a>3. A*启发式搜索</h3><h2 id="五、查找"><a href="#五、查找" class="headerlink" title="五、查找"></a>五、查找</h2><h3 id="1-线性表查找（二分查找）"><a href="#1-线性表查找（二分查找）" class="headerlink" title="1. 线性表查找（二分查找）"></a>1. 线性表查找（二分查找）</h3><h3 id="2-树结构查找"><a href="#2-树结构查找" class="headerlink" title="2. 树结构查找"></a>2. 树结构查找</h3><h3 id="3-散列表查找"><a href="#3-散列表查找" class="headerlink" title="3. 散列表查找"></a>3. 散列表查找</h3><h2 id="六、字符串匹配"><a href="#六、字符串匹配" class="headerlink" title="六、字符串匹配"></a>六、字符串匹配</h2><h3 id="1-朴素"><a href="#1-朴素" class="headerlink" title="1. 朴素"></a>1. 朴素</h3><h3 id="2-KMP"><a href="#2-KMP" class="headerlink" title="2. KMP"></a>2. KMP</h3><h3 id="3-Robin-karp"><a href="#3-Robin-karp" class="headerlink" title="3. Robin-karp"></a>3. Robin-karp</h3><h3 id="4-Boyer-Moore"><a href="#4-Boyer-Moore" class="headerlink" title="4. Boyer-Moore"></a>4. Boyer-Moore</h3><h3 id="5-AC自动机"><a href="#5-AC自动机" class="headerlink" title="5. AC自动机"></a>5. AC自动机</h3><h3 id="6-前缀树（字典树）Trie"><a href="#6-前缀树（字典树）Trie" class="headerlink" title="6. 前缀树（字典树）Trie"></a>6. 前缀树（字典树）Trie</h3><ul>
+<li><p>用于字典查找：如给定一系列构成字典的字符串（个数为N），在字典中找出所有以“ABC”开头的字符串，其中最长的为M</p>
+<ul>
+<li>暴力搜索：O(M*N)</li>
+<li>前缀树：O(M)</li>
+</ul>
+</li>
+<li><p>经典应用：搜索框自动补全、拼写检查、IP 路由 (最长前缀匹配)、九宫格打字预测</p>
+</li>
+<li><p>特性</p>
+<ul>
+<li><p>1.每个结点至少包含两个基本属性</p>
+<ul>
+<li>1）children：数组或集合，罗列每个分支中包含的所有字符</li>
+<li>2）isEnd：布尔值，表示该结点是否为某个字符串的结尾</li>
+</ul>
+</li>
+<li><p>2.根节点为空</p>
+</li>
+<li><p>3.除根结点外，其他节点都可能是单词的结尾，叶子结点一定是单词的结尾</p>
+</li>
+</ul>
+</li>
+<li><p>基本操作</p>
+<ul>
+<li><p>1.向 Trie 树中插入键</p>
+<p>  <img src="https://tvax3.sinaimg.cn/large/006YzKDNly1gujqdl7gvfj60xc0go42z02.jpg" alt="image-20210917170051035"></p>
+<ul>
+<li><p>算法分析</p>
+<ul>
+<li><p>从根开始搜索它对应于第一个键字符的链接。有两种情况：</p>
+<ul>
+<li>1.链接存在。沿着链接移动到树的下一个子层。算法继续搜索下一个键字符。</li>
+<li>2.链接不存在。创建一个新的节点，并将它与父节点的链接相连，该链接与当前的键字符相匹配<br>  重复以上步骤，直到到达键的最后一个字符，然后将当前节点标记为结束节点，算法完成。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>复杂度分析</p>
+<ul>
+<li>时间复杂度：O(m)，其中 m为键长。在算法的每次迭代中，我们要么检查要么创建一个节点，直到到达键尾。只需要 m次操作。</li>
+<li>空间复杂度：O(m)。最坏的情况下，新插入的键和 Trie 树中已有的键没有公共前缀。此时需要添加 m 个结点，使用 O(m) 空间。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>2.在 Trie 树中查找键</p>
+<p>  <img src="https://tva4.sinaimg.cn/large/006YzKDNly1gujqe8598lj60lu0gon0902.jpg" alt="image-20210917170128796"></p>
+<ul>
+<li><p>算法分析</p>
+<ul>
+<li><p>每个键在 trie 中表示为从根到内部节点或叶的路径。我们用第一个键字符从根开始，。检查当前节点中与键字符对应的链接。有两种情况：</p>
+</li>
+<li><ol>
+<li><p>存在链接。我们移动到该链接后面路径中的下一个节点，并继续搜索下一个键字符。</p>
+<ul>
+<li><ol start="2">
+<li>不存在链接。若已无键字符，且当前结点标记为 isEnd，则返回 true。否则有两种可能，均返回 false :</li>
+</ol>
+</li>
+<li><p>1）还有键字符剩余，但无法跟随 Trie 树的键路径，找不到键。</p>
+<ul>
+<li>2）没有键字符剩余，但当前结点没有标记为 isEnd。也就是说，待查找键只是Trie树中另一个键的前缀。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>复杂度分析</p>
+<ul>
+<li>时间复杂度 : O(m)。算法的每一步均搜索下一个键字符。最坏的情况下需要 m 次操作。</li>
+<li>空间复杂度 : O(1)。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Leetcode </p>
+<ul>
+<li><a href="https://leetcode-cn.com/problems/implement-trie-prefix-tree/" target="_blank" rel="noopener">208. 实现 Trie (前缀树) -中等</a></li>
+<li><a href="https://leetcode-cn.com/problems/design-add-and-search-words-data-structure/" target="_blank" rel="noopener">211. 添加与搜索单词 - 数据结构设计-中等</a></li>
+<li><a href="https://leetcode-cn.com/problems/word-search-ii/" target="_blank" rel="noopener">212. 单词搜索 II-困难</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="7-后缀数组"><a href="#7-后缀数组" class="headerlink" title="7. 后缀数组"></a>7. 后缀数组</h3><h2 id="七、其他"><a href="#七、其他" class="headerlink" title="七、其他"></a>七、其他</h2><h3 id="1-数论"><a href="#1-数论" class="headerlink" title="1. 数论"></a>1. 数论</h3><h3 id="2-计算几何"><a href="#2-计算几何" class="headerlink" title="2. 计算几何"></a>2. 计算几何</h3><h3 id="3-概率分析"><a href="#3-概率分析" class="headerlink" title="3. 概率分析"></a>3. 概率分析</h3><h3 id="4-并查集"><a href="#4-并查集" class="headerlink" title="4. 并查集"></a>4. 并查集</h3><h3 id="5-拓扑网络"><a href="#5-拓扑网络" class="headerlink" title="5. 拓扑网络"></a>5. 拓扑网络</h3><h3 id="6-矩阵计算"><a href="#6-矩阵计算" class="headerlink" title="6. 矩阵计算"></a>6. 矩阵计算</h3><h3 id="7-线性规划"><a href="#7-线性规划" class="headerlink" title="7. 线性规划"></a>7. 线性规划</h3>
+
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
+          
+          <li class="previous">
+            <a href="/2020/12/18/1af5.html" data-toggle="tooltip" data-placement="top" title="Git同时push到Github和Gitee">&larr; Previous Post</a>
+          </li>
+          
+          
+          <li class="next">
+            <a href="/2020/11/26/6186.html" data-toggle="tooltip" data-placement="top" title="git 回滚指定版本并推送到远程分支">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
+
+        
+        <!-- tip start -->
+        <div class="tip">
+          <p>
+            If the images or anything used in the blog infringe your copyright, please contact me to delete them. Thank you!
+          </p>
+        </div>
+        <!-- tip end -->
+        
+
+        
+        <hr>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+<!-- gitalk start -->
+<!-- Docs:https://github.com/gitalk/gitalk/blob/master/readme-cn.md -->
+
+<div id="gitalk-container"></div>
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.js"></script> -->
+<script src="/js/comment/gitalk.js"></script>
+
+<script>
+  var gitalk = new Gitalk({
+    clientID: '174c71e299e44fbdb98f',
+    clientSecret: 'b89fcac752fa9157640097d65ec0796ba699eaa4',
+    repo: 'VickyLuoLuo.github.io',
+    owner: 'VickyLuoLuo',
+    admin: 'VickyLuoLuo',
+    id: 'Thu Nov 26 2020 17:33:24 GMT+0800', // Ensure uniqueness and length less than 50
+    distractionFreeMode: false, // Facebook-like distraction free mode
+    perPage: 10 ,
+    pagerDirection: 'last',
+    createIssueManually: true ,
+    language: 'en'
+  });
+  gitalk.render('gitalk-container');
+
+  var gtFolded = () => {
+    setTimeout(function() {
+      let markdownBody = document.getElementsByClassName("markdown-body");
+      let list = Array.from(markdownBody);
+      list.forEach(item => {
+        if (item.clientHeight > 250) {
+          item.classList.add('gt-comment-body-folded');
+          item.style.maxHeight = '250px';
+          item.title = 'Click to Expand';
+          item.onclick = function() {
+            item.classList.remove('gt-comment-body-folded');
+            item.style.maxHeight = '';
+            item.title = '';
+            item.onclick = null;
+          };
+        }
+      })
+    }, 800);
+  }
+</script>
+
+<!-- gitalk end -->
+
+
+
+<!-- 2. gitment comment -->
+
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+            <!-- 修改自动编号显示问题 -->
+           <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#数据结构"><span class="toc-nav-text">数据结构</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#一、线性表"><span class="toc-nav-text">一、线性表</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#1-数组"><span class="toc-nav-text">1. 数组</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2-链表"><span class="toc-nav-text">2. 链表</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#3-栈"><span class="toc-nav-text">3. 栈</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#4-队列"><span class="toc-nav-text">4. 队列</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#二、散列表"><span class="toc-nav-text">二、散列表</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#1-散列函数"><span class="toc-nav-text">1. 散列函数</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2-冲突解决"><span class="toc-nav-text">2. 冲突解决</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#3-动态扩容"><span class="toc-nav-text">3. 动态扩容</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#4-位图"><span class="toc-nav-text">4. 位图</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#三、树"><span class="toc-nav-text">三、树</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#1-二叉树"><span class="toc-nav-text">1. 二叉树</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2-多路查找树"><span class="toc-nav-text">2. 多路查找树</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#3-堆"><span class="toc-nav-text">3. 堆</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#四、图"><span class="toc-nav-text">四、图</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#1-图的存储"><span class="toc-nav-text">1. 图的存储</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2-拓扑排序"><span class="toc-nav-text">2. 拓扑排序</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#3-最短路径"><span class="toc-nav-text">3. 最短路径</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#4-关键路径"><span class="toc-nav-text">4. 关键路径</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#5-最小生成树"><span class="toc-nav-text">5. 最小生成树</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#6-二分图"><span class="toc-nav-text">6. 二分图</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#7-最大流"><span class="toc-nav-text">7. 最大流</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#算法"><span class="toc-nav-text">算法</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#一、复杂度"><span class="toc-nav-text">一、复杂度</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#1-时间复杂度"><span class="toc-nav-text">1. 时间复杂度</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2-空间复杂度"><span class="toc-nav-text">2. 空间复杂度</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#3-Tips"><span class="toc-nav-text">3. Tips</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#二、基本算法思想"><span class="toc-nav-text">二、基本算法思想</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#1-贪心算法"><span class="toc-nav-text">1. 贪心算法</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2-分治算法"><span class="toc-nav-text">2. 分治算法</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#3-动态规划"><span class="toc-nav-text">3. 动态规划</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#4-回溯算法"><span class="toc-nav-text">4. 回溯算法</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#5-枚举算法"><span class="toc-nav-text">5. 枚举算法</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#三、排序"><span class="toc-nav-text">三、排序</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#1-O-n-2"><span class="toc-nav-text">1. O(n^2)</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2-O-nlogn"><span class="toc-nav-text">2. O(nlogn)</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#3-O-n"><span class="toc-nav-text">3. O(n)</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#四、搜索"><span class="toc-nav-text">四、搜索</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#1-深度优先搜索"><span class="toc-nav-text">1. 深度优先搜索</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2-广度优先搜索"><span class="toc-nav-text">2. 广度优先搜索</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#3-A-启发式搜索"><span class="toc-nav-text">3. A*启发式搜索</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#五、查找"><span class="toc-nav-text">五、查找</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#1-线性表查找（二分查找）"><span class="toc-nav-text">1. 线性表查找（二分查找）</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2-树结构查找"><span class="toc-nav-text">2. 树结构查找</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#3-散列表查找"><span class="toc-nav-text">3. 散列表查找</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#六、字符串匹配"><span class="toc-nav-text">六、字符串匹配</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#1-朴素"><span class="toc-nav-text">1. 朴素</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2-KMP"><span class="toc-nav-text">2. KMP</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#3-Robin-karp"><span class="toc-nav-text">3. Robin-karp</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#4-Boyer-Moore"><span class="toc-nav-text">4. Boyer-Moore</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#5-AC自动机"><span class="toc-nav-text">5. AC自动机</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#6-前缀树（字典树）Trie"><span class="toc-nav-text">6. 前缀树（字典树）Trie</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#7-后缀数组"><span class="toc-nav-text">7. 后缀数组</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#七、其他"><span class="toc-nav-text">七、其他</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#1-数论"><span class="toc-nav-text">1. 数论</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2-计算几何"><span class="toc-nav-text">2. 计算几何</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#3-概率分析"><span class="toc-nav-text">3. 概率分析</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#4-并查集"><span class="toc-nav-text">4. 并查集</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#5-拓扑网络"><span class="toc-nav-text">5. 拓扑网络</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#6-矩阵计算"><span class="toc-nav-text">6. 矩阵计算</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#7-线性规划"><span class="toc-nav-text">7. 线性规划</span></a></li></ol></li></ol></li></ol>
+        
+        </div>
+      </aside>
+    
+
+
+      <!-- Sidebar Container -->
+      <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+        <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">FEATURED TAGS</a>
+          </h5>
+          <div class="tags">
+            
+            <a class="tag" href="/tags/#algorithm" title="algorithm">algorithm</a>
+            
+            <a class="tag" href="/tags/#data structure" title="data structure">data structure</a>
+            
+          </div>
+        </section>
+        
+
+        <!-- Friends Blog -->
+        
+        <hr>
+        <h5>FRIENDS</h5>
+        <ul class="list-inline">
+
+          
+          <li>
+            <a href="https://sagerenn.github.io/" target="_blank">Sage Renn</a>
+          </li>
+          
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
+
+
+	<!-- Footer (contains ThemeColor、viewer) -->
+	<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center">
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+        </ul>
+        <p class="copyright text-muted">
+          Copyright &copy;
+          Vicky Luo
+          2021
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a id="rocket" href="#top" class=""></a>
+
+<!-- jQuery -->
+<script type="text/javascript" src="/js/jquery.min.js"></script>
+<!-- <script type="text/javascript" src="/js/jquery.js"></script> -->
+<!-- <script type="text/javascript" src="//cdnjs.loli.net/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+
+<!-- Bootstrap Core JavaScript -->
+<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script type="text/javascript" src="/js/hux-blog.min.js"></script>
+
+<!-- catalog -->
+<script type="text/javascript" async="true" src="/js/catalog.js?v=1.0.0"></script>
+
+<!-- totop(rocket) -->
+<script type="text/javascript" async="true" src="/js/totop.js?v=1.0.0"></script>
+
+<!-- Busuanzi JavaScript -->
+<script type="text/javascript" async="true" src="/js/busuanzi.pure.mini.js"></script>
+
+
+  <!-- Scroll start -->
+  <script type="text/javascript" src="/js/scroll.js"></script>
+  <!-- Scroll end -->
+
+
+
+  <!-- ThemeColor start -->
+  <script type="text/javascript" src="/js/themecolor.js"></script>
+  <!-- ThemeColor end -->
+
+
+
+
+
+  <!-- viewer start -->
+  <!-- viewer start (Picture preview) -->
+  <script type="text/javascript" src="/js/viewer/viewer.min.js"></script>
+  <script type="text/javascript" src="/js/viewer/pic-viewer.js"></script>
+  <!-- viewer end -->
+
+
+<script>
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function (e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  // fastClick.js
+  async ("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function () {
+    var $nav = document.querySelector("nav");
+    if ($nav)
+      FastClick.attach($nav);
+    }
+  )
+</script>
+
+<!-- Because of the native support for backtick-style fenced code blocks right within the Markdown is landed in Github Pages, From V1.6, There is no need for Highlight.js, so Huxblog drops it officially. -
+https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0 - https://help.github.com/articles/creating-and-highlighting-code-blocks/ -->
+<!-- <script> async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){ hljs.initHighlightingOnLoad(); }) </script> <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet"> -->
+
+<!-- jquery.tagcloud.js -->
+<!-- <script> // only load tagcloud.js in tag.html if($('#tag_cloud').length !== 0){ async("https://vickyluoluo.github.io/js/jquery.tagcloud.js",function(){ $.fn.tagcloud.defaults = { //size: {start: 1, end: 1, unit: 'em'}, color: {start:
+'#bbbbee', end: '#0085a1'}, }; $('#tag_cloud a').tagcloud(); }) } </script> -->
+
+
+	<!-- Search -->
+	
+	<div class="popup search-popup local-search-popup">
+  <span class="popup-btn-close">
+    ESC
+  </span>
+  <div class="container">
+    <div class="row">
+      <!-- <div class="col-md-9 col-md-offset-1"> -->
+      <div class="col-lg-9 col-lg-offset-1 col-md-10 col-md-offset-1 local-search-content">
+
+        <div class="local-search-header clearfix">
+
+          <div class="local-search-input-wrapper">
+            <span class="search-icon">
+              <i class="fa fa-search fa-lg" style="margin: 25px 10px 25px 20px;"></i>
+            </span>
+            <input autocomplete="off" placeholder="Search..." type="text" id="local-search-input">
+          </div>
+        </div>
+        <div id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <script src="/js/ziploader.js"></script>
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.json";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    // monitor main search box;
+    var onPopupClose = function (e) {
+      $('.popup').fadeOut(300);
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $('.popup').fadeIn(300);
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+    // get search zip version
+    $.get('/searchVersion.json?t=' + (+new Date()), function (res) {
+      if (localStorage.getItem('searchVersion') !== res) {
+        localStorage.setItem('searchVersion', res);
+        initSearchJson();
+      }
+    });
+
+    function initSearchJson() {
+      initLoad(['/search.flv'], {
+        loadOptions: {
+          success: function (obj) {
+            localStorage.setItem('searchJson', obj['search.json'])
+          },
+          error: function (e) {
+            return console.log(e)
+          }
+        },
+        returnOptions: {
+          'json': TYPE_TEXT
+        },
+        mimeOptions: {
+          'json': 'application/json'
+        }
+      })
+    }
+    // search function;
+    var searchFunc = function (search_id, content_id) {
+      'use strict';
+      isfetched = true;
+      var datas = JSON.parse(localStorage.getItem('searchJson'));
+      // console.log(search_id)
+      var input = document.getElementById(search_id);
+      var resultContent = document.getElementById(content_id);
+      var inputEventFunction = function () {
+        var searchText = input.value.trim().toLowerCase();
+        var keywords = searchText.split(/[\s\-]+/);
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        var resultItems = [];
+        if (searchText.length > 0) {
+          // perform local searching
+          datas.forEach(function (data) {
+            var isMatch = false;
+            var hitCount = 0;
+            var searchTextCount = 0;
+            var title = data.title
+              ? data.title.trim()
+              : '';
+            var titleInLowerCase = title.toLowerCase();
+            var content = data.content
+              ? data.content.trim().replace(/<[^>]+>/g, "")
+              : '';
+            var contentInLowerCase = content.toLowerCase();
+            var articleUrl = decodeURIComponent(data.url);
+
+            var date = data.date;
+            var dateTime = date.replace(/T/, " ").replace(/.000Z/, "");
+            var imgUrl = data.header_img;
+
+            var indexOfTitle = [];
+            var indexOfContent = [];
+            // only match articles with not empty titles
+            keywords.forEach(function (keyword) {
+              function getIndexByWord(word, text, caseSensitive) {
+                var wordLen = word.length;
+                if (wordLen === 0) {
+                  return [];
+                }
+                var startPosition = 0,
+                  position = [],
+                  index = [];
+                if (!caseSensitive) {
+                  text = text.toLowerCase();
+                  word = word.toLowerCase();
+                }
+                while ((position = text.indexOf(word, startPosition)) > -1) {
+                  index.push({position: position, word: word});
+                  startPosition = position + wordLen;
+                }
+                return index;
+              }
+              indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+              indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+            });
+            if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+              isMatch = true;
+              hitCount = indexOfTitle.length + indexOfContent.length;
+            }
+            // show search results
+            if (isMatch) {
+              // sort index by position of keyword
+              [indexOfTitle, indexOfContent].forEach(function (index) {
+                index.sort(function (itemLeft, itemRight) {
+                  if (itemRight.position !== itemLeft.position) {
+                    return itemRight.position - itemLeft.position;
+                  } else {
+                    return itemLeft.word.length - itemRight.word.length;
+                  }
+                });
+              });
+              // merge hits into slices
+              function mergeIntoSlice(text, start, end, index) {
+                var item = index[index.length - 1];
+                var position = item.position;
+                var word = item.word;
+                var hits = [];
+                var searchTextCountInSlice = 0;
+                while (position + word.length <= end && index.length != 0) {
+                  if (word === searchText) {
+                    searchTextCountInSlice++;
+                  }
+                  hits.push({position: position, length: word.length});
+                  var wordEnd = position + word.length;
+                  // move to next position of hit
+                  index.pop();
+                  while (index.length != 0) {
+                    item = index[index.length - 1];
+                    position = item.position;
+                    word = item.word;
+                    if (wordEnd > position) {
+                      index.pop();
+                    } else {
+                      break;
+                    }
+                  }
+                }
+                searchTextCount += searchTextCountInSlice;
+                return {hits: hits, start: start, end: end, searchTextCount: searchTextCountInSlice};
+              }
+              var slicesOfTitle = [];
+              if (indexOfTitle.length != 0) {
+                slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+              }
+              var slicesOfContent = [];
+              while (indexOfContent.length != 0) {
+                var item = indexOfContent[indexOfContent.length - 1];
+                var position = item.position;
+                var word = item.word;
+                // cut out 100 characters
+                var start = position - 20;
+                var end = position + 80;
+                if (start < 0) {
+                  start = 0;
+                }
+                if (end < position + word.length) {
+                  end = position + word.length;
+                }
+                if (end > content.length) {
+                  end = content.length;
+                }
+                slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+              }
+              // sort slices in content by search text's count and hits' count
+              slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                  return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                  return sliceRight.hits.length - sliceLeft.hits.length;
+                } else {
+                  return sliceLeft.start - sliceRight.start;
+                }
+              });
+              // select top N slices in content
+              var upperBound = parseInt('1');
+              if (upperBound >= 0) {
+                slicesOfContent = slicesOfContent.slice(0, upperBound);
+              }
+              // highlight title and content
+              function highlightKeyword(text, slice) {
+                var result = '';
+                var prevEnd = slice.start;
+                slice.hits.forEach(function (hit) {
+                  result += text.substring(prevEnd, hit.position);
+                  var end = hit.position + hit.length;
+                  result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                  prevEnd = end;
+                });
+                result += text.substring(prevEnd, slice.end);
+                return result;
+              }
+              var resultItem = '';
+
+              // if (slicesOfTitle.length != 0) {   resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>"; } else {   resultItem += "<li><a target='_blank' href='" +
+              // articleUrl + "' class='search-result-title'>" + title + "</a>"; } slicesOfContent.forEach(function (slice) {   resultItem += "<a target='_blank' href='" + articleUrl + "'><p class=\"search-result\">" + highlightKeyword(content, slice) +
+              // "...</p></a>"; }); resultItem += "</li>";
+
+              if (slicesOfTitle.length != 0) {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              } else {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + title + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              }
+              slicesOfContent.forEach(function (slice) {
+                resultItem += "<p class=\"search-result-content\">" + highlightKeyword(content, slice) + "...</p>";
+              });
+              resultItem += "</div><div class='search-result-right'><img class='media-image' src='" + imgUrl + "' width='64px' height='48px'></img></div></a>";
+
+              resultItems.push({item: resultItem, searchTextCount: searchTextCount, hitCount: hitCount, id: resultItems.length});
+            }
+          })
+        };
+
+        if (keywords.length === 1 && keywords[0] === "") {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else if (resultItems.length === 0) {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else {
+          resultItems.sort(function (resultLeft, resultRight) {
+            if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+              return resultRight.searchTextCount - resultLeft.searchTextCount;
+            } else if (resultLeft.hitCount !== resultRight.hitCount) {
+              return resultRight.hitCount - resultLeft.hitCount;
+            } else {
+              return resultRight.id - resultLeft.id;
+            }
+          });
+          var searchResultList = '<div class=\"search-result-list\">';
+          resultItems.forEach(function (result) {
+            searchResultList += result.item;
+          })
+          searchResultList += "</div>";
+          resultContent.innerHTML = searchResultList;
+        }
+      }
+      if ('auto' === 'auto') {
+        input.addEventListener('input', inputEventFunction);
+      } else {
+        $('.search-icon').click(inputEventFunction);
+        input.addEventListener('keypress', function (event) {
+          if (event.keyCode === 13) {
+            inputEventFunction();
+          }
+        });
+      }
+      // remove loading animation
+      $('body').css('overflow', '');
+      proceedsearch();
+    }
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function (e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc('local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function (e) {
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 && $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+
+    document.addEventListener('mouseup', (e) => {
+      var _con = document.querySelector(".local-search-content");
+      if (_con) {
+        if (!_con.contains(e.target)) {
+          onPopupClose();
+        }
+      }
+    });
+  </script>
+
+
+	
+
+	<!-- Image to hack wechat -->
+	<!-- <img src="https://vickyluoluo.github.io/img/icon_wechat.png" width="0" height="0" /> -->
+	<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>

@@ -71,12 +71,12 @@
 
   <!-- Pygments Highlight CSS -->
   
-<link rel="stylesheet" href="../../../css/highlight.css">
-<link rel="stylesheet" href="../../../css/widget.css">
-<link rel="stylesheet" href="../../../css/rocket.css">
-<link rel="stylesheet" href="../../../css/signature.css">
-<link rel="stylesheet" href="../../../css/catalog.css">
-<link rel="stylesheet" href="../../../css/livemylife.css">
+<link rel="stylesheet" href="../../css/highlight.css">
+<link rel="stylesheet" href="../../css/widget.css">
+<link rel="stylesheet" href="../../css/rocket.css">
+<link rel="stylesheet" href="../../css/signature.css">
+<link rel="stylesheet" href="../../css/catalog.css">
+<link rel="stylesheet" href="../../css/livemylife.css">
 
 
   
@@ -138,10 +138,10 @@
   <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
 
   <!-- ga & ba script hoook -->
-  <link rel="canonical" href="https://vickyluoluo.github.io/2021/07/15/f6ae.html">
+  <link rel="canonical" href="https://vickyluoluo.github.io/tags/树形dp/">
   <title>
     
-    动态规划问题解题思路 - dream big
+    dream big
     
   </title>
 <meta name="generator" content="Hexo 4.2.1"></head>
@@ -230,13 +230,6 @@
 
           
           <li>
-            <a href="/ebooks/">EBooks</a>
-          </li>
-          
-          
-
-          
-          <li>
             <a href="/about/">About</a>
           </li>
           
@@ -251,7 +244,7 @@
 
           
           <li>
-            <a href="/categories/">Categories</a>
+            <a href="/ebooks/">EBooks</a>
           </li>
           
           
@@ -259,6 +252,13 @@
           
           <li>
             <a href="/tags/">Tags</a>
+          </li>
+          
+          
+
+          
+          <li>
+            <a href="/categories/">Categories</a>
           </li>
           
           
@@ -316,8 +316,8 @@
 
   <style type="text/css">
     header.intro-header {
-       /*post*/
-        background-image: url('/img/header_img/post-bg-desk.jpg');
+       /*page*/
+        background-image: url('/img/header_img/archive_bg.jpg');
       
     }
 
@@ -339,40 +339,10 @@
       <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
           
-          <div class="post-heading">
-            <div class="tags">
-              
-              <a class="tag" href="/tags/#algorithm" title="algorithm">algorithm</a>
-              
-            </div>
-            <h1>动态规划问题解题思路</h1>
-            <h2 class="subheading"></h2>
-            <span class="meta">
-              Posted by Vicky Luo on
-              2021-07-15
-            </span>
-
-
-            
-            <!-- WordCount start -->
-            <div class="blank_box"></div>
-            <span class="meta">
-              Estimated Reading Time <span class="post-count">1</span> Minutes
-            </span>
-            <div class="blank_box"></div>
-            <span class="meta">
-              Words <span class="post-count">276</span> In Total
-            </span>
-            <div class="blank_box"></div>
-            <!-- 不蒜子统计 start -->
-            <span class="meta">
-              Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
-            </span>
-            <!-- 不蒜子统计 end -->
-            <!-- WordCount end -->
-            
-
-
+          <div class="site-heading">
+            <h1>Dream big</h1>
+            <!--<hr class="small">-->
+            <span class="subheading">Never name your product Pied Piper.</span>
           </div>
           
         </div>
@@ -413,215 +383,712 @@
 	Friends Blog、
 	anchorjs、
 	) -->
-	<!-- Modify by Yu-Hsuan Yen -->
-<!-- Post Content -->
-<article>
-  <div class="container">
-    <div class="row">
-      <!-- Post Container -->
-      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
-
-        <h3 id="动态规划问题解题思路"><a href="#动态规划问题解题思路" class="headerlink" title="动态规划问题解题思路"></a>动态规划问题解题思路</h3><p>动态规划问题一般形式是求最值，求最值问题核心是穷举，要把所有答案列举出来找最值。但是，动态规划问题存在<code>重叠子问题</code>，暴力穷举效率极低，可以使用<code>备忘录</code>或<code>DP table</code>来优化穷举过程。而且，我们可以通过寻找<code>最优子结构</code>，及通过子问题的最值得到原问题的最值。动态规划问题千变万化，只有列出正确的<code>状态转移方程</code>，才能正确的穷举，这也是最困难的地方。</p>
-<p>综上，动态规划三要素：重叠子问题、最优子结构、状态转移方程。</p>
-<h4 id="确定状态转移方程思路："><a href="#确定状态转移方程思路：" class="headerlink" title="确定状态转移方程思路："></a>确定状态转移方程思路：</h4><p><strong>明确 base case -&gt; 明确「状态」-&gt; 明确「选择」 -&gt; 定义 dp 数组/函数的含义</strong>。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 初始化 base case</span><br><span class="line">dp[<span class="number">0</span>][<span class="number">0</span>][...] = base</span><br><span class="line"># 进行状态转移</span><br><span class="line"><span class="keyword">for</span> 状态<span class="number">1</span> in 状态<span class="number">1</span>的所有取值：</span><br><span class="line">    <span class="keyword">for</span> 状态<span class="number">2</span> in 状态<span class="number">2</span>的所有取值：</span><br><span class="line">        <span class="keyword">for</span> ...</span><br><span class="line">            dp[状态<span class="number">1</span>][状态<span class="number">2</span>][...] = 求最值(选择<span class="number">1</span>，选择<span class="number">2</span>...)</span><br></pre></td></tr></table></figure>
-
-
-
-        <hr>
-        <!-- Pager -->
-        <ul class="pager">
-          
-          <li class="previous">
-            <a href="/2021/08/18/86e5.html" data-toggle="tooltip" data-placement="top" title="中国地图">&larr; Previous Post</a>
-          </li>
-          
-          
-          <li class="next">
-            <a href="/2021/06/04/9f70.html" data-toggle="tooltip" data-placement="top" title="Support for password authentication was removed on August 13, 2021. Please use a personal access token instead.">Next Post &rarr;</a>
-          </li>
-          
-        </ul>
-
-        
-        <!-- tip start -->
-        <div class="tip">
-          <p>
-            If the images or anything used in the blog infringe your copyright, please contact me to delete them. Thank you!
-          </p>
-        </div>
-        <!-- tip end -->
-        
-
-        
-        <hr>
-
-        <!-- comments start -->
-        <!-- 1. gitalk comment -->
-
-<!-- gitalk start -->
-<!-- Docs:https://github.com/gitalk/gitalk/blob/master/readme-cn.md -->
-
-<div id="gitalk-container"></div>
-
-<!-- <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.js"></script> -->
-<script src="/js/comment/gitalk.js"></script>
-
-<script>
-  var gitalk = new Gitalk({
-    clientID: '174c71e299e44fbdb98f',
-    clientSecret: 'b89fcac752fa9157640097d65ec0796ba699eaa4',
-    repo: 'VickyLuoLuo.github.io',
-    owner: 'VickyLuoLuo',
-    admin: 'VickyLuoLuo',
-    id: 'Thu Jul 15 2021 00:00:00 GMT+0800', // Ensure uniqueness and length less than 50
-    distractionFreeMode: false, // Facebook-like distraction free mode
-    perPage: 10 ,
-    pagerDirection: 'last',
-    createIssueManually: true ,
-    language: 'en'
-  });
-  gitalk.render('gitalk-container');
-
-  var gtFolded = () => {
-    setTimeout(function() {
-      let markdownBody = document.getElementsByClassName("markdown-body");
-      let list = Array.from(markdownBody);
-      list.forEach(item => {
-        if (item.clientHeight > 250) {
-          item.classList.add('gt-comment-body-folded');
-          item.style.maxHeight = '250px';
-          item.title = 'Click to Expand';
-          item.onclick = function() {
-            item.classList.remove('gt-comment-body-folded');
-            item.style.maxHeight = '';
-            item.title = '';
-            item.onclick = null;
-          };
-        }
-      })
-    }, 800);
-  }
-</script>
-
-<!-- gitalk end -->
-
-
-
-<!-- 2. gitment comment -->
-
-
-
-<!-- 3. disqus comment -->
-
-
-        <!-- comments end -->
-        <hr>
-
-      </div>
-
-      <!-- Catalog: Tabe of Content -->
-      <!-- Table of Contents -->
-
-    
-      <aside id="sidebar">
-        <div id="toc" class="toc-article">
-        <strong class="toc-title">Contents</strong>
-        
-            <!-- 修改自动编号显示问题 -->
-           <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#动态规划问题解题思路"><span class="toc-nav-text">动态规划问题解题思路</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#确定状态转移方程思路："><span class="toc-nav-text">确定状态转移方程思路：</span></a></li></ol></li></ol>
-        
-        </div>
-      </aside>
+	<!-- Main Content -->
+<div class="container">
+  <div class="row">
     
 
+    <!-- USE SIDEBAR -->
+    <!-- Post Container -->
+    <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-8 col-md-offset-1
+                col-sm-12
+                col-xs-12
+                post-container
+            ">
 
-      <!-- Sidebar Container -->
-      <div class="
-                col-lg-8 col-lg-offset-2
-                col-md-10 col-md-offset-1
-                sidebar-container">
+      
+<!-- Main Content -->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1">
+      <!-- 归档列表 -->
 
-        <!-- Featured Tags -->
-        
-        <section>
-          <!-- no hr -->
-          <h5>
-            <a href="/tags/">FEATURED TAGS</a>
-          </h5>
-          <div class="tags">
-            
-            <a class="tag" href="/tags/#algorithm" title="algorithm">algorithm</a>
-            
-          </div>
-        </section>
-        
+      
 
-        <!-- Friends Blog -->
-        
-        <hr>
-        <h5>FRIENDS</h5>
-        <ul class="list-inline">
+      <!-- 归档列表 -->
 
+      
+      <div class="one-tag-list">
+        <span class="fa fa-calendar-times-o listing-seperator" id="2022">
+          <span class="tag-text">2022</span>
+        </span>
+        <ul>
           
+          <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
           <li>
-            <a href="https://sagerenn.github.io/" target="_blank">Sage Renn</a>
+            04-30
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/2022/04/30/8e5a.html" style="color: #0085a1">
+              <span>
+                SQLSERVER
+              </span>
+            </a>
+            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+          </li>
+          
+          <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+          <li>
+            04-10
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/2022/04/10/f82e.html" style="color: #0085a1">
+              <span>
+                数据结构与算法---线段树
+              </span>
+            </a>
+            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
           </li>
           
         </ul>
-        
       </div>
+      
+      <div class="one-tag-list">
+        <span class="fa fa-calendar-times-o listing-seperator" id="2021">
+          <span class="tag-text">2021</span>
+        </span>
+        <ul>
+          
+          <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+          <li>
+            11-10
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/2021/11/10/6fff.html" style="color: #0085a1">
+              <span>
+                读源码的实用技巧
+              </span>
+            </a>
+            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+          </li>
+          
+          <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+          <li>
+            10-28
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/2021/10/28/9f48.html" style="color: #0085a1">
+              <span>
+                nginx127.0.0.1与localhost跨域问题
+              </span>
+            </a>
+            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+          </li>
+          
+          <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+          <li>
+            08-25
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/2021/08/25/5dae.html" style="color: #0085a1">
+              <span>
+                BIO NIO与Netty
+              </span>
+            </a>
+            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+          </li>
+          
+          <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+          <li>
+            08-18
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/2021/08/18/86e5.html" style="color: #0085a1">
+              <span>
+                中国地图
+              </span>
+            </a>
+            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+          </li>
+          
+          <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+          <li>
+            07-12
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/2021/07/12/211a.html" style="color: #0085a1">
+              <span>
+                数据结构与算法---资源限制类问题
+              </span>
+            </a>
+            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+          </li>
+          
+          <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+          <li>
+            06-24
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/2021/06/24/211a.html" style="color: #0085a1">
+              <span>
+                数据结构与算法---哈希函数和岛
+              </span>
+            </a>
+            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+          </li>
+          
+          <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+          <li>
+            06-04
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/2021/06/04/9f70.html" style="color: #0085a1">
+              <span>
+                Support for password authentication was removed on August 13, 2021. Please use a personal access token instead.
+              </span>
+            </a>
+            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+          </li>
+          
+          <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+          <li>
+            05-15
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/2021/05/15/211a.html" style="color: #0085a1">
+              <span>
+                数据结构与算法---并查集和图
+              </span>
+            </a>
+            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+          </li>
+          
+          <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+          <li>
+            04-29
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/2021/04/29/f6ae.html" style="color: #0085a1">
+              <span>
+                数据结构与算法---暴力递归到动态规划
+              </span>
+            </a>
+            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+          </li>
+          
+          <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+          <li>
+            04-15
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/2021/04/15/a10a.html" style="color: #0085a1">
+              <span>
+                高并发利器Redis
+              </span>
+            </a>
+            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+          </li>
+          
+          <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+          <li>
+            04-02
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/2021/04/02/211a.html" style="color: #0085a1">
+              <span>
+                数据结构与算法---单调栈和滑动窗口
+              </span>
+            </a>
+            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+          </li>
+          
+          <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+          <li>
+            03-31
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/2021/03/31/57bd.html" style="color: #0085a1">
+              <span>
+                Java NIO通信基础
+              </span>
+            </a>
+            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+          </li>
+          
+          <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+          <li>
+            03-24
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/2021/03/24/1af5.html" style="color: #0085a1">
+              <span>
+                高并发IO的底层原理
+              </span>
+            </a>
+            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+          </li>
+          
+          <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+          <li>
+            02-26
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/2021/02/26/c608.html" style="color: #0085a1">
+              <span>
+                数据结构与算法---搜索二叉树与跳表
+              </span>
+            </a>
+            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+          </li>
+          
+          <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+          <li>
+            01-22
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/2021/01/22/73b3.html" style="color: #0085a1">
+              <span>
+                数据结构与算法---堆
+              </span>
+            </a>
+            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+          </li>
+          
+        </ul>
+      </div>
+      
+      <div class="one-tag-list">
+        <span class="fa fa-calendar-times-o listing-seperator" id="2020">
+          <span class="tag-text">2020</span>
+        </span>
+        <ul>
+          
+          <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+          <li>
+            12-25
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/2020/12/25/c15d.html" style="color: #0085a1">
+              <span>
+                数据结构与算法---贪心算法
+              </span>
+            </a>
+            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+          </li>
+          
+          <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+          <li>
+            12-21
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/2020/12/21/211a.html" style="color: #0085a1">
+              <span>
+                数据结构与算法---排序
+              </span>
+            </a>
+            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+          </li>
+          
+          <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+          <li>
+            12-19
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/2020/12/19/7b21.html" style="color: #0085a1">
+              <span>
+                数据结构与算法---二叉树基本算法及递归
+              </span>
+            </a>
+            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+          </li>
+          
+          <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+          <li>
+            12-18
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/2020/12/18/1af5.html" style="color: #0085a1">
+              <span>
+                Git同时push到Github和Gitee
+              </span>
+            </a>
+            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+          </li>
+          
+          <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+          <li>
+            12-10
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/2020/12/10/211a.html" style="color: #0085a1">
+              <span>
+                数据结构与算法---链表
+              </span>
+            </a>
+            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+          </li>
+          
+          <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+          <li>
+            12-09
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/2020/12/09/8c68.html" style="color: #0085a1">
+              <span>
+                HTTP状态码
+              </span>
+            </a>
+            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+          </li>
+          
+          <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+          <li>
+            11-26
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/2020/11/26/2312.html" style="color: #0085a1">
+              <span>
+                数据结构和算法大纲
+              </span>
+            </a>
+            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+          </li>
+          
+          <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+          <li>
+            11-26
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/2020/11/26/6186.html" style="color: #0085a1">
+              <span>
+                git 回滚指定版本并推送到远程分支
+              </span>
+            </a>
+            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+          </li>
+          
+          <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+          <li>
+            10-23
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/2020/10/23/130.html" style="color: #0085a1">
+              <span>
+                VirtualBox新建Centos虚机环境配置
+              </span>
+            </a>
+            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+          </li>
+          
+          <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+          <li>
+            10-15
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/2020/10/15/2de3.html" style="color: #0085a1">
+              <span>
+                JAVA知识点汇总
+              </span>
+            </a>
+            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+          </li>
+          
+        </ul>
+      </div>
+      
+
+
     </div>
   </div>
-</article>
+</div>
 
 
+      <!-- 如果开启评论功能 -->
+      
+    </div>
 
-<!-- anchorjs start -->
-<!-- async load function -->
-<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
-<script type="text/javascript">
-  // async load function
-  function async (u, c) {
-    var d = document,
-      t = 'script',
-      o = d.createElement(t),
-      s = d.getElementsByTagName(t)[0];
-    o.src = u;
-    if (c) {
-      o.addEventListener('load', function(e) {
-        c(null, e);
-      }, false);
-    }
-    s.parentNode.insertBefore(o, s);
-  };
-</script>
-<script type="text/javascript">
-  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
-  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
-    anchors.options = {
-      visible: 'hover',
-      placement: 'left',
-      // icon: 'ℬ'
-      icon: '❡'
-    };
-    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
-  });
-</script>
-<style>
-  /* place left on bigger screen */
-  @media all and (min-width: 800px) {
-    .anchorjs-link {
-      position: absolute;
-      left: -0.75em;
-      font-size: 1.1em;
-      margin-top: -0.1em;
-    }
-  }
-</style>
+    <!-- Sidebar Container -->
+<div class="
+    col-lg-3 col-lg-offset-0
+    col-md-3 col-md-offset-0
+    col-sm-12
+    col-xs-12
+    sidebar-container
+">
+    
+        
+<!-- <h5>VISITORS</h5> -->
+<!-- <h5><a href="/">VISITORS</a></h5> -->
+<h5>VISITORS</h5>
+<div class="widget">
+  <span>
+    Viewed <b><i><span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin"></i></span></i></b> Times
+  </span>
+  <br />
+  <span>
+    <b><i><span id="busuanzi_value_site_uv"><i class="fa fa-spinner fa-spin"></i></span></i></b> Visitors In Total
+  </span>
+</div>
 
-<!-- anchorjs end -->
 
+        <hr>
+    
+        <!-- Featured Tags -->
+
+<section>
+  <!-- no hr -->
+  <h5><a href="/tags/">FEATURED TAGS</a></h5>
+  <div class="tags">
+    
+    
+    <a href="/tags/#algorithm" title="algorithm" rel="13">algorithm</a>
+    
+    
+    
+    <a href="/tags/#data structure" title="data structure" rel="8">data structure</a>
+    
+    
+    
+    <a href="/tags/#BST" title="BST" rel="1">BST</a>
+    
+    
+    
+    <a href="/tags/#二叉树" title="二叉树" rel="1">二叉树</a>
+    
+    
+    
+    <a href="/tags/#树形dp" title="树形dp" rel="1">树形dp</a>
+    
+    
+    
+    <a href="/tags/#动态规划" title="动态规划" rel="1">动态规划</a>
+    
+    
+    
+    <a href="/tags/#http" title="http" rel="2">http</a>
+    
+    
+    
+    <a href="/tags/#git" title="git" rel="3">git</a>
+    
+    
+    
+    <a href="/tags/#map" title="map" rel="1">map</a>
+    
+    
+    
+    <a href="/tags/#tools" title="tools" rel="1">tools</a>
+    
+    
+    
+    <a href="/tags/#IO" title="IO" rel="3">IO</a>
+    
+    
+    
+    <a href="/tags/#netty" title="netty" rel="1">netty</a>
+    
+    
+    
+    <a href="/tags/#java" title="java" rel="1">java</a>
+    
+    
+    
+    <a href="/tags/#spring" title="spring" rel="1">spring</a>
+    
+    
+    
+    <a href="/tags/#mysql" title="mysql" rel="1">mysql</a>
+    
+    
+    
+    <a href="/tags/#nginx" title="nginx" rel="1">nginx</a>
+    
+    
+    
+    <a href="/tags/#sqlserver" title="sqlserver" rel="1">sqlserver</a>
+    
+    
+    
+    <a href="/tags/#redis" title="redis" rel="1">redis</a>
+    
+    
+    
+    <a href="/tags/#source code" title="source code" rel="1">source code</a>
+    
+    
+  </div>
+</section>
+
+
+        <hr>
+    
+        <!-- Short About -->
+<section class="visible-md visible-lg">
+  <h5><a href="/about/">ABOUT ME</a></h5>
+  <div class="short-about">
+
+    
+    <img id="avatar_pic" src="/img/avatar/about-me.jpg" alt="avatar_pic" style="box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);
+    -moz-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);
+    -webkit-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);" />
+    
+
+    
+    <p>Success comes from the pursuit of perfection.</p>
+    
+
+    <!-- SNS Link -->
+    <ul class="list-inline">
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+    </ul>
+  </div>
+</section>
+
+        <hr>
+    
+        
+<!-- <h5>RECENT POSTS</h5> -->
+<!-- <h5><a href="/">RECENT POSTS</a></h5> -->
+<h5>RECENT POSTS</h5>
+<div class="widget">
+  <ul>
+    
+    <a href="../../2022/04/30/8e5a.html">
+      <li>SQLSERVER</li>
+    </a>
+    
+    <a href="../../2022/04/10/f82e.html">
+      <li>数据结构与算法---线段树</li>
+    </a>
+    
+    <a href="../../2021/11/10/6fff.html">
+      <li>读源码的实用技巧</li>
+    </a>
+    
+    <a href="../../2021/10/28/9f48.html">
+      <li>nginx127.0.0.1与localhost跨域问题</li>
+    </a>
+    
+    <a href="../../2021/08/25/5dae.html">
+      <li>BIO NIO与Netty</li>
+    </a>
+    
+  </ul>
+</div>
+
+
+        <hr>
+    
+        <!-- Friends Blog -->
+
+<!-- <h5><a href="/">FRIENDS</a></h5> -->
+<h5>FRIENDS</h5>
+<ul class="list-inline">
+  
+  <li><a href="https://sagerenn.github.io/" target="_blank">Sage Renn</a></li>
+  
+</ul>
+
+
+        <hr>
+    
+        
+    <!-- <h5>ARCHIVES</h5> -->
+    <h5><a href="/archives/">ARCHIVES</a></h5>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2022/04/">April 2022</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2021/11/">November 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2021/10/">October 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2021/08/">August 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2021/07/">July 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2021/06/">June 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2021/05/">May 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2021/04/">April 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2021/03/">March 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2021/02/">February 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2021/01/">January 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2020/12/">December 2020</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2020/11/">November 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2020/10/">October 2020</a><span class="archive-list-count">2</span></li></ul>
+    </div>
+
+
+        <hr>
+    
+        <!-- Categories -->
+
+<!-- <h5>categories</h5> -->
+<h5><a href="/categories/">CATEGORIES</a></h5>
+<div class="widget">
+  <ul>
+    
+    <a href="/categories/#work">
+      <li>work</li>
+    </a>
+    
+    <a href="/categories/#life">
+      <li>life</li>
+    </a>
+    
+  </ul>
+</div>
+
+
+        <hr>
+    
+</div>
+
+    
+  </div>
+</div>
 
 
 	<!-- Footer (contains ThemeColor、viewer) -->
@@ -651,7 +1118,7 @@
         <p class="copyright text-muted">
           Copyright &copy;
           Vicky Luo
-          2021
+          2022
           
         </p>
       </div>

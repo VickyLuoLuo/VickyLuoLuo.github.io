@@ -244,6 +244,13 @@
 
           
           <li>
+            <a href="/categories/">Categories</a>
+          </li>
+          
+          
+
+          
+          <li>
             <a href="/ebooks/">EBooks</a>
           </li>
           
@@ -252,13 +259,6 @@
           
           <li>
             <a href="/tags/">Tags</a>
-          </li>
-          
-          
-
-          
-          <li>
-            <a href="/categories/">Categories</a>
           </li>
           
           
@@ -454,7 +454,6 @@
 <li><p><strong>flip()翻转</strong></p>
 <p> ​        向缓冲区写入数据之后，不能直接从缓冲区中读取数据，需要使用flip()将写入模式翻转成读取模式。flip()方法源码如下：</p>
  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">final</span> Buffer <span class="title">flip</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    limit = position;</span><br><span class="line">    position = <span class="number">0</span>;</span><br><span class="line">    mark = -<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p> 容量为10的intBuffer，在写入1个数据时，position=1，limit=10，capacity=10；在写完翻转后，position=0，limit=1，capacity=10；</p>
 <blockquote>
 <p>读取完成后，如何再一次将缓冲区切换成写入模式呢？可以调用Buffer.clear()清空或者Buffer.compact()压缩方法，它们可以将缓冲区转换为写模式。</p>
@@ -477,7 +476,6 @@
 <li><p><strong>rewind()倒带</strong></p>
 <p> ​        已读完的数据，如果需要再读一遍，可以调用rewind()方法。rewind()也叫倒带。源码如下：</p>
  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">final</span> Buffer <span class="title">rewind</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    position = <span class="number">0</span>; <span class="comment">// 重置</span></span><br><span class="line">    mark = -<span class="number">1</span>; <span class="comment">// 清理标记</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <blockquote>
 <p>rewind()和flip()区别在于：rewind()不会影响limit；而flip()会重设limit属性值。</p>
 </blockquote>
@@ -488,7 +486,6 @@
 </ol>
 <p><strong>Buffer类的基本使用步骤</strong>：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">IntBuffer intBuffer = intBuffer.allocate(<span class="number">10</span>);</span><br><span class="line">intBuffer.put(<span class="number">1</span>);</span><br><span class="line">intBuffer.flip();</span><br><span class="line">intBuffer.get();</span><br><span class="line">intBuffer.clear();||intBuffer.compact();</span><br></pre></td></tr></table></figure>
-
 <h3 id="二、Channel类及其属性"><a href="#二、Channel类及其属性" class="headerlink" title="二、Channel类及其属性"></a>二、Channel类及其属性</h3><blockquote>
 <p>NIO中一个连接用一个Channel（通道）来表示，一个通道可以表示一个底层的文件描述符，例如硬件设备、文件、网络连接等。对于不同的网络传输协议类型，在Java中都有不同的NIO Channel（通道）实现。</p>
 </blockquote>
@@ -516,7 +513,7 @@
   <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建RandomAccessFile随机访问对象</span></span><br><span class="line">RandomAccessFile rafile = <span class="keyword">new</span> RandomAccessFile(srcFile, <span class="string">"rw"</span>);</span><br><span class="line"><span class="comment">// 获取文件流的通道</span></span><br><span class="line">FileChannel raFileChannel = rafile.getChannel();</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<ol start="2">
+<ol>
 <li><p><strong>读取FileChannel通道</strong></p>
 <p> ​        调用<code>public abstract int read(ByteBuffer src) throws IOException</code>方法读取通道数据，写入ByteBuffer缓冲区，并返回数据。<strong>虽然对于通道来说是读取数据，但是对于ByteBuffer缓冲区来说是写入数据，这时，ByteBuffer缓冲区处于写入模式。</strong></p>
  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ByteBuffer byteBuffer = ByteBuffer.allocate(<span class="number">1024</span>);</span><br><span class="line"><span class="keyword">int</span> length = -<span class="number">1</span>;</span><br><span class="line"><span class="keyword">while</span> (-<span class="number">1</span> != (length = raFileChannel.read(byteBuffer))) &#123;</span><br><span class="line"><span class="comment">// TODO</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -531,7 +528,6 @@
 <li><p><strong>强制刷新到磁盘</strong></p>
 <p> ​        在将缓冲区写入通道时，出于性能原因，操作系统不可能每次都实时将数据写入磁盘。如果需要保证写入通道的缓冲数据，最终都真正地写入磁盘，可以调用FileChannel的force()方法。</p>
  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">inChannel.force(<span class="keyword">true</span>);</span><br></pre></td></tr></table></figure>
-
 </li>
 </ol>
 <h4 id="SocketChannel和ServerSocketChannel的使用"><a href="#SocketChannel和ServerSocketChannel的使用" class="headerlink" title="SocketChannel和ServerSocketChannel的使用"></a>SocketChannel和ServerSocketChannel的使用</h4><blockquote>
@@ -541,10 +537,8 @@
 <li><p><strong>获取SocketChannel传输通道</strong></p>
 <p> ​        在<strong>客户端</strong>，先通过SocketChannel静态方法open()获得一个套接字传输通道；然后，将socket套接字设置为非阻塞模式；最后，通过connect()实例方法，对服务器的IP和端口发起连接。</p>
  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 获取通道</span></span><br><span class="line">SocketChannel socketChannel = SocketChannel.open();</span><br><span class="line"><span class="comment">// 设置为非阻塞</span></span><br><span class="line">socketChannel.configureBlocking(<span class="keyword">false</span>);</span><br><span class="line"><span class="comment">// 对服务器的IP和端口发起连接</span></span><br><span class="line">socketChannel.connect(<span class="keyword">new</span> InetSocketAddress(InetAddress.getLocalHost(),<span class="number">5252</span>));</span><br></pre></td></tr></table></figure>
-
 <p> ​        非阻塞情况下，与服务器的连接可能还没有真正建立，socketChannel.connect方法就返回了，因此需要不断地自旋，检查当前是否连接到了主机：</p>
  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 不断自旋，等待连接完成</span></span><br><span class="line"><span class="keyword">while</span> (!socketChannel.finishConnect()) &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p> ​        在<strong>服务器端</strong>，当新连接事件到来时，ServerSocketChannel能成功地查询，通过accept()方法，来获取新连接的套接字通道：</p>
  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 新连接事件到来,通过事件（后面会讲到key）获取服务器监听通道</span></span><br><span class="line">ServerSocketChannel serverSocketChannel = （ServerSocketChannel）key.channel();</span><br><span class="line"><span class="comment">// 获取新连接的套接字通道</span></span><br><span class="line">SocketChannel socketChannel = serverSocketChannel.accept();</span><br><span class="line"><span class="comment">// 切换为非阻塞模式</span></span><br><span class="line">socketChannel.configureBlocking(<span class="keyword">false</span>);</span><br></pre></td></tr></table></figure>
 </li>
@@ -557,7 +551,6 @@
 <li><p><strong>关闭SocketChannel传输通道</strong></p>
 <p> ​        在关闭SocketChannel传输通道前，如果传输通道用来写入数据，则建议调用一次shutdownOutput()终止输出方法，向对方发送一个输出的结束标志（-1）。然后调用socketChannel.close()方法，关闭套接字连接。</p>
  <figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 终止输出方法，向对方发送一个输出的结束标志</span></span><br><span class="line"><span class="selector-tag">socketChannel</span><span class="selector-class">.shutdownOutput</span>();</span><br><span class="line"><span class="comment">// 关闭套接字连接</span></span><br><span class="line"><span class="selector-tag">socketChannel</span><span class="selector-class">.close</span>();</span><br></pre></td></tr></table></figure>
-
 </li>
 </ol>
 <h4 id="DatagramChannel的使用"><a href="#DatagramChannel的使用" class="headerlink" title="DatagramChannel的使用"></a>DatagramChannel的使用</h4><blockquote>
@@ -571,7 +564,6 @@
 <li><p><strong>读取DatagramChannel传输通道</strong></p>
 <p> ​        不是调用read方法，而是调用receive：</p>
  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ByteBuffer byteBuffer = ByteBuffer.allocate(<span class="number">1024</span>);</span><br><span class="line">SocketAddress clientAddr = datagramChannel.receive(byteBuffer);</span><br></pre></td></tr></table></figure>
-
 <p> ​        通道读取receive（ByteBuffer buf）方法的返回值，是SocketAddress类型，表示返回发送端的连接地址（包括IP和端口）。</p>
 </li>
 <li><p><strong>写入DatagramChannel传输通道</strong></p>
@@ -596,14 +588,12 @@
 </ol>
 <p>事件类型的定义在SelectionKey类中。如果选择器要监控通道的多种事件，可以用“按位或”运算符来实现。例如，同时监控可读和可写IO事件：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> key = SelectionKey.OP_READ | SelectionKey.OP_WRITE;</span><br></pre></td></tr></table></figure>
-
 <h4 id="SelectableChannel-可选择通道"><a href="#SelectableChannel-可选择通道" class="headerlink" title="SelectableChannel(可选择通道)"></a>SelectableChannel(可选择通道)</h4><p>​        一条通道若能被选择，必须继承SelectableChannel类。所有网络链接Socket套接字通道，都继承了SelectableChannel类，都是可选择的。而FileChannel文件通道，并没有继承SelectableChannel，因此不是可选择通道。</p>
 <h4 id="SelectionKey-选择键"><a href="#SelectionKey-选择键" class="headerlink" title="SelectionKey(选择键)"></a>SelectionKey(选择键)</h4><p>​        一旦在通道中发生了某些IO事件（就绪状态达成），并且在选择器中注册过，就会被选择器选中，并放入SelectionKey的集合中。SelectionKey可以获得通道的IO事件类型，比方说SelectionKey.OP_READ，还可以获得发生IO事件所在的通道及选择器实例。</p>
 <h4 id="选择器的使用"><a href="#选择器的使用" class="headerlink" title="选择器的使用"></a>选择器的使用</h4><ol>
 <li><p><strong>获取选择器实例</strong></p>
 <p> ​        通过调用静态工厂方法open()来获取：</p>
  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Selector selector = Selector.open();</span><br></pre></td></tr></table></figure>
-
 <p> <em>open()的内部，是向选择器SPI（SelectorProvider）发出请求，通过默认的SPI对象，获取一个新的选择器实例。SPI全称为（Service Provider Interface，服务提供者接口），是JDK的一种可以扩展的服务提供和发现机制。Java通过SPI的方式，提供选择器的默认实现版本。也就是说，其他的服务提供商可以通过SPI的方式，提供定制化版本的选择器的动态替换或者扩展。</em></p>
 </li>
 <li><p><strong>将通道注册到选择器中</strong></p>
@@ -612,14 +602,11 @@
 </li>
 <li><p><strong>选出感兴趣的IO就绪事件（选择键集合）</strong></p>
  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 轮询感兴趣的IO就绪事件（选择键集合）</span></span><br><span class="line"><span class="keyword">while</span> (selector.select() &gt; <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="comment">// 获取选择键集合</span></span><br><span class="line">    Iterator&lt;SelectionKey&gt; selectedKeys = selector.selectedKeys().iterator();</span><br><span class="line">    <span class="keyword">while</span> (selectedKeys.hasNext()) &#123;</span><br><span class="line">        <span class="comment">// 获取单个的选择键并处理</span></span><br><span class="line">        SelectionKey selectedKey = selectedKeys.next();</span><br><span class="line">        <span class="keyword">if</span> (selectedKey.isAcceptable()) &#123;</span><br><span class="line">     		<span class="comment">// 通道有新连接</span></span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (selectedKey.isConnectalbe()) &#123;</span><br><span class="line">            <span class="comment">// 通道连接成功</span></span><br><span class="line">        &#125;  <span class="keyword">else</span> <span class="keyword">if</span> (selectedKey.isReadalbe()) &#123;</span><br><span class="line">            <span class="comment">// 通道可读</span></span><br><span class="line">        &#125;  <span class="keyword">else</span> <span class="keyword">if</span> (selectedKey.isWritalbe()) &#123;</span><br><span class="line">            <span class="comment">// 通道可写</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 处理完后移除选择键</span></span><br><span class="line">        selectedKeys.remove();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p> SelectionKey集合不能添加元素，如果试图向SelectionKey选择键集合中添加元素，则将抛出java.lang.UnsupportedOperationException异常。</p>
 <p> select()方法有三个重载的实现版本，具体如下：</p>
 <ol>
-<li><p>select()：阻塞调用，一直到至少有一个通道发生了注册的IO事件。</p>
-</li>
-<li><p>select(long timeout)：和select()一样，但最长阻塞时间为timeout指定的毫秒数。</p>
-</li>
+<li>select()：阻塞调用，一直到至少有一个通道发生了注册的IO事件。</li>
+<li>select(long timeout)：和select()一样，但最长阻塞时间为timeout指定的毫秒数。</li>
 <li><p>selectNow()：非阻塞，不管有没有IO事件，都会立刻返回。</p>
 <p>select()方法返回的整数值，表示从上一次select到这一次select之间，有多少<strong>通道</strong>发生了注册的IO事件。强调一下，select()方法返回的数量，指的是通道数，而不是IO事件数。</p>
 </li>
@@ -629,23 +616,16 @@
 <h4 id="实践案例"><a href="#实践案例" class="headerlink" title="实践案例"></a>实践案例</h4><p>使用NIO实现Discard服务器，Discard服务器的功能很简单，读取客户端通道的输入数据，读取完成后直接关闭客户端通道；并且读取到的数据直接抛弃掉。</p>
 <p><strong>服务器端：</strong></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 使用NIO实现Discard服务器端功能：</span></span><br><span class="line"><span class="comment"> *      仅读取客户端通道的输入数据，读取完成后直接关闭客户端通道，并且读取到的数据直接抛弃掉。</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">NioDiscardServer</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">startServer</span><span class="params">()</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 获取选择器</span></span><br><span class="line">        Selector selector = Selector.open();</span><br><span class="line">        <span class="comment">// 获取通道</span></span><br><span class="line">        ServerSocketChannel serverSocketChannel = ServerSocketChannel.open();</span><br><span class="line">        <span class="comment">// 设置为非阻塞</span></span><br><span class="line">        serverSocketChannel.configureBlocking(<span class="keyword">false</span>);</span><br><span class="line">        <span class="comment">// 绑定连接</span></span><br><span class="line">        serverSocketChannel.bind(<span class="keyword">new</span> InetSocketAddress(<span class="number">5252</span>));</span><br><span class="line">        System.out.println(<span class="string">"服务器启动成功"</span>);</span><br><span class="line">        <span class="comment">// 将通道注册的“接收新连接”IO事件注册到选择器上</span></span><br><span class="line">        serverSocketChannel.register(selector, SelectionKey.OP_ACCEPT);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 轮询感兴趣的IO就绪事件（选择键集合）</span></span><br><span class="line">        <span class="keyword">while</span> (selector.select() &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="comment">// 获取选择键集合</span></span><br><span class="line">            Iterator&lt;SelectionKey&gt; selectedKeys = selector.selectedKeys().iterator();</span><br><span class="line">            <span class="keyword">while</span> (selectedKeys.hasNext()) &#123;</span><br><span class="line">                <span class="comment">// 获取单个的选择键并处理</span></span><br><span class="line">                SelectionKey selectedKey = selectedKeys.next();</span><br><span class="line">                <span class="keyword">if</span> (selectedKey.isAcceptable()) &#123;</span><br><span class="line">                    <span class="comment">// 若选择键的IO事件是“连接就绪”，就获取客户端连接</span></span><br><span class="line">                    SocketChannel socketChannel = serverSocketChannel.accept();</span><br><span class="line">                    <span class="comment">// 切换为非阻塞模式</span></span><br><span class="line">                    socketChannel.configureBlocking(<span class="keyword">false</span>);</span><br><span class="line">                    <span class="comment">// 将新连接的通道可读事件注册到选择器上</span></span><br><span class="line">                    socketChannel.register(selector, SelectionKey.OP_READ);</span><br><span class="line">                &#125; <span class="keyword">else</span> <span class="keyword">if</span> (selectedKey.isReadable()) &#123;</span><br><span class="line">                    <span class="comment">// 若选择键的IO事件是“可读”，就读取数据</span></span><br><span class="line">                    SocketChannel socketChannel = (SocketChannel) selectedKey.channel();</span><br><span class="line">                    <span class="comment">// 读取数据，然后丢弃</span></span><br><span class="line">                    ByteBuffer byteBuffer = ByteBuffer.allocate(<span class="number">1024</span>);</span><br><span class="line">                    <span class="keyword">int</span> length = <span class="number">0</span>;</span><br><span class="line">                    <span class="comment">// 调用通道的read方法，从通道读取数据写入缓冲区，并返回读取到的数据</span></span><br><span class="line">                    <span class="keyword">while</span> ((length = socketChannel.read(byteBuffer)) &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                        byteBuffer.flip();</span><br><span class="line">                        System.out.println(<span class="keyword">new</span> String(byteBuffer.array(), <span class="number">0</span>, length));</span><br><span class="line">                        byteBuffer.clear();</span><br><span class="line">                    &#125;</span><br><span class="line">                    socketChannel.close();</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="comment">// 移除选择键</span></span><br><span class="line">                selectedKeys.remove();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 关闭连接</span></span><br><span class="line">        serverSocketChannel.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p><strong>客户端：</strong></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 使用NIO实现Discard客户端功能：</span></span><br><span class="line"><span class="comment"> *      客户端首先建立到服务器的连接，发送一些简单的数据，然后直接关闭连接。</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">NioDiscardClient</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">startClient</span><span class="params">()</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        InetSocketAddress address = <span class="keyword">new</span> InetSocketAddress(InetAddress.getLocalHost(),<span class="number">5252</span>);</span><br><span class="line">        <span class="comment">// 获取通道</span></span><br><span class="line">        SocketChannel socketChannel = SocketChannel.open(address);</span><br><span class="line">        <span class="comment">// 设置为非阻塞</span></span><br><span class="line">        socketChannel.configureBlocking(<span class="keyword">false</span>);</span><br><span class="line">        <span class="comment">// 不断自旋，等待连接完成</span></span><br><span class="line">        <span class="keyword">while</span> (!socketChannel.finishConnect()) &#123;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="string">"客户端连接成功"</span>);</span><br><span class="line">        <span class="comment">// 分配指定大小的缓冲区</span></span><br><span class="line">        ByteBuffer byteBuffer = ByteBuffer.allocate(<span class="number">1024</span>);</span><br><span class="line">        byteBuffer.put(<span class="string">"hello nio"</span>.getBytes());</span><br><span class="line">        byteBuffer.flip();</span><br><span class="line">        <span class="comment">// 发送到服务器</span></span><br><span class="line">        socketChannel.write(byteBuffer);</span><br><span class="line">        <span class="comment">// 终止输出方法，向对方发送一个输出的结束标志</span></span><br><span class="line">        socketChannel.shutdownOutput();</span><br><span class="line">        <span class="comment">// 关闭套接字连接</span></span><br><span class="line">        socketChannel.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p><strong>测试：</strong></p>
 <p>​        先启动服务器，等到控制台出现“服务器启动成功”，再启动客户端，客户端连接成功后，发现服务器端出现“hello nio”则成功：</p>
 <p>服务器端：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">服务器启动成功</span><br></pre></td></tr></table></figure>
-
 <p>客户端：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">客户端连接成功</span><br></pre></td></tr></table></figure>
-
 <p>服务器端：</p>
 <figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">服务器启动成功</span></span><br><span class="line"><span class="attr">hello</span> <span class="string">nio</span></span><br></pre></td></tr></table></figure>
-
-
-
 
 
         <hr>
@@ -1288,6 +1268,21 @@ https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0
 	<!-- <img src="https://vickyluoluo.github.io/img/icon_wechat.png" width="0" height="0" /> -->
 	<!-- Migrate from head to bottom, no longer block render and still work -->
 
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 
 </html>

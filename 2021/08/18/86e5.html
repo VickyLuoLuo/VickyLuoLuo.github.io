@@ -244,6 +244,13 @@
 
           
           <li>
+            <a href="/categories/">Categories</a>
+          </li>
+          
+          
+
+          
+          <li>
             <a href="/ebooks/">EBooks</a>
           </li>
           
@@ -252,13 +259,6 @@
           
           <li>
             <a href="/tags/">Tags</a>
-          </li>
-          
-          
-
-          
-          <li>
-            <a href="/categories/">Categories</a>
           </li>
           
           
@@ -421,7 +421,7 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <div id="chinaMap" style="width: 100%;height:600px;"></div>
+        <p><div id="chinaMap" style="width: 100%;height:600px;"></div></p>
 <script type="text/javascript" src="/js/echarts/echarts.min.js"></script>
 <script type="text/javascript" src="/js/echarts/china.js"></script>
 <script type="text/javascript" src="/js/src/chinamap.js"></script>
@@ -1054,6 +1054,21 @@ https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0
 	<!-- <img src="https://vickyluoluo.github.io/img/icon_wechat.png" width="0" height="0" /> -->
 	<!-- Migrate from head to bottom, no longer block render and still work -->
 
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 
 </html>

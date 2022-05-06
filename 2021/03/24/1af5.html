@@ -244,6 +244,13 @@
 
           
           <li>
+            <a href="/categories/">Categories</a>
+          </li>
+          
+          
+
+          
+          <li>
             <a href="/ebooks/">EBooks</a>
           </li>
           
@@ -252,13 +259,6 @@
           
           <li>
             <a href="/tags/">Tags</a>
-          </li>
-          
-          
-
-          
-          <li>
-            <a href="/categories/">Categories</a>
           </li>
           
           
@@ -520,11 +520,9 @@
 <p>​        对于高并发的应用，面临的并发连接数往往是十万级、百万级、千万级、甚至像腾讯QQ一样的上亿级。当单个进程打开的文件句柄数量，超过了系统配置上限值时，会发出“Socket/File:Can’t open so many files”的错误提示。</p>
 <h4 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h4><p>​        可以通过<code>ulimit -n 1000000</code>修改句柄数（最大值是1048576 ），但是ulimit命令仅对当前用户有效，如果想永久保存配置，可以编辑/etc/rc.local开机启动文件，添加如下内容：</p>
 <figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ulimit -SHn <span class="number">1000000</span></span><br></pre></td></tr></table></figure>
-
 <p>​        增加-S和-H两个命令选项。选项-S表示软性极限值，-H表示硬性极限值。硬性极限（需要root权限）是实际的限制，就是最大可以是100万，不能再多了。软性极限是系统警告（Warning）的极限值，超过这个极限值，内核会发出警告。</p>
 <p>​        终极解除Linux系统的最大文件打开数量的限制，可以编辑/etc/security/limits.conf，添加如下内容：</p>
 <figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">soft nofile <span class="number">1000000</span></span><br><span class="line">hard nofile <span class="number">1000000</span></span><br></pre></td></tr></table></figure>
-
 <p>soft nofile表示软性极限，hard nofile表示硬性极限。不可以设置unlimited。</p>
 
 
@@ -1168,6 +1166,21 @@ https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0
 	<!-- <img src="https://vickyluoluo.github.io/img/icon_wechat.png" width="0" height="0" /> -->
 	<!-- Migrate from head to bottom, no longer block render and still work -->
 
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 
 </html>

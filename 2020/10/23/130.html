@@ -244,6 +244,13 @@
 
           
           <li>
+            <a href="/categories/">Categories</a>
+          </li>
+          
+          
+
+          
+          <li>
             <a href="/ebooks/">EBooks</a>
           </li>
           
@@ -252,13 +259,6 @@
           
           <li>
             <a href="/tags/">Tags</a>
-          </li>
-          
-          
-
-          
-          <li>
-            <a href="/categories/">Categories</a>
           </li>
           
           
@@ -423,101 +423,66 @@
 
         <h3 id="一、全局代理设置"><a href="#一、全局代理设置" class="headerlink" title="一、全局代理设置"></a>一、全局代理设置</h3><p>修改 /etc/profile 文件,添加下面内容:</p>
 <figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">http_proxy</span>=http://name:pwd@ip:port</span><br><span class="line"><span class="attribute">https_proxy</span>=http://name:pwd@ip:port</span><br><span class="line"><span class="attribute">ftp_proxy</span>=http://name:pwd@ip:port</span><br><span class="line"><span class="builtin-name">export</span> http_proxy</span><br><span class="line"><span class="builtin-name">export</span> https_proxy</span><br><span class="line"><span class="builtin-name">export</span> ftp_proxy</span><br></pre></td></tr></table></figure>
-
 <p>使全局配置生效</p>
 <figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root<span class="symbol">@lcoalhost]</span><span class="meta"># source /etc/profile</span></span><br></pre></td></tr></table></figure>
-
 <p>若只针对某个用户而言,则修改 ~/.bash_profile 文件,添加相同内容;</p>
 <p>修改完成后,注销重新登录即可。</p>
 <h3 id="二、yum代理设置"><a href="#二、yum代理设置" class="headerlink" title="二、yum代理设置"></a>二、yum代理设置</h3><p>修改 /etc/yum.conf，添加下面内容:</p>
 <figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http_proxy=<span class="string">http:</span><span class="comment">//name:pwd@ip:port</span></span><br></pre></td></tr></table></figure>
-
 <p>保存退出后，就可以使用yum轻松的安装软件了。</p>
 <h3 id="三、wget代理设置"><a href="#三、wget代理设置" class="headerlink" title="三、wget代理设置"></a>三、wget代理设置</h3><p>修改/etc/wgetrc，添加下面内容:</p>
 <figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">http_proxy = <span class="string">http:</span><span class="comment">//name:pwd@ip:port</span></span><br><span class="line">ftp_proxy = <span class="string">http:</span><span class="comment">//name:pwd@ip:port</span></span><br></pre></td></tr></table></figure>
-
 <h3 id="四、网络配置"><a href="#四、网络配置" class="headerlink" title="四、网络配置"></a>四、网络配置</h3><p>VirtualBox主机网络管理器中需要创建一张Host-Only网卡，并手动配置网卡地址及DHCP服务器。虚机启动时会根据dhcp服务器配置自动分配地址。</p>
 <p>虚机设置中启用两张网卡，网卡一连接方式为桥接网卡，网卡二连接方式为仅主机（Host-Only）网络。</p>
 <p>虚机中，安装net-tools依赖包：</p>
 <figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root<span class="symbol">@lcoalhost]</span><span class="meta"># yum -y install net-tools</span></span><br></pre></td></tr></table></figure>
-
 <p>查看网卡是否启用（是否分配ip，是否能ping通主机）：</p>
 <figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">[<span class="symbol">root@</span>lcoalhost]# ifconfig</span><br><span class="line">enp0s3: flags=<span class="number">4163</span>&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu <span class="number">1500</span></span><br><span class="line">        inet <span class="number">10.112</span><span class="number">.118</span><span class="number">.81</span>  netmask <span class="number">255.255</span><span class="number">.254</span><span class="number">.0</span>  broadcast <span class="number">10.112</span><span class="number">.119</span><span class="number">.255</span> </span><br><span class="line">        inet6 fe80::f41f:d:f042:d8ae  prefixlen <span class="number">64</span>  scopeid <span class="number">0x20</span>&lt;link&gt; </span><br><span class="line">        ether <span class="number">08</span>:<span class="number">00</span>:<span class="number">27</span>:fb:<span class="number">62</span>:<span class="number">61</span>  txqueuelen <span class="number">1000</span>  (Ethernet) <span class="comment">//ether对应第一张网卡的mac</span></span><br><span class="line">        RX packets <span class="number">220530</span>  bytes <span class="number">251839085</span> (<span class="number">240.1</span> MiB)</span><br><span class="line">        RX errors <span class="number">0</span>  dropped <span class="number">0</span>  overruns <span class="number">0</span>  frame <span class="number">0</span></span><br><span class="line">        TX packets <span class="number">42719</span>  bytes <span class="number">2891040</span> (<span class="number">2.7</span> MiB)</span><br><span class="line">        TX errors <span class="number">0</span>  dropped <span class="number">0</span> overruns <span class="number">0</span>  carrier <span class="number">0</span>  collisions <span class="number">0</span></span><br><span class="line">enp0s8: flags=<span class="number">4163</span>&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu <span class="number">1500</span></span><br><span class="line">        inet <span class="number">192.168</span><span class="number">.56</span><span class="number">.103</span>  netmask <span class="number">255.255</span><span class="number">.255</span><span class="number">.0</span>  broadcast <span class="number">192.168</span><span class="number">.56</span><span class="number">.255</span> <span class="comment">// inet对应dhcp地址池中的地址</span></span><br><span class="line">        inet6 fe80::<span class="number">5f</span>f8:c6c:<span class="number">90</span>:<span class="number">9239</span>  prefixlen <span class="number">64</span>  scopeid <span class="number">0x20</span>&lt;link&gt;</span><br><span class="line">        ether <span class="number">08</span>:<span class="number">00</span>:<span class="number">27</span>:<span class="number">96</span>:<span class="number">49</span>:<span class="number">8</span>d  txqueuelen <span class="number">1000</span>  (Ethernet) <span class="comment">//ether对应第二张网卡的mac</span></span><br><span class="line">        RX packets <span class="number">62911</span>  bytes <span class="number">3926194</span> (<span class="number">3.7</span> MiB)</span><br><span class="line">        RX errors <span class="number">0</span>  dropped <span class="number">0</span>  overruns <span class="number">0</span>  frame <span class="number">0</span></span><br><span class="line">        TX packets <span class="number">117073</span>  bytes <span class="number">10861798</span> (<span class="number">10.3</span> MiB)</span><br><span class="line">        TX errors <span class="number">0</span>  dropped <span class="number">0</span> overruns <span class="number">0</span>  carrier <span class="number">0</span>  collisions <span class="number">0</span></span><br></pre></td></tr></table></figure>
-
 <h3 id="五、git代理设置"><a href="#五、git代理设置" class="headerlink" title="五、git代理设置"></a>五、git代理设置</h3><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@lcoalhost]<span class="comment"># yun -y install git</span></span><br><span class="line">[root@lcoalhost]<span class="comment"># git config --global https.proxy http://name:pwd<span class="doctag">@ip</span>:port</span></span><br><span class="line">[root@lcoalhost]<span class="comment"># git config --global http.proxy http://name:pwd<span class="doctag">@ip</span>:port</span></span><br></pre></td></tr></table></figure>
-
 <h3 id="六、docker-安装"><a href="#六、docker-安装" class="headerlink" title="六、docker 安装"></a>六、docker 安装</h3><p>1、Docker 要求 CentOS 系统的内核版本高于 3.10 ，查看本页面的前提条件来验证你的CentOS 版本是否支持 Docker 。</p>
 <p>通过 uname -r 命令查看你当前的内核版本</p>
 <figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root<span class="symbol">@lcoalhost]</span><span class="meta"># uname -r</span></span><br></pre></td></tr></table></figure>
-
 <p>2、使用 root 权限登录 Centos。确保 yum 包更新到最新。</p>
 <figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root<span class="symbol">@lcoalhost]</span><span class="meta"># sudo yum update</span></span><br></pre></td></tr></table></figure>
-
-
 <p>3、卸载旧版本(如果安装过旧版本的话)</p>
 <figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root<span class="symbol">@lcoalhost]</span><span class="meta">#sudo yum remove docker  docker-common docker-selinux docker-engine</span></span><br></pre></td></tr></table></figure>
-
 <p>4、安装需要的软件包， yum-util 提供yum-config-manager功能，另外两个是devicemapper驱动依赖的</p>
 <figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root<span class="symbol">@lcoalhost]</span><span class="meta"># sudo yum install -y yum-utils device-mapper-persistent-data lvm2</span></span><br></pre></td></tr></table></figure>
-
 <p>5、设置yum源</p>
 <figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@lcoalhost]# sudo yum-config-manager --<span class="built_in">add</span>-repo http<span class="variable">s:</span>//download.docker.<span class="keyword">com</span>/linux/centos/docker-<span class="keyword">ce</span>.repo</span><br></pre></td></tr></table></figure>
-
 <p> 重新设置阿里镜像网站（有时候也很慢）</p>
 <figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@lcoalhost]# yum-config-manager --<span class="built_in">add</span>-repo http://mirrors.aliyun.<span class="keyword">com</span>/dockerce/linux/centos/docker-<span class="keyword">ce</span>.repo</span><br></pre></td></tr></table></figure>
-
 <p>6、可以查看所有仓库中所有docker版本，并选择特定版本安装</p>
 <figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@lcoalhost]# yum <span class="keyword">list</span> docker-<span class="keyword">ce</span> --showduplicates | <span class="keyword">sort</span> -r</span><br></pre></td></tr></table></figure>
-
 <p>7、安装docker</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-attr">[root@lcoalhost]</span># <span class="selector-tag">sudo</span> <span class="selector-tag">yum</span> <span class="selector-tag">install</span> <span class="selector-tag">docker-ce</span>  #由于<span class="selector-tag">repo</span>中默认只开启<span class="selector-tag">stable</span>仓库，故这里安装的是最新稳定版17<span class="selector-class">.12</span><span class="selector-class">.0</span></span><br><span class="line"><span class="selector-attr">[root@lcoalhost]</span># <span class="selector-tag">sudo</span> <span class="selector-tag">yum</span> <span class="selector-tag">install</span> &lt;<span class="selector-tag">FQPN</span>&gt;  # 例如：<span class="selector-tag">sudo</span> <span class="selector-tag">yum</span> <span class="selector-tag">install</span> <span class="selector-tag">docker-ce-17</span><span class="selector-class">.12</span><span class="selector-class">.0</span><span class="selector-class">.ce</span></span><br></pre></td></tr></table></figure>
-
 <p>8、启动并加入开机启动</p>
 <figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root<span class="symbol">@lcoalhost]</span><span class="meta"># sudo systemctl start docker</span></span><br><span class="line">[root<span class="symbol">@lcoalhost]</span><span class="meta"># sudo systemctl enable docker</span></span><br></pre></td></tr></table></figure>
-
-
 <p>9、验证安装是否成功(有client和service两部分表示docker安装启动都成功了)</p>
 <figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root<span class="symbol">@lcoalhost]</span><span class="meta"># docker version</span></span><br></pre></td></tr></table></figure>
-
 <h3 id="七、设置docker-代理"><a href="#七、设置docker-代理" class="headerlink" title="七、设置docker 代理"></a>七、设置docker 代理</h3><figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[root@lcoalhost]<span class="comment"># mkdir -p /etc/systemd/system/docker.service.d</span></span><br><span class="line">[root@lcoalhost]<span class="comment"># cat &gt; /etc/systemd/system/docker.service.d/https-proxy.conf &lt;&lt; EOF</span></span><br><span class="line">[Service]</span><br><span class="line">Environment=<span class="string">"http://name:pwd@ip:port"</span> <span class="string">"HTTPS_PROXY=http://name:pwd@ip:port"</span> </span><br><span class="line">EOF</span><br><span class="line">[root@lcoalhost]<span class="comment"># systemctl daemon-reload</span></span><br><span class="line">[root@lcoalhost]<span class="comment"># systemctl restart docker</span></span><br><span class="line">[root@lcoalhost]<span class="comment"># systemctl show --property=Environment docker</span></span><br></pre></td></tr></table></figure>
-
 <p>docker 镜像加速，docker客户端版本大于 1.10.0 ,可修改daemon配置文件/etc/docker/daemon.json来使用加速器</p>
 <figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[root<span class="symbol">@lcoalhost]</span><span class="meta">#sudo mkdir -p /etc/docker</span></span><br><span class="line">[root<span class="symbol">@lcoalhost]</span><span class="meta">#sudo tee /etc/docker/daemon.json &lt;&lt;-<span class="string">'EOF'</span></span></span><br><span class="line">&#123;</span><br><span class="line"><span class="string">"registry-mirrors"</span>: [<span class="string">"https://4ld4cyzt.mirror.aliyuncs.com"</span>]</span><br><span class="line">&#125;</span><br><span class="line">EOF</span><br><span class="line">[root<span class="symbol">@lcoalhost]</span><span class="meta">#sudo systemctl daemon-reload</span></span><br><span class="line">[root<span class="symbol">@lcoalhost]</span><span class="meta">#sudo systemctl restart docker</span></span><br></pre></td></tr></table></figure>
-
-
-
 <h3 id="八、docker中安装Mysql"><a href="#八、docker中安装Mysql" class="headerlink" title="八、docker中安装Mysql"></a>八、docker中安装Mysql</h3><p>拉取mysql镜像</p>
 <figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">[root@lcoalhost]# docker pull mysq<span class="variable">l:5</span>.<span class="number">7</span></span><br><span class="line"><span class="number">5.7</span>: Pulling from library/mysql</span><br><span class="line"><span class="number">123275</span>d6e508: Already <span class="built_in">exists</span> </span><br><span class="line"><span class="number">27</span>cddf5c7140: Pull <span class="built_in">complete</span> </span><br><span class="line">c17d442e14c9: Pull <span class="built_in">complete</span> </span><br><span class="line"><span class="number">2</span>eb72ffed068: Pull <span class="built_in">complete</span> </span><br><span class="line">d4aa125eb616: Pull <span class="built_in">complete</span> </span><br><span class="line"><span class="number">52560</span>afb169c: Pull <span class="built_in">complete</span> </span><br><span class="line"><span class="number">68190</span>f37a1d2: Pull <span class="built_in">complete</span> </span><br><span class="line"><span class="number">3</span>fd1dc6e2990: Pull <span class="built_in">complete</span> </span><br><span class="line"><span class="number">85</span>a79b83df29: Pull <span class="built_in">complete</span> </span><br><span class="line"><span class="number">35</span>e0b437fe88: Pull <span class="built_in">complete</span> </span><br><span class="line"><span class="number">992</span>f6a10268c: Pull <span class="built_in">complete</span> </span><br><span class="line">Diges<span class="variable">t:</span> <span class="built_in">sha256</span>:<span class="number">82</span>b72085b2fcff073a6616b84c7c3bcbb36e2d13af838cec11a9ed1d0b183f5e</span><br><span class="line">Statu<span class="variable">s:</span> Downloaded newer image <span class="keyword">for</span> mysq<span class="variable">l:5</span>.<span class="number">7</span></span><br><span class="line">docker.io/library/mysq<span class="variable">l:5</span>.<span class="number">7</span></span><br></pre></td></tr></table></figure>
-
 <p>查看镜像</p>
 <figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[<span class="symbol">root@</span>lcoalhost]# docker images</span><br><span class="line">REPOSITORY  TAG    IMAGE ID     CREATED       SIZE</span><br><span class="line">mysql       <span class="number">5.7</span>    f5829c0eee9e <span class="number">2</span> hours ago   <span class="number">455</span>MB</span><br><span class="line">[<span class="symbol">root@</span>lcoalhost]#</span><br></pre></td></tr></table></figure>
-
 <p>启动mysql</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">sudo docker run -p 3306:3306 --name mysql \</span><br><span class="line">-v /mydata/mysql/log:/var/log/mysql \</span><br><span class="line">-v /mydata/mysql/data:/var/lib/mysql \</span><br><span class="line">-v /mydata/mysql/conf:/etc/mysql \</span><br><span class="line">-e MYSQL_ROOT_PASSWORD=root \</span><br><span class="line">-d mysql:5.7</span><br></pre></td></tr></table></figure>
-
 <p>修改配置</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">[root@lcoalhost]<span class="comment"># cd /mydata/mysql/conf</span></span><br><span class="line">// 配置如下：</span><br><span class="line">[root@lcoalhost conf]<span class="comment"># cat my.cnf</span></span><br><span class="line">[client]</span><br><span class="line">default-character-<span class="keyword">set</span>=utf8</span><br><span class="line">[mysql]</span><br><span class="line"><span class="keyword">default</span>-<span class="built_in">character</span>-<span class="keyword">set</span>=utf8</span><br><span class="line">[mysqld]</span><br><span class="line">init_connect=<span class="string">'SET collation_connection = utf8_unicode_ci'</span></span><br><span class="line">init_connect=<span class="string">'SET NAMES utf8'</span></span><br><span class="line"><span class="built_in">character</span>-<span class="keyword">set</span>-<span class="keyword">server</span>=utf8</span><br><span class="line"><span class="keyword">collation</span>-<span class="keyword">server</span>=utf8_unicode_ci</span><br><span class="line"><span class="keyword">skip</span>-<span class="built_in">character</span>-<span class="keyword">set</span>-<span class="keyword">client</span>-handshake</span><br><span class="line"><span class="keyword">skip</span>-<span class="keyword">name</span>-resolve</span><br><span class="line"></span><br><span class="line">[root@lcoalhost conf]<span class="comment"># docker restart mysql</span></span><br><span class="line">mysql</span><br><span class="line">[root@lcoalhost conf]<span class="comment">#</span></span><br></pre></td></tr></table></figure>
-
 <p>进入容器查看配置是否生效：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">[root@lcoalhost conf]# docker exec -it mysql /bin/bash</span><br><span class="line">root@b3a74e031bd7:/# whereis mysql</span><br><span class="line">mysql: /usr/bin/mysql /usr/lib/mysql /etc/mysql /usr/share/mysql</span><br><span class="line"></span><br><span class="line">root@b3a74e031bd7:/# ls /etc/mysql </span><br><span class="line">my.cnf</span><br><span class="line">root@b3a74e031bd7:/# cat /etc/mysql/my.cnf </span><br><span class="line">[client]</span><br><span class="line">default-character-set=utf8</span><br><span class="line">[mysql]</span><br><span class="line">default-character-set=utf8</span><br><span class="line">[mysqld]</span><br><span class="line">init_connect='SET collation_connection = utf8_unicode_ci'</span><br><span class="line">init_connect='SET NAMES utf8'</span><br><span class="line">character-set-server=utf8</span><br><span class="line">collation-server=utf8_unicode_ci</span><br><span class="line">skip-character-set-client-handshake</span><br><span class="line">skip-name-resolve</span><br><span class="line">root@b3a74e031bd7:/#</span><br></pre></td></tr></table></figure>
-
 <p>设置mysql随docker启动</p>
 <figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root<span class="symbol">@lcoalhost</span> ~]<span class="meta"># docker update mysql --restart=always</span></span><br><span class="line">mysql</span><br></pre></td></tr></table></figure>
-
 <h3 id="九、docker中安装Redis"><a href="#九、docker中安装Redis" class="headerlink" title="九、docker中安装Redis"></a>九、docker中安装Redis</h3><p>拉取redis镜像</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[root@lcoalhost ~]# docker pull redis</span><br><span class="line">Using default tag: latest</span><br><span class="line">latest: Pulling from library/redis</span><br><span class="line">123275d6e508: Already exists </span><br><span class="line">f2edbd6a658e: Pull complete </span><br><span class="line">66960bede47c: Pull complete </span><br><span class="line">79dc0b596c90: Pull complete </span><br><span class="line">de36df38e0b6: Pull complete </span><br><span class="line">602cd484ff92: Pull complete </span><br><span class="line">Digest: sha256:1d0b903e3770c2c3c79961b73a53e963f4fd4b2674c2c4911472e8a054cb5728</span><br><span class="line">Status: Downloaded newer image for redis:latest</span><br><span class="line">docker.io/library/redis:latest</span><br></pre></td></tr></table></figure>
-
 <p>启动</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[root@lcoalhost ~]# mkdir -p /mydata/redis/conf</span><br><span class="line">[root@lcoalhost ~]# touch /mydata/redis/conf/redis.conf</span><br><span class="line">[root@lcoalhost ~]# echo "appendonly yes"  &gt;&gt; /mydata/redis/conf/redis.conf // 开启数据持久化</span><br><span class="line">[root@lcoalhost ~]# docker run -p 6379:6379 --name redis -v /mydata/redis/data:/data \</span><br><span class="line"> -v /mydata/redis/conf/redis.conf:/etc/redis/redis.conf \</span><br><span class="line"> -d redis redis-server /etc/redis/redis.conf</span><br><span class="line">ce7ae709711986e3f90c9278b284fe6f51f1c1102ba05f3692f0e934ceca1565</span><br></pre></td></tr></table></figure>
-
 <p> 连接docker中的redis</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[root@lcoalhost ~]# docker exec -it redis redis-cli</span><br><span class="line">127.0.0.1:6379&gt; set key1 v1</span><br><span class="line">OK</span><br><span class="line">127.0.0.1:6379&gt; get key1</span><br><span class="line">"v1"</span><br></pre></td></tr></table></figure>
-
 <p>设置redis随docker启动</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@lcoalhost ~]# docker update redis --restart=always</span><br><span class="line">redis</span><br></pre></td></tr></table></figure>
-
-
-
 
 
         <hr>
@@ -1160,6 +1125,21 @@ https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0
 	<!-- <img src="https://vickyluoluo.github.io/img/icon_wechat.png" width="0" height="0" /> -->
 	<!-- Migrate from head to bottom, no longer block render and still work -->
 
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 
 </html>

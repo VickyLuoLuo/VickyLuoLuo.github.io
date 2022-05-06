@@ -244,6 +244,13 @@
 
           
           <li>
+            <a href="/categories/">Categories</a>
+          </li>
+          
+          
+
+          
+          <li>
             <a href="/ebooks/">EBooks</a>
           </li>
           
@@ -252,13 +259,6 @@
           
           <li>
             <a href="/tags/">Tags</a>
-          </li>
-          
-          
-
-          
-          <li>
-            <a href="/categories/">Categories</a>
           </li>
           
           
@@ -485,15 +485,10 @@
 </li>
 </ul>
 <h4 id="3-Redis连接客户端命令："><a href="#3-Redis连接客户端命令：" class="headerlink" title="3. Redis连接客户端命令："></a>3. Redis连接客户端命令：</h4><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#redis-cli</span> -h host -<span class="selector-tag">p</span> port -<span class="selector-tag">a</span> password</span><br></pre></td></tr></table></figure>
-
 <p>本地连接：</p>
 <figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">root@</span><span class="number">0912</span>b31c4171# redis-cli</span><br></pre></td></tr></table></figure>
-
-
-
 <h3 id="五-Redis的主要特点"><a href="#五-Redis的主要特点" class="headerlink" title="五. Redis的主要特点"></a>五. Redis的主要特点</h3><h4 id="1-速度异常快"><a href="#1-速度异常快" class="headerlink" title="1. 速度异常快"></a>1. 速度异常快</h4><p>​        采用多路 IO 复用模型，不需要等待磁盘的IO，在内存之间进行的数据存储和查询，速度非常快。官方数据显示每秒可执行大约 110000 次的设置(SET)操作，每秒大约可执行 81000 次的读取/获取(GET)操作。可以运行命令 <code>redis-benchmark -n 100000 -q</code> 来检测本地同时执行 10 万个请求时的性能：</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">root@0912b31c4171:/data#</span> <span class="string">redis-benchmark</span> <span class="string">-n</span> <span class="number">100000</span> <span class="string">-q</span></span><br><span class="line"><span class="attr">PING_INLINE:</span> <span class="number">31172.07</span> <span class="string">requests</span> <span class="string">per</span> <span class="string">second</span></span><br><span class="line"><span class="attr">PING_BULK:</span> <span class="number">31615.55</span> <span class="string">requests</span> <span class="string">per</span> <span class="string">second</span></span><br><span class="line"><span class="attr">SET:</span> <span class="number">30432.14</span> <span class="string">requests</span> <span class="string">per</span> <span class="string">second</span></span><br><span class="line"><span class="attr">GET:</span> <span class="number">31289.11</span> <span class="string">requests</span> <span class="string">per</span> <span class="string">second</span></span><br><span class="line"><span class="attr">INCR:</span> <span class="number">30441.40</span> <span class="string">requests</span> <span class="string">per</span> <span class="string">second</span></span><br><span class="line"><span class="attr">LPUSH:</span> <span class="number">29550.83</span> <span class="string">requests</span> <span class="string">per</span> <span class="string">second</span></span><br><span class="line"><span class="attr">RPUSH:</span> <span class="number">30184.12</span> <span class="string">requests</span> <span class="string">per</span> <span class="string">second</span></span><br></pre></td></tr></table></figure>
-
 <h4 id="2-丰富的数据结构"><a href="#2-丰富的数据结构" class="headerlink" title="2. 丰富的数据结构"></a>2. 丰富的数据结构</h4><p>​        除了string之外，还有list、hash、set、sortedset、bitmaps、hyperloglogs、geospatial indexes和stream。其中<strong>string(字符串)</strong>、<strong>list(列表)</strong>、<strong>hash(字典)</strong>、<strong>set(集合)</strong> 和 <strong>zset(有序集合)</strong>这 5 种是 Redis 最基础、最重要的部分。</p>
 <h4 id="3-单线程"><a href="#3-单线程" class="headerlink" title="3. 单线程"></a>3. 单线程</h4><p>​        避免了频繁的上下文切换。Redis 内部使用文件事件处理器 <code>file event handler</code>，这个文件事件处理器是单线程的，所以 Redis 才叫做单线程的模型。它采用 IO 多路复用机制同时监听多个 socket，根据 socket 上的事件来选择对应的事件处理器进行处理。</p>
 <p>文件事件处理器的结构包含 4 个部分：</p>
@@ -556,7 +551,6 @@
 <p>另一方面，如果接收消息的频道是 <code>wmyskxz.chat</code>，那么 <code>Consumer 3</code> 也会受到消息。  </p>
 <h5 id="快速体验"><a href="#快速体验" class="headerlink" title="快速体验"></a><em>快速体验</em></h5><p>在 <strong>Redis</strong> 中，<strong>PubSub</strong> 模块的使用非常简单，常用的命令也就下面这么几条：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 订阅频道：</span></span><br><span class="line">SUBSCRIBE channel [channel ....]   <span class="comment"># 订阅给定的一个或多个频道的信息</span></span><br><span class="line">PSUBSCRIBE pattern [pattern ....]  <span class="comment"># 订阅一个或多个符合给定模式的频道</span></span><br><span class="line"><span class="comment"># 发布频道：</span></span><br><span class="line">PUBLISH channel message  <span class="comment"># 将消息发送到指定的频道</span></span><br><span class="line"><span class="comment"># 退订频道：</span></span><br><span class="line">UNSUBSCRIBE [channel [channel ....]]   <span class="comment"># 退订指定的频道</span></span><br><span class="line">PUNSUBSCRIBE [pattern [pattern ....]]  <span class="comment">#退订所有给定模式的频道</span></span><br></pre></td></tr></table></figure>
-
 <p>我们可以在本地快速地来体验一下 <strong>PubSub</strong>：</p>
 <p><img src="https://tvax2.sinaimg.cn/large/006YzKDNly1gopdlahl8sg30qq0cenpg.gif" alt=""></p>
 <p>具体步骤如下：</p>
@@ -576,33 +570,26 @@
 <li><strong>设置和获取键值对</strong>：</li>
 </ul>
 <figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="builtin-name">SET</span> key value</span><br><span class="line">OK</span><br><span class="line">&gt; <span class="builtin-name">GET</span> key</span><br><span class="line"><span class="string">"value"</span></span><br></pre></td></tr></table></figure>
-
 <p>当 key 存在时，<code>SET</code> 命令会覆盖掉你上一次设置的值：</p>
 <figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="builtin-name">SET</span> key newValue</span><br><span class="line">OK</span><br><span class="line">&gt; <span class="builtin-name">GET</span> key</span><br><span class="line"><span class="string">"newValue"</span></span><br></pre></td></tr></table></figure>
-
 <p>另外还可以使用 <code>EXISTS</code> 和 <code>DEL</code> 关键字来查询是否存在和删除键值对：</p>
 <figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt; EXISTS <span class="type">key</span></span><br><span class="line">(<span class="type">integer</span>) <span class="number">1</span></span><br><span class="line">&gt; DEL <span class="type">key</span></span><br><span class="line">(<span class="type">integer</span>) <span class="number">1</span></span><br><span class="line">&gt; GET <span class="type">key</span></span><br><span class="line">(nil)</span><br></pre></td></tr></table></figure>
-
 <ul>
 <li><strong>批量设置键值对</strong></li>
 </ul>
 <figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="keyword">SET</span> key1 <span class="comment">value1</span></span><br><span class="line">OK</span><br><span class="line">&gt; <span class="keyword">SET</span> <span class="comment">key2 value2</span></span><br><span class="line">OK</span><br><span class="line">&gt; MGET <span class="comment">key1 key2 key3    #</span> 返回一个列表</span><br><span class="line">1) <span class="string">"value1"</span></span><br><span class="line">2) <span class="string">"value2"</span></span><br><span class="line">3) (nil)</span><br><span class="line">&gt; MSET <span class="comment">key1 value1 key2 value2</span></span><br><span class="line">&gt; MGET <span class="comment">key1 key2</span></span><br><span class="line">1) <span class="string">"value1"</span></span><br><span class="line">2) <span class="string">"value2"</span></span><br></pre></td></tr></table></figure>
-
 <ul>
 <li><strong>过期和 SET 命令扩展</strong></li>
 </ul>
 <p>可以对 key 设置过期时间，到时间会被自动删除，这个功能常用来控制缓存的失效时间。<em>(过期可以是任意数据结构)</em></p>
 <figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="builtin-name">SET</span> key value1</span><br><span class="line">&gt; <span class="builtin-name">GET</span> key</span><br><span class="line"><span class="string">"value1"</span></span><br><span class="line">&gt; EXPIRE name 5    # 5s 后过期</span><br><span class="line"><span class="built_in">..</span>.                # 等待 5s</span><br><span class="line">&gt; <span class="builtin-name">GET</span> key</span><br><span class="line">(<span class="literal">nil</span>)</span><br></pre></td></tr></table></figure>
-
 <p>等价于 <code>SET</code> + <code>EXPIRE</code> 的 <code>SETEX</code> 命令：</p>
 <figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&gt; SETEX <span class="type">key</span> <span class="number">5</span> value1</span><br><span class="line">...                # 等待 <span class="number">5</span>s 后获取</span><br><span class="line">&gt; GET <span class="type">key</span></span><br><span class="line">(nil)</span><br><span class="line"></span><br><span class="line">&gt; SETNX <span class="type">key</span> value1  # 如果 <span class="type">key</span> 不存在则 SET 成功</span><br><span class="line">(<span class="type">integer</span>) <span class="number">1</span></span><br><span class="line">&gt; SETNX <span class="type">key</span> value1  # 如果 <span class="type">key</span> 存在则 SET 失败</span><br><span class="line">(<span class="type">integer</span>) <span class="number">0</span></span><br><span class="line">&gt; GET <span class="type">key</span></span><br><span class="line"><span class="string">"value"</span>             # 没有改变</span><br></pre></td></tr></table></figure>
-
 <ul>
 <li><strong>计数</strong></li>
 </ul>
 <p>如果 value 是一个整数，还可以对它使用 <code>INCR</code> 命令进行 <strong>原子性</strong> 的自增操作，这意味着及时多个客户端对同一个 key 进行操作，也决不会导致竞争的情况：</p>
 <figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt; SET counter <span class="number">100</span></span><br><span class="line">&gt; INCR counter</span><br><span class="line">(<span class="built_in">int</span>eger) <span class="number">101</span></span><br><span class="line">&gt; INCRBY counter <span class="number">50</span></span><br><span class="line">(<span class="built_in">int</span>eger) <span class="number">151</span></span><br></pre></td></tr></table></figure>
-
 <h4 id="2-list"><a href="#2-list" class="headerlink" title="2. list"></a>2. list</h4><blockquote>
 <p>Redis 的列表相当于 Java 语言中的 <strong>LinkedList</strong>，注意它是链表而不是数组。这意味着 list 的插入和删除操作非常快，时间复杂度为 O(1)，但是索引定位很慢，时间复杂度为 O(n)。</p>
 </blockquote>
@@ -614,19 +601,16 @@
 </ul>
 <p>示范：</p>
 <figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash"> rpush mylist A</span></span><br><span class="line">(integer) 1</span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> rpush mylist B</span></span><br><span class="line">(integer) 2</span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> lpush mylist first</span></span><br><span class="line">(integer) 3</span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> lrange mylist 0 -1    <span class="comment"># -1 表示倒数第一个元素, 这里表示从第一个元素到最后一个元素，即所有</span></span></span><br><span class="line">1) "first"</span><br><span class="line">2) "A"</span><br><span class="line">3) "B"</span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>list 实现队列</li>
 </ul>
 <p>队列是先进先出的数据结构，常用于消息排队和异步逻辑处理，它会确保元素的访问顺序：</p>
 <figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash"> RPUSH books python java golang</span></span><br><span class="line">(integer) 3</span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> LPOP books</span></span><br><span class="line">"python"</span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> LPOP books</span></span><br><span class="line">"java"</span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> LPOP books</span></span><br><span class="line">"golang"</span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> LPOP books</span></span><br><span class="line">(nil)</span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>list 实现栈</li>
 </ul>
 <p>栈是先进后出的数据结构，跟队列正好相反：</p>
 <figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash"> RPUSH books python java golang</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> RPOP books</span></span><br><span class="line">"golang"</span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> RPOP books</span></span><br><span class="line">"java"</span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> RPOP books</span></span><br><span class="line">"python"</span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> RPOP books</span></span><br><span class="line">(nil)</span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>使用场景举例：简单的消息队列、分页功能（lrange ）</li>
 </ul>
@@ -637,7 +621,6 @@
 <li>基本操作：</li>
 </ul>
 <figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&gt; HSET <span class="keyword">books </span><span class="keyword">java </span><span class="string">"think in java"</span>    <span class="comment"># 命令行的字符串如果包含空格则需要使用引号包裹</span></span><br><span class="line">(integer) <span class="number">1</span></span><br><span class="line">&gt; HSET <span class="keyword">books </span>python <span class="string">"python cookbook"</span></span><br><span class="line">(integer) <span class="number">1</span></span><br><span class="line">&gt; HGETALL <span class="keyword">books </span>   <span class="comment"># key 和 value 间隔出现</span></span><br><span class="line"><span class="number">1</span>) <span class="string">"java"</span></span><br><span class="line"><span class="number">2</span>) <span class="string">"think in java"</span></span><br><span class="line"><span class="number">3</span>) <span class="string">"python"</span></span><br><span class="line"><span class="number">4</span>) <span class="string">"python cookbook"</span></span><br><span class="line">&gt; HGET <span class="keyword">books </span><span class="keyword">java</span></span><br><span class="line"><span class="keyword">"think </span>in <span class="keyword">java"</span></span><br><span class="line"><span class="keyword">&gt; </span>HSET <span class="keyword">books </span><span class="keyword">java </span><span class="string">"head first java"</span>  </span><br><span class="line">(integer) <span class="number">0</span>        <span class="comment"># 因为是更新操作，所以返回 0</span></span><br><span class="line">&gt; HMSET <span class="keyword">books </span><span class="keyword">java </span><span class="string">"effetive  java"</span> python <span class="string">"learning python"</span>    <span class="comment"># 批量操作</span></span><br><span class="line">OK</span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>使用场景举例：单点登录。存储用户信息，以 CookieId 作为 Key，设置 30 分钟为缓存过期时间，能很好的模拟出类似 Session 的效果。</li>
 </ul>
@@ -648,7 +631,6 @@
 <li>基本操作：</li>
 </ul>
 <figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&gt; SADD <span class="keyword">books </span><span class="keyword">java</span></span><br><span class="line"><span class="keyword">(integer) </span><span class="number">1</span></span><br><span class="line">&gt; SADD <span class="keyword">books </span><span class="keyword">java </span>   <span class="comment"># 重复</span></span><br><span class="line">(integer) <span class="number">0</span></span><br><span class="line">&gt; SADD <span class="keyword">books </span>python golang</span><br><span class="line">(integer) <span class="number">2</span></span><br><span class="line">&gt; SMEMBERS <span class="keyword">books </span>   <span class="comment"># 注意顺序，set 是无序的 </span></span><br><span class="line"><span class="number">1</span>) <span class="string">"java"</span></span><br><span class="line"><span class="number">2</span>) <span class="string">"python"</span></span><br><span class="line"><span class="number">3</span>) <span class="string">"golang"</span></span><br><span class="line">&gt; SISMEMBER <span class="keyword">books </span><span class="keyword">java </span>   <span class="comment"># 查询某个 value 是否存在，相当于 contains</span></span><br><span class="line">(integer) <span class="number">1</span></span><br><span class="line">&gt; <span class="keyword">SCARD </span><span class="keyword">books </span>   <span class="comment"># 获取长度</span></span><br><span class="line">(integer) <span class="number">3</span></span><br><span class="line">&gt; SPOP <span class="keyword">books </span>    <span class="comment"># 弹出一个</span></span><br><span class="line"><span class="string">"java"</span></span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>使用场景举例：全局去重、计算共同喜好等</li>
 </ul>
@@ -659,7 +641,6 @@
 <li>基本操作</li>
 </ul>
 <figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">&gt; ZADD books <span class="number">9.0</span> <span class="string">"think in java"</span></span><br><span class="line">&gt; ZADD books <span class="number">8.9</span> <span class="string">"java concurrency"</span></span><br><span class="line">&gt; ZADD books <span class="number">8.6</span> <span class="string">"java cookbook"</span></span><br><span class="line"></span><br><span class="line">&gt; ZRANGE books <span class="number">0</span> <span class="number">-1</span>     # 按 score 排序列出，参数区间为排名范围</span><br><span class="line"><span class="number">1</span>) <span class="string">"java cookbook"</span></span><br><span class="line"><span class="number">2</span>) <span class="string">"java concurrency"</span></span><br><span class="line"><span class="number">3</span>) <span class="string">"think in java"</span></span><br><span class="line"></span><br><span class="line">&gt; ZREVRANGE books <span class="number">0</span> <span class="number">-1</span>  # 按 score 逆序列出，参数区间为排名范围</span><br><span class="line"><span class="number">1</span>) <span class="string">"think in java"</span></span><br><span class="line"><span class="number">2</span>) <span class="string">"java concurrency"</span></span><br><span class="line"><span class="number">3</span>) <span class="string">"java cookbook"</span></span><br><span class="line"></span><br><span class="line">&gt; ZCARD books           # 相当于 count()</span><br><span class="line">(<span class="type">integer</span>) <span class="number">3</span></span><br><span class="line"></span><br><span class="line">&gt; ZSCORE books <span class="string">"java concurrency"</span>   # 获取指定 value 的 score</span><br><span class="line"><span class="string">"8.9000000000000004"</span>                # 内部 score 使用 double 类型进行存储，所以存在小数点精度问题</span><br><span class="line"></span><br><span class="line">&gt; ZRANK books <span class="string">"java concurrency"</span>    # 排名</span><br><span class="line">(<span class="type">integer</span>) <span class="number">1</span></span><br><span class="line"></span><br><span class="line">&gt; ZRANGEBYSCORE books <span class="number">0</span> <span class="number">8.91</span>        # 根据分值区间遍历 zset</span><br><span class="line"><span class="number">1</span>) <span class="string">"java cookbook"</span></span><br><span class="line"><span class="number">2</span>) <span class="string">"java concurrency"</span></span><br><span class="line"></span><br><span class="line">&gt; ZRANGEBYSCORE books -inf <span class="number">8.91</span> withscores  # 根据分值区间 (-∞, <span class="number">8.91</span>] 遍历 zset，同时返回分值。inf 代表 infinite。</span><br><span class="line"><span class="number">1</span>) <span class="string">"java cookbook"</span></span><br><span class="line"><span class="number">2</span>) <span class="string">"8.5999999999999996"</span></span><br><span class="line"><span class="number">3</span>) <span class="string">"java concurrency"</span></span><br><span class="line"><span class="number">4</span>) <span class="string">"8.9000000000000004"</span></span><br><span class="line"></span><br><span class="line">&gt; ZREM books <span class="string">"java concurrency"</span>             # 删除 value</span><br><span class="line">(<span class="type">integer</span>) <span class="number">1</span></span><br><span class="line">&gt; ZRANGE books <span class="number">0</span> <span class="number">-1</span></span><br><span class="line"><span class="number">1</span>) <span class="string">"java cookbook"</span></span><br><span class="line"><span class="number">2</span>) <span class="string">"think in java"</span></span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>使用场景举例：排行榜应用取 TOP N 、范围查找</li>
 </ul>
@@ -689,8 +670,7 @@
 </li>
 </ol>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> Object <span class="title">getObjectInclNullById</span><span class="params">(Integer id)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 从缓存中获取数据</span></span><br><span class="line">    Object cacheValue = cache.get(id);</span><br><span class="line">    <span class="comment">// 缓存为空</span></span><br><span class="line">    <span class="keyword">if</span> (cacheValue == <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="comment">// 从数据库中获取</span></span><br><span class="line">        Object storageValue = storage.get(key);</span><br><span class="line">        <span class="comment">// 缓存空对象</span></span><br><span class="line">        cache.set(key, storageValue);</span><br><span class="line">        <span class="comment">// 如果存储数据为空，需要设置一个过期时间(300秒)</span></span><br><span class="line">        <span class="keyword">if</span> (storageValue == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="comment">// 必须设置过期时间，否则有被攻击的风险</span></span><br><span class="line">            cache.expire(key, <span class="number">60</span> * <span class="number">5</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> storageValue;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> cacheValue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ol start="2">
+<ol>
 <li><p>布隆过滤器</p>
 <p> ​        布隆过滤器是一个非常神奇的数据结构，通过它我们可以非常方便地判断一个给定数据是否存在于海量数据中，我们需要的就是判断 key 是否合法。</p>
 <p> ​        具体做法：内部维护一系列合法有效的 Key都存放在布隆过滤器中，当用户请求过来，先判断用户发来的请求的值是否存在于布隆过滤器中。不存在的话，直接返回请求参数错误信息给客户端，存在的话才会走下面的流程。</p>
@@ -702,10 +682,8 @@
 <li><p>使用布隆过滤器中的哈希函数对元素值进行计算，得到哈希值（有几个哈希函数得到几个哈希值）。</p>
 </li>
 <li><p>根据得到的哈希值，在位数组中把对应下标的值置为 1。</p>
+<p><strong>当我们需要判断一个元素是否存在于布隆过滤器的时候，会进行如下操作：</strong></p>
 </li>
-</ol>
-<p> <strong>当我们需要判断一个元素是否存在于布隆过滤器的时候，会进行如下操作：</strong></p>
-<ol>
 <li><p>对给定元素再次进行相同的哈希计算；</p>
 </li>
 <li><p>得到值之后判断位数组中的每个元素是否都为 1，如果值都为 1，那么说明这个值在布隆过滤器中，如果存在一个值不为 1，说明该元素不在布隆过滤器中。</p>
@@ -1370,6 +1348,21 @@ https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0
 	<!-- <img src="https://vickyluoluo.github.io/img/icon_wechat.png" width="0" height="0" /> -->
 	<!-- Migrate from head to bottom, no longer block render and still work -->
 
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 
 </html>

@@ -244,6 +244,13 @@
 
           
           <li>
+            <a href="/categories/">Categories</a>
+          </li>
+          
+          
+
+          
+          <li>
             <a href="/ebooks/">EBooks</a>
           </li>
           
@@ -252,13 +259,6 @@
           
           <li>
             <a href="/tags/">Tags</a>
-          </li>
-          
-          
-
-          
-          <li>
-            <a href="/categories/">Categories</a>
           </li>
           
           
@@ -361,7 +361,7 @@
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">284</span> In Total
+              Words <span class="post-count">283</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- 不蒜子统计 start -->
@@ -428,9 +428,7 @@
 <h3 id="2-拉取Gitee项目，修改-git配置文件"><a href="#2-拉取Gitee项目，修改-git配置文件" class="headerlink" title="2. 拉取Gitee项目，修改.git配置文件"></a>2. 拉取Gitee项目，修改.git配置文件</h3><p>克隆创建好的Gitee项目：<br><code>git clone $项目地址</code></p>
 <p>git默认远程仓库为origin，可用git remote查看。<br>添加gitee地址到origin：<br><code>git remote set-url --add origin $项目gitee地址</code></p>
 <p>添加github地址到origin：<br><code>git remote set-url --add origin $项目github地址</code></p>
-<p>也可直接打开配置文件修改，文件位于.git/config</p>
-<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[remote <span class="string">"origin"</span>]</span><br><span class="line"> 	url = <span class="symbol">https:</span>/<span class="regexp">/gitee.com/</span><span class="variable">$项</span>目gitee地址</span><br><span class="line"> 	fetch = +refs/heads/*<span class="symbol">:refs/remotes/origin/*</span></span><br><span class="line"> 	url = <span class="symbol">https:</span>/<span class="regexp">/github.com/</span><span class="variable">$项</span>目github地址</span><br></pre></td></tr></table></figure>
-
+<p>也可直接打开配置文件修改，文件位于.git/config<br><figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[remote <span class="string">"origin"</span>]</span><br><span class="line"> 	url = <span class="symbol">https:</span>/<span class="regexp">/gitee.com/</span><span class="variable">$项</span>目gitee地址</span><br><span class="line"> 	fetch = +refs/heads/*<span class="symbol">:refs/remotes/origin/*</span></span><br><span class="line"> 	url = <span class="symbol">https:</span>/<span class="regexp">/github.com/</span><span class="variable">$项</span>目github地址</span><br></pre></td></tr></table></figure></p>
 <h3 id="3-修改完成，push一下看看吧"><a href="#3-修改完成，push一下看看吧" class="headerlink" title="3. 修改完成，push一下看看吧"></a>3. 修改完成，push一下看看吧</h3><p>若push不成功，可以检查一下自己是否有仓库权限，配置地址是否正确</p>
 <h4 id="push时记住用户名密码的方法"><a href="#push时记住用户名密码的方法" class="headerlink" title="push时记住用户名密码的方法"></a>push时记住用户名密码的方法</h4><p>配置文件中使能保存密码功能：<br><code>git config credential.helper store</code></p>
 <p>提交时输入用户名密码，再次提交就记住啦。</p>
@@ -446,7 +444,7 @@
           
           
           <li class="next">
-            <a href="/2020/12/10/211a.html" data-toggle="tooltip" data-placement="top" title="数据结构与算法---链表">Next Post &rarr;</a>
+            <a href="/2020/12/12/ac01.html" data-toggle="tooltip" data-placement="top" title="数据结构与算法---二叉树的相关概念">Next Post &rarr;</a>
           </li>
           
         </ul>
@@ -1076,6 +1074,21 @@ https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0
 	<!-- <img src="https://vickyluoluo.github.io/img/icon_wechat.png" width="0" height="0" /> -->
 	<!-- Migrate from head to bottom, no longer block render and still work -->
 
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 
 </html>

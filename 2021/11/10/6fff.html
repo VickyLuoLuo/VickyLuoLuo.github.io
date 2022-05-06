@@ -244,6 +244,13 @@
 
           
           <li>
+            <a href="/categories/">Categories</a>
+          </li>
+          
+          
+
+          
+          <li>
             <a href="/ebooks/">EBooks</a>
           </li>
           
@@ -252,13 +259,6 @@
           
           <li>
             <a href="/tags/">Tags</a>
-          </li>
-          
-          
-
-          
-          <li>
-            <a href="/categories/">Categories</a>
           </li>
           
           
@@ -424,13 +424,10 @@
         <h2 id="读源码的实用技巧"><a href="#读源码的实用技巧" class="headerlink" title="读源码的实用技巧"></a>读源码的实用技巧</h2><h3 id="1-查看Java-native方法源码"><a href="#1-查看Java-native方法源码" class="headerlink" title="1. 查看Java native方法源码"></a>1. 查看Java native方法源码</h3><p>   Java底层的native方法可以在OpenJDK中通过<code>类名_方法名</code>（方法名首字母要大写）的形式找到该方法对应的源码实现</p>
 <p>   eg：分配直接内存的方法<code>ByteBuffer.allocateDirect(1024)</code>源码跟下去会发现核心代码实现是Unsafe.class中的如下方法：</p>
    <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">native</span> <span class="keyword">long</span> <span class="title">allocateMemory0</span><span class="params">(<span class="keyword">long</span> var1)</span></span>;</span><br></pre></td></tr></table></figure>
-
 <p>   想要查看 Unsafe::allocateMemory0(long var1)的源码，可以在OpenJDK中搜索Unsafe_AllocateMemory0，如下：</p>
    <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">UNSAFE_ENTRY(jlong, Unsafe_AllocateMemory0(JNIEnv *env, jobject unsafe, jlong <span class="built_in">size</span>)) &#123;</span><br><span class="line">  <span class="keyword">size_t</span> sz = (<span class="keyword">size_t</span>)<span class="built_in">size</span>;</span><br><span class="line"></span><br><span class="line">  assert(is_aligned(sz, HeapWordSize), <span class="string">"sz not aligned"</span>);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">void</span>* x = os::<span class="built_in">malloc</span>(sz, mtOther);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> addr_to_java(x);</span><br><span class="line">&#125; UNSAFE_END</span><br></pre></td></tr></table></figure>
-
 <h3 id="2-查看操作系统方法介绍"><a href="#2-查看操作系统方法介绍" class="headerlink" title="2. 查看操作系统方法介绍"></a>2. 查看操作系统方法介绍</h3><p>   上述<code>Unsafe_AllocateMemory0</code>方法中核心实现方法为<code>os::malloc(sz, mtOther)</code>，<code>malloc</code>是操作系统的原生方法，此类方法可以借助Linux系统命令<code>man $方法名</code>来查看方法对应的手册条目介绍，如下（不同操作系统可能有略微差别）：</p>
    <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">☁  ~  man <span class="built_in">malloc</span></span><br></pre></td></tr></table></figure>
-
    <figure class="highlight irpf90"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">MALLOC(<span class="number">3</span>)                BSD Library Functions Manual                MALLOC(<span class="number">3</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">NAME</span></span><br><span class="line">     calloc, <span class="keyword">free</span>, malloc, realloc, reallocf, valloc, aligned_alloc -- memory allocation</span><br><span class="line"></span><br><span class="line">SYNOPSIS</span><br><span class="line">     #<span class="keyword">include</span> &lt;stdlib.h&gt;</span><br><span class="line"></span><br><span class="line">     void *</span><br><span class="line">     calloc(size_t <span class="built_in">count</span>, size_t <span class="built_in">size</span>);</span><br><span class="line"></span><br><span class="line">     void</span><br><span class="line">     <span class="keyword">free</span>(void *ptr);</span><br><span class="line"></span><br><span class="line">     void *</span><br><span class="line">     malloc(size_t <span class="built_in">size</span>);</span><br><span class="line">        </span><br><span class="line">        ...</span><br><span class="line"></span><br><span class="line">DESCRIPTION</span><br><span class="line">     The malloc(), calloc(), valloc(), realloc(), and reallocf() functions</span><br><span class="line">     <span class="built_in">allocate</span> memory.  The <span class="built_in">allocated</span> memory is aligned such that it can be</span><br><span class="line">     used for <span class="built_in">any</span> <span class="keyword">data</span> <span class="keyword">type</span>, including AltiVec- and SSE-related types.  The</span><br><span class="line">     aligned_alloc() <span class="function"><span class="keyword">function</span></span> allocates memory with the requested alignment.</span><br><span class="line">     The <span class="keyword">free</span>() <span class="function"><span class="keyword">function</span></span> frees allocations that were created via the preceding</span><br><span class="line">     allocation functions.</span><br><span class="line"></span><br><span class="line">     The malloc() <span class="function"><span class="keyword">function</span></span> allocates <span class="built_in">size</span> bytes of memory and returns a</span><br><span class="line">     <span class="keyword">pointer</span> to the <span class="built_in">allocated</span> memory.</span><br><span class="line">     ......</span><br></pre></td></tr></table></figure>
 <h3 id="3-TODO-持续更新"><a href="#3-TODO-持续更新" class="headerlink" title="3. TODO 持续更新"></a>3. TODO 持续更新</h3>
 
@@ -1074,6 +1071,21 @@ https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0
 	<!-- <img src="https://vickyluoluo.github.io/img/icon_wechat.png" width="0" height="0" /> -->
 	<!-- Migrate from head to bottom, no longer block render and still work -->
 
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 
 </html>

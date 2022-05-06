@@ -244,6 +244,13 @@
 
           
           <li>
+            <a href="/categories/">Categories</a>
+          </li>
+          
+          
+
+          
+          <li>
             <a href="/ebooks/">EBooks</a>
           </li>
           
@@ -252,13 +259,6 @@
           
           <li>
             <a href="/tags/">Tags</a>
-          </li>
-          
-          
-
-          
-          <li>
-            <a href="/categories/">Categories</a>
           </li>
           
           
@@ -427,9 +427,9 @@
 <li><h6 id="切换到临时分支推送并删除原分支"><a href="#切换到临时分支推送并删除原分支" class="headerlink" title="切换到临时分支推送并删除原分支"></a>切换到临时分支推送并删除原分支</h6> <figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b temp            <span class="comment">// 新建临时分支并切换</span></span><br><span class="line">git <span class="keyword">push</span> origin temp:temp       <span class="comment">// 将代码push到temp分支</span></span><br><span class="line">git <span class="keyword">push</span> origin --<span class="keyword">delete</span> main   <span class="comment">// 删除远端分支main，此处注意如果要删除的远端分支为默认分支则不可删除，需将默认分支切换到其他分支</span></span><br><span class="line">git branch -d main              <span class="comment">// 删除本地分支main</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><h6 id="新建并切换回原分支并删除临时分支"><a href="#新建并切换回原分支并删除临时分支" class="headerlink" title="新建并切换回原分支并删除临时分支"></a>新建并切换回原分支并删除临时分支</h6> <figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b main            <span class="comment">// 新建本地分支main并切换</span></span><br><span class="line">git <span class="keyword">push</span> origin main            <span class="comment">// 提交分支main到远端</span></span><br><span class="line">git branch -d temp				<span class="comment">// 删除本地临时分支</span></span><br><span class="line">git <span class="keyword">push</span> origin --<span class="keyword">delete</span> temp	<span class="comment">// 删除远端临时分支，此处注意如果要删除的远端分支为默认分支则不可删除，需将默认分支切换到其他分支</span></span><br></pre></td></tr></table></figure>
-
 <blockquote>
-<h6 id="github切换默认分支："><a href="#github切换默认分支：" class="headerlink" title="github切换默认分支："></a>github切换默认分支：</h6><pre><code>进入对应repo → Settings → Branches → Switch to another branch</code></pre></blockquote>
+<h6 id="github切换默认分支："><a href="#github切换默认分支：" class="headerlink" title="github切换默认分支："></a>github切换默认分支：</h6><pre><code>进入对应repo → Settings → Branches → Switch to another branch
+</code></pre></blockquote>
 </li>
 </ol>
 
@@ -1074,6 +1074,21 @@ https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0
 	<!-- <img src="https://vickyluoluo.github.io/img/icon_wechat.png" width="0" height="0" /> -->
 	<!-- Migrate from head to bottom, no longer block render and still work -->
 
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 
 </html>

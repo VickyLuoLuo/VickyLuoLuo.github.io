@@ -244,6 +244,13 @@
 
           
           <li>
+            <a href="/categories/">Categories</a>
+          </li>
+          
+          
+
+          
+          <li>
             <a href="/ebooks/">EBooks</a>
           </li>
           
@@ -252,13 +259,6 @@
           
           <li>
             <a href="/tags/">Tags</a>
-          </li>
-          
-          
-
-          
-          <li>
-            <a href="/categories/">Categories</a>
           </li>
           
           
@@ -450,10 +450,8 @@
 <li>其他</li>
 </ul>
 <h3 id="3-动态扩容"><a href="#3-动态扩容" class="headerlink" title="3. 动态扩容"></a>3. 动态扩容</h3><h3 id="4-位图"><a href="#4-位图" class="headerlink" title="4. 位图"></a>4. 位图</h3><h2 id="三、树"><a href="#三、树" class="headerlink" title="三、树"></a>三、树</h2><h3 id="1-二叉树"><a href="#1-二叉树" class="headerlink" title="1. 二叉树"></a>1. 二叉树</h3><ul>
-<li><p>平衡二叉树</p>
-</li>
-<li><p>二叉查找树</p>
-</li>
+<li>平衡二叉树</li>
+<li>二叉查找树</li>
 <li><p>平衡二叉查找树</p>
 <ul>
 <li>AVL树</li>
@@ -462,8 +460,7 @@
 </li>
 <li><p>完全二叉树</p>
 </li>
-<li><p>满二叉树</p>
-</li>
+<li>满二叉树</li>
 </ul>
 <h3 id="2-多路查找树"><a href="#2-多路查找树" class="headerlink" title="2. 多路查找树"></a>2. 多路查找树</h3><ul>
 <li>B树</li>
@@ -472,22 +469,16 @@
 <li>2-3-4树</li>
 </ul>
 <h3 id="3-堆"><a href="#3-堆" class="headerlink" title="3. 堆"></a>3. 堆</h3><ul>
-<li><p>小顶堆</p>
-</li>
-<li><p>大顶堆</p>
-</li>
+<li>小顶堆</li>
+<li>大顶堆</li>
 <li><p>优先级队列</p>
 <ul>
-<li><p>与普通队列区别：保证每次取出的元素是队列中优先级最高的，优先级别克自定义</p>
-</li>
-<li><p>常用场景：从杂乱的数据中按照一定顺序筛选数据</p>
-</li>
-<li><p>本质：二叉堆结构，binary heap. 利用数组来实现完全二叉树</p>
-</li>
+<li>与普通队列区别：保证每次取出的元素是队列中优先级最高的，优先级别克自定义</li>
+<li>常用场景：从杂乱的数据中按照一定顺序筛选数据</li>
+<li>本质：二叉堆结构，binary heap. 利用数组来实现完全二叉树</li>
 <li><p>特性</p>
 <ul>
-<li><p>1.数组中第一个元素拥有最高优先级</p>
-</li>
+<li>1.数组中第一个元素拥有最高优先级</li>
 <li><p>2.给定下标i，那么对于arr[i]：</p>
 <ul>
 <li>1）父节点：对应元素下标为（i - 1）/ 2</li>
@@ -528,8 +519,7 @@
 </li>
 <li><p>线段树Segment Tree</p>
 <ul>
-<li><p>按照二叉树的形式存储数据的结构，每个结点保存数组中某一段的总和</p>
-</li>
+<li>按照二叉树的形式存储数据的结构，每个结点保存数组中某一段的总和</li>
 <li><p>Leetcode </p>
 <ul>
 <li><a href="https://leetcode-cn.com/problems/count-of-smaller-numbers-after-self/" target="_blank" rel="noopener">315. 计算右侧小于当前元素的个数-困难</a></li>
@@ -551,11 +541,11 @@
 <li>只关注循环执行次数最多的一段代码</li>
 </ol>
 </li>
-<li><ol start="2">
+<li><ol>
 <li>加法法则：总复杂度等于量级最大的那段代码的复杂度</li>
 </ol>
 </li>
-<li><ol start="3">
+<li><ol>
 <li>乘法法则：嵌套代码的复杂度等于嵌套内外代码复杂度的乘积</li>
 </ol>
 </li>
@@ -572,7 +562,7 @@
 </li>
 </ol>
 </li>
-<li><ol start="2">
+<li><ol>
 <li><p>O(logn)、O(nlogn)</p>
 <ul>
 <li>i=1; while (i &lt;= n) { i = i * 2; }<br> 在对数阶时间复杂度的表示方法里，我们忽略对数的“底”，统一表示为 O(logn)。</li>
@@ -581,7 +571,7 @@
 </li>
 </ol>
 </li>
-<li><ol start="3">
+<li><ol>
 <li><p>O(m+n)、O(m*n)</p>
 <ul>
 <li>代码的复杂度由两个数据的规模来决定，无法事先评估 m 和 n 谁的量级大</li>
@@ -615,8 +605,7 @@
 </li>
 <li><p>插入排序</p>
 <ul>
-<li><p>原地排序、稳定排序</p>
-</li>
+<li>原地排序、稳定排序</li>
 <li><p>leetcode:</p>
 <p><a href="https://leetcode-cn.com/problems/insertion-sort-list/" target="_blank" rel="noopener">147. 对链表进行插入排序-中等</a></p>
 </li>
@@ -658,7 +647,7 @@
 <ul>
 <li>1.算法原理<br>  1）计数其实就是桶排序的一种特殊情况。<br>  2）当要排序的n个数据所处范围并不大时，比如最大值为k，则分成k个桶<br>  3）每个桶内的数据值都是相同的，就省掉了桶内排序的时间。</li>
 <li>2.使用条件<br>  1）只能用在数据范围不大的场景中，若数据范围k比要排序的数据n大很多，就不适合用计数排序；<br>  2）计数排序只能给非负整数排序，其他类型需要在不改变相对大小情况下，转换为非负整数；<br>  3）比如如果考试成绩精确到小数后一位，就需要将所有分数乘以10，转换为整数。</li>
-<li><ol start="2">
+<li><ol>
 <li>案例分析：<br>   假设只有8个考生分数在0-5分之间，成绩存于数组A[8] = [2，5，3，0，2，3，0，3]。<br>   使用大小为6的数组C[6]表示桶，下标对应分数，即0，1，2，3，4，5。<br>   C[6]存储的是考生人数，只需遍历一边考生分数，就可以得到C[6] = [2，0，2，3，0，1]。<br>   对C[6]数组顺序求和则C[6]=[2，2，4，7，7，8]，c[k]存储的是小于等于分数k的考生个数。</li>
 </ol>
 </li>
@@ -698,8 +687,7 @@
 </li>
 <li><p>2.根节点为空</p>
 </li>
-<li><p>3.除根结点外，其他节点都可能是单词的结尾，叶子结点一定是单词的结尾</p>
-</li>
+<li>3.除根结点外，其他节点都可能是单词的结尾，叶子结点一定是单词的结尾</li>
 </ul>
 </li>
 <li><p>基本操作</p>
@@ -735,7 +723,7 @@
 <li><ol>
 <li><p>存在链接。我们移动到该链接后面路径中的下一个节点，并继续搜索下一个键字符。</p>
 <ul>
-<li><ol start="2">
+<li><ol>
 <li>不存在链接。若已无键字符，且当前结点标记为 isEnd，则返回 true。否则有两种可能，均返回 false :</li>
 </ol>
 </li>
@@ -1412,6 +1400,21 @@ https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0
 	<!-- <img src="https://vickyluoluo.github.io/img/icon_wechat.png" width="0" height="0" /> -->
 	<!-- Migrate from head to bottom, no longer block render and still work -->
 
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 
 </html>

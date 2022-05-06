@@ -244,6 +244,13 @@
 
           
           <li>
+            <a href="/categories/">Categories</a>
+          </li>
+          
+          
+
+          
+          <li>
             <a href="/ebooks/">EBooks</a>
           </li>
           
@@ -252,13 +259,6 @@
           
           <li>
             <a href="/tags/">Tags</a>
-          </li>
-          
-          
-
-          
-          <li>
-            <a href="/categories/">Categories</a>
           </li>
           
           
@@ -346,6 +346,10 @@
               
               <a class="tag" href="/tags/#data structure" title="data structure">data structure</a>
               
+              <a class="tag" href="/tags/#二叉树" title="二叉树">二叉树</a>
+              
+              <a class="tag" href="/tags/#BST" title="BST">BST</a>
+              
             </div>
             <h1>数据结构与算法---搜索二叉树与跳表</h1>
             <h2 class="subheading"></h2>
@@ -423,7 +427,7 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h1 id="数据结构与算法—搜索二叉树与跳表"><a href="#数据结构与算法—搜索二叉树与跳表" class="headerlink" title="数据结构与算法—搜索二叉树与跳表"></a>数据结构与算法—搜索二叉树与跳表</h1><h2 id="搜索二叉树-Binary-Search-Tree-："><a href="#搜索二叉树-Binary-Search-Tree-：" class="headerlink" title="搜索二叉树(Binary Search Tree)："></a>搜索二叉树(Binary Search Tree)：</h2><h3 id="特性："><a href="#特性：" class="headerlink" title="特性："></a>特性：</h3><ol>
+        <h1 id="数据结构与算法—-搜索二叉树与跳表"><a href="#数据结构与算法—-搜索二叉树与跳表" class="headerlink" title="数据结构与算法—-搜索二叉树与跳表"></a>数据结构与算法—-搜索二叉树与跳表</h1><h2 id="搜索二叉树-Binary-Search-Tree-："><a href="#搜索二叉树-Binary-Search-Tree-：" class="headerlink" title="搜索二叉树(Binary Search Tree)："></a>搜索二叉树(Binary Search Tree)：</h2><h3 id="特性："><a href="#特性：" class="headerlink" title="特性："></a>特性：</h3><ol>
 <li>若任意节点的左子树不空，则左子树上所有节点的值均小于它的根节点的值；</li>
 <li>若任意节点的右子树不空，则右子树上所有节点的值均大于它的根节点的值；</li>
 <li>任意节点的左、右子树也分别为二叉查找树；</li>
@@ -615,7 +619,7 @@
         <strong class="toc-title">Contents</strong>
         
             <!-- 修改自动编号显示问题 -->
-           <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#数据结构与算法—搜索二叉树与跳表"><span class="toc-nav-text">数据结构与算法—搜索二叉树与跳表</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#搜索二叉树-Binary-Search-Tree-："><span class="toc-nav-text">搜索二叉树(Binary Search Tree)：</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#特性："><span class="toc-nav-text">特性：</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#说明："><span class="toc-nav-text">说明：</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#搜索二叉树查询key-查询某个key存在还是不存在"><span class="toc-nav-text">搜索二叉树查询key(查询某个key存在还是不存在):</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#搜索二叉树插入新的key"><span class="toc-nav-text">搜索二叉树插入新的key:</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#搜索二叉树删除key"><span class="toc-nav-text">搜索二叉树删除key:</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#基础的搜索二叉树缺点："><span class="toc-nav-text">基础的搜索二叉树缺点：</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#左旋、右旋"><span class="toc-nav-text">左旋、右旋</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#AVL树、SB树与红黑树"><span class="toc-nav-text">AVL树、SB树与红黑树</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#共性："><span class="toc-nav-text">共性：</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#不同："><span class="toc-nav-text">不同：</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#AVL树："><span class="toc-nav-text">AVL树：</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#SB树-Size-Balanced-Tree-："><span class="toc-nav-text">SB树(Size Balanced Tree)：</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#SB树在使用时候的改进："><span class="toc-nav-text">SB树在使用时候的改进：</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#红黑树："><span class="toc-nav-text">红黑树：</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#跳表"><span class="toc-nav-text">跳表</span></a></li></ol></li></ol>
+           <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#数据结构与算法—-搜索二叉树与跳表"><span class="toc-nav-text">数据结构与算法—-搜索二叉树与跳表</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#搜索二叉树-Binary-Search-Tree-："><span class="toc-nav-text">搜索二叉树(Binary Search Tree)：</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#特性："><span class="toc-nav-text">特性：</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#说明："><span class="toc-nav-text">说明：</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#搜索二叉树查询key-查询某个key存在还是不存在"><span class="toc-nav-text">搜索二叉树查询key(查询某个key存在还是不存在):</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#搜索二叉树插入新的key"><span class="toc-nav-text">搜索二叉树插入新的key:</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#搜索二叉树删除key"><span class="toc-nav-text">搜索二叉树删除key:</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#基础的搜索二叉树缺点："><span class="toc-nav-text">基础的搜索二叉树缺点：</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#左旋、右旋"><span class="toc-nav-text">左旋、右旋</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#AVL树、SB树与红黑树"><span class="toc-nav-text">AVL树、SB树与红黑树</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#共性："><span class="toc-nav-text">共性：</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#不同："><span class="toc-nav-text">不同：</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#AVL树："><span class="toc-nav-text">AVL树：</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#SB树-Size-Balanced-Tree-："><span class="toc-nav-text">SB树(Size Balanced Tree)：</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#SB树在使用时候的改进："><span class="toc-nav-text">SB树在使用时候的改进：</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#红黑树："><span class="toc-nav-text">红黑树：</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#跳表"><span class="toc-nav-text">跳表</span></a></li></ol></li></ol>
         
         </div>
       </aside>
@@ -640,6 +644,10 @@
             <a class="tag" href="/tags/#algorithm" title="algorithm">algorithm</a>
             
             <a class="tag" href="/tags/#data structure" title="data structure">data structure</a>
+            
+            <a class="tag" href="/tags/#二叉树" title="二叉树">二叉树</a>
+            
+            <a class="tag" href="/tags/#BST" title="BST">BST</a>
             
           </div>
         </section>
@@ -1156,6 +1164,21 @@ https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0
 	<!-- <img src="https://vickyluoluo.github.io/img/icon_wechat.png" width="0" height="0" /> -->
 	<!-- Migrate from head to bottom, no longer block render and still work -->
 
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 
 </html>

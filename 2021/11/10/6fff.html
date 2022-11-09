@@ -237,6 +237,13 @@
 
           
           <li>
+            <a href="/ebooks/">EBooks</a>
+          </li>
+          
+          
+
+          
+          <li>
             <a href="/archive/">Archives</a>
           </li>
           
@@ -245,13 +252,6 @@
           
           <li>
             <a href="/categories/">Categories</a>
-          </li>
-          
-          
-
-          
-          <li>
-            <a href="/ebooks/">EBooks</a>
           </li>
           
           
@@ -419,7 +419,7 @@
   <div class="container">
     <div class="row">
       <!-- Post Container -->
-      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container" style="word-wrap: break-word;">
 
         <h2 id="读源码的实用技巧"><a href="#读源码的实用技巧" class="headerlink" title="读源码的实用技巧"></a>读源码的实用技巧</h2><h3 id="1-查看Java-native方法源码"><a href="#1-查看Java-native方法源码" class="headerlink" title="1. 查看Java native方法源码"></a>1. 查看Java native方法源码</h3><p>   Java底层的native方法可以在OpenJDK中通过<code>类名_方法名</code>（方法名首字母要大写）的形式找到该方法对应的源码实现</p>
 <p>   eg：分配直接内存的方法<code>ByteBuffer.allocateDirect(1024)</code>源码跟下去会发现核心代码实现是Unsafe.class中的如下方法：</p>

@@ -237,6 +237,13 @@
 
           
           <li>
+            <a href="/ebooks/">EBooks</a>
+          </li>
+          
+          
+
+          
+          <li>
             <a href="/archive/">Archives</a>
           </li>
           
@@ -245,13 +252,6 @@
           
           <li>
             <a href="/categories/">Categories</a>
-          </li>
-          
-          
-
-          
-          <li>
-            <a href="/ebooks/">EBooks</a>
           </li>
           
           
@@ -419,7 +419,7 @@
   <div class="container">
     <div class="row">
       <!-- Post Container -->
-      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container" style="word-wrap: break-word;">
 
         <h3 id="一、全局代理设置"><a href="#一、全局代理设置" class="headerlink" title="一、全局代理设置"></a>一、全局代理设置</h3><p>修改 /etc/profile 文件,添加下面内容:</p>
 <figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">http_proxy</span>=http://name:pwd@ip:port</span><br><span class="line"><span class="attribute">https_proxy</span>=http://name:pwd@ip:port</span><br><span class="line"><span class="attribute">ftp_proxy</span>=http://name:pwd@ip:port</span><br><span class="line"><span class="builtin-name">export</span> http_proxy</span><br><span class="line"><span class="builtin-name">export</span> https_proxy</span><br><span class="line"><span class="builtin-name">export</span> ftp_proxy</span><br></pre></td></tr></table></figure>

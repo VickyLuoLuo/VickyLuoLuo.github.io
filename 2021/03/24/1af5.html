@@ -237,6 +237,13 @@
 
           
           <li>
+            <a href="/ebooks/">EBooks</a>
+          </li>
+          
+          
+
+          
+          <li>
             <a href="/archive/">Archives</a>
           </li>
           
@@ -245,13 +252,6 @@
           
           <li>
             <a href="/categories/">Categories</a>
-          </li>
-          
-          
-
-          
-          <li>
-            <a href="/ebooks/">EBooks</a>
           </li>
           
           
@@ -419,7 +419,7 @@
   <div class="container">
     <div class="row">
       <!-- Post Container -->
-      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container" style="word-wrap: break-word;">
 
         <h2 id="高并发IO的底层原理"><a href="#高并发IO的底层原理" class="headerlink" title="高并发IO的底层原理"></a>高并发IO的底层原理</h2><h3 id="一、IO读写基础原理"><a href="#一、IO读写基础原理" class="headerlink" title="一、IO读写基础原理"></a>一、IO读写基础原理</h3><blockquote>
 <p>​        用户程序进行IO的读写，会用到底层的read&amp;write两大系统调用。无论是调用操作系统的read，还是write，都会涉及缓冲区。调用read，是把数据从内核缓冲区复制到进程缓冲区；而write，是把数据从进程缓冲区复制到内核缓冲区。也就是说，上层程序的IO操作，实际上不是物理设备级别的读写，而是缓存的复制。数据在内核缓冲区和物理设备（如磁盘）之间的交换，是由操作系统内核（Kernel）来完成的。</p>

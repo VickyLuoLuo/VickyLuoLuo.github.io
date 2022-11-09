@@ -237,6 +237,13 @@
 
           
           <li>
+            <a href="/ebooks/">EBooks</a>
+          </li>
+          
+          
+
+          
+          <li>
             <a href="/archive/">Archives</a>
           </li>
           
@@ -245,13 +252,6 @@
           
           <li>
             <a href="/categories/">Categories</a>
-          </li>
-          
-          
-
-          
-          <li>
-            <a href="/ebooks/">EBooks</a>
           </li>
           
           
@@ -425,7 +425,7 @@
   <div class="container">
     <div class="row">
       <!-- Post Container -->
-      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container" style="word-wrap: break-word;">
 
         <h2 id="JVM内存模型"><a href="#JVM内存模型" class="headerlink" title="JVM内存模型"></a>JVM内存模型</h2><h3 id="程序计数器（线程私有）"><a href="#程序计数器（线程私有）" class="headerlink" title="程序计数器（线程私有）"></a>程序计数器（线程私有）</h3><blockquote>
 <p>对于一个处理器(如果是多核cpu那就是一核)，在一个确定的时刻都只会执行一条线程中的指令，一条线程中有多个指令，为了线程切换可以恢复到正确执行位置，每个线程都需有独立的一个程序计数器，不同线程之间的程序计数器互不影响，独立存储。</p>
